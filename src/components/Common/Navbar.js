@@ -36,7 +36,7 @@ class Navbar extends Component{
                 <a href="#" className="navbar-brand nav-link">
                       {/* <h3 className="font-weight-bold white branding logo" style={{color: '#37BC9B !important'}}>DASHBOARD</h3>  */}
                   <img alt="" src={dealstimer} data-expand={dealstimer} data-collapse className="brand-logo" style={{maxWidth: '100%'}} />
-                      {/* <img alt="branding logo" src={dealstimer} data-expand={dealstimer} data-collapse="{{asset('')}}" className="brand-logo" style={{maxWidth: '100%'}} />  */}
+                      {/* <img alt="branding logo" src={dealstimer} data-expand={dealstimer} data-collapse="{{asset('')}}" className="brand-logo"  */}
                 </a>
               </li>
               <li className="nav-item hidden-md-up float-xs-right"><a data-toggle="collapse" data-target="#navbar-mobile" className="nav-link open-navbar-container"><i className="icon-ellipsis pe-2x icon-icon-rotate-right-right" /></a></li>
