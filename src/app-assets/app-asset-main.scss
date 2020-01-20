@@ -1,0 +1,72 @@
+
+//@import './css-rtl/app.css';
+// @import './css-rtl/app.min.css';
+// @import './css-rtl/bootstrap-extended.min.css';
+// @import './css-rtl/bootstrap.css';
+// @import './css-rtl/bootstrap.min.css';
+// @import './css-rtl/colors.css';
+// @import './css-rtl/colors.min.css';
+// @import './css-rtl/core/colors/palette-callout.css';
+//@import './css-rtl/custom-rtl.css';
+//@import './css-rtl/custom-rtl.min.css';
+//@import './css-rtl/core/colors/palette-callout.min.css';
+
+
+
+
+
+/*
+
+  
+      <link rel="stylesheet" type="text/css" href="{{asset('public/app-assets/css/bootstrap.css')}}">
+      <!-- font icons-->
+      <link rel="stylesheet" type="text/css" href="{{asset('public/app-assets/fonts/icomoon.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset('public/app-assets/fonts/flag-icon-css/css/flag-icon.min.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset('public/app-assets/vendors/css/extensions/pace.css')}}">
+      <!-- END VENDOR CSS-->
+      <!-- BEGIN ROBUST CSS-->
+      <link rel="stylesheet" type="text/css" href="{{asset('public/app-assets/css/bootstrap-extended.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset('public/app-assets/css/app.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset('public/app-assets/css/colors.css')}}">
+      <!-- END ROBUST CSS-->
+      <!-- BEGIN Page Level CSS-->
+      <link rel="stylesheet" type="text/css" href="{{asset('public/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset('public/app-assets/css/core/menu/menu-types/vertical-overlay-menu.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset('public/app-assets/css/core/colors/palette-gradient.css')}}">
+      <!-- END Page Level CSS-->
+      <!-- BEGIN Custom CSS-->
+      <link rel="stylesheet" type="text/css" href="{{asset('public/assets/css/style.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset('public/custom-admin.css')}}">
+    
+
+*/
+
+
+
+
+@import './css/bootstrap.css';
+
+@import './fonts/icomoon.css';
+@import './fonts/flag-icon-css/css/flag-icon.min.css';
+@import './vendors/css/extensions/pace.css';
+
+
+// <!-- BEGIN ROBUST CSS-->
+// <link rel="stylesheet" type="text/css" href="{{asset('public/app-assets/css/bootstrap-extended.css')}}">
+// <link rel="stylesheet" type="text/css" href="{{asset('public/app-assets/css/app.css')}}">
+// <link rel="stylesheet" type="text/css" href="{{asset('public/app-assets/css/colors.css')}}">
+@import './css/bootstrap-extended.css';
+ @import './css/app.css';
+@import './css/colors.css';
+
+// <!-- END ROBUST CSS-->
+//       <!-- BEGIN Page Level CSS-->
+//       <link rel="stylesheet" type="text/css" href="{{asset('public/app-assets/css/core/menu/menu-types/vertical-menu.css')}}">
+//       <link rel="stylesheet" type="text/css" href="{{asset('public/app-assets/css/core/menu/menu-types/vertical-overlay-menu.css')}}">
+//       <link rel="stylesheet" type="text/css" href="{{asset('public/app-assets/css/core/colors/palette-gradient.css')}}">
+
+// @import './css/core/menu/menu-types/vertical-menu.css';
+// @import './css/core/menu/menu-types/vertical-overlay-menu.css';
+// @import './css/core/colors/palette-gradient.css';
+
+ 
