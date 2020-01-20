@@ -1,0 +1,16 @@
+.login .passfield {
+  margin-top: 10px;
+}
+.login .card {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.login .content-wrapper {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* (x, y)  => position */
+  -ms-transform: translate(-50%, -50%); /* IE 9 */
+  -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
+}

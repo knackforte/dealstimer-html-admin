@@ -1,8 +1,25 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
 
 class Users extends Component {
-    render()
-    {
+    state = {
+        users: []
+    }
+    componentDidMount() {
+        let config = {
+            headers: {
+                APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa'
+            }
+        }
+        axios.get('http://clientdemo.knackforte.com/apidealstimer/public/api/user', config)
+            .then(response => {
+                this.setState({ users: response.data })
+            })
+            .catch(e => {
+                alert('Unable to fetch data from API.');
+            })
+    }
+    render() {
         return (
             <div className="app-content content container-fluid">
                 <div className="content-wrapper">
@@ -30,9 +47,9 @@ class Users extends Component {
                         <div className="col-md-12">
                             <div className="card mb-1">
                                 <div className="card-header">
-                                    <h4 className="card-title" id="basic-layout-form"><i className="icon-search"/>
+                                    <h4 className="card-title" id="basic-layout-form"><i className="icon-search" />
                                         Search</h4>
-                                    <a className="heading-elements-toggle"><i className="icon-ellipsis font-medium-3"/></a>
+                                    <a className="heading-elements-toggle"><i className="icon-ellipsis font-medium-3" /></a>
                                 </div>
                                 <div className="card-body collapse in">
                                     <div className="card-block pb-0">
@@ -45,12 +62,12 @@ class Users extends Component {
                                                             type="text"
                                                             id="projectinput1"
                                                             className="form-control"
-                                                            placeholder="Product Name"
-                                                            name="fname"/>
+                                                            placeholder="User Name"
+                                                            name="fname" />
                                                     </div>
                                                     <div className="col-md-3">
                                                         <button type="submit" className="btn btn-primary">
-                                                            <i className="icon-search"/>
+                                                            <i className="icon-search" />
                                                             View
                                                         </button>
                                                     </div>
@@ -79,116 +96,36 @@ class Users extends Component {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <th scope="row">
-                                                        <label className="checkbox-container">
-                                                            <input type="checkbox"/>
-                                                            <span className="checkmark"/>
-                                                            &nbsp;1
-                                                        </label>
-                                                    </th>
-                                                    <td>Mark
-                                                        <br/>
-                                                        <a href="#">Edit</a>
-                                                        &nbsp;
-                                                        <a href="#" className="text-danger">Delete</a>
-                                                    </td>
-                                                    <td>otto</td>
-                                                    <td>otto@mail.com</td>
-                                                    <td>Vendor</td>
-                                                    <td>Active</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">
-                                                        <label className="checkbox-container">
-                                                            <input type="checkbox"/>
-                                                            <span className="checkmark"/>
-                                                            &nbsp;2
-                                                        </label>
-                                                    </th>
-                                                    <td>Jacob<br/>
-                                                        <a href="#">Edit</a>&nbsp;
-                                                        <a href="#" className="text-danger">Delete</a>
-                                                    </td>
-                                                    <td>jacob</td>
-                                                    <td>jacob@gmail.com</td>
-                                                    <td>Vendor</td>
-                                                    <td>Active</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">
-                                                        <label className="checkbox-container">
-                                                            <input type="checkbox"/>
-                                                            <span className="checkmark"/>
-                                                            &nbsp;3
-                                                        </label>
-                                                    </th>
-                                                    <td>Larry<br/>
-                                                        <a href="#">Edit</a>&nbsp;
-                                                        <a href="#" className="text-danger">Delete</a>
-                                                    </td>
-                                                    <td>larry</td>
-                                                    <td>larry@gmail.com</td>
-                                                    <td>Admin</td>
-                                                    <td>Active</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">
-                                                        <label className="checkbox-container">
-                                                            <input type="checkbox"/>
-                                                            <span className="checkmark"/>
-                                                            &nbsp;4
-                                                        </label>
-                                                    </th>
-                                                    <td>Mark<br/>
-                                                        <a href="#">Edit</a>&nbsp;
-                                                        <a href="#" className="text-danger">Delete</a>
-                                                    </td>
-                                                    <td>otto</td>
-                                                    <td>otto@mail.com</td>
-                                                    <td>Vendor</td>
-                                                    <td>Active</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">
-                                                        <label className="checkbox-container">
-                                                            <input type="checkbox"/>
-                                                            <span className="checkmark"/>
-                                                            &nbsp;5
-                                                        </label>
-                                                    </th>
-                                                    <td>Jacob<br/>
-                                                        <a href="#">Edit</a>&nbsp;
-                                                        <a href="#" className="text-danger">Delete</a>
-                                                    </td>
-                                                    <td>jacob</td>
-                                                    <td>jacob@gmail.com</td>
-                                                    <td>Vendor</td>
-                                                    <td>Active</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">
-                                                        <label className="checkbox-container">
-                                                            <input type="checkbox"/>
-                                                            <span className="checkmark"/>
-                                                            &nbsp;6
-                                                        </label>
-                                                    </th>
-                                                    <td>Larry<br/>
-                                                        <a href="#">Edit</a>&nbsp;
-                                                        <a href="#" className="text-danger">Delete</a>
-                                                    </td>
-                                                    <td>larry</td>
-                                                    <td>larry@gmail.com</td>
-                                                    <td>Admin</td>
-                                                    <td>Active</td>
-                                                </tr>
+                                                {this.state.users.map(data => {
+                                                    return (
+                                                        <tr>
+                                                            <th scope="row">
+                                                                <label className="checkbox-container">
+                                                                    <input type="checkbox" />
+                                                                    <span className="checkmark" />
+                                                                    &nbsp;{data.id}
+                                                                </label>
+                                                            </th>
+                                                            <td>{data.first_name + " " + data.last_name}
+                                                                <br />
+                                                                <a href="#">Edit</a>
+                                                                &nbsp;
+                                                                    <a href="#" className="text-danger">Delete</a>
+                                                            </td>
+                                                            <td>{data.username}</td>
+                                                            <td>{data.email}</td>
+                                                            <td>{data.display_name}</td>
+                                                            <td>Active</td>
+                                                        </tr>
+                                                    );
+                                                })}
+
                                             </tbody>
                                             <tfoot>
                                                 <tr>
-                                                    <th/>
+                                                    <th />
                                                     <th colSpan={3}>Total Users</th>
-                                                    <th>25</th>
+                                                    <th>{this.state.users.length}</th>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -197,27 +134,8 @@ class Users extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="row">
-                        <div
-                            className="col-md-12"
-                            style={{
-                            textAlign: 'right'
-                        }}>
-                            <span>Page 3 of 4
-                            </span>&nbsp;
-                            <button className="btn btn-secondary">&lt;&lt;</button>&nbsp;
-                            <button className="btn btn-secondary">&lt;
-                            </button>&nbsp;
-                            <button className="btn btn-secondary">1</button>&nbsp;
-                            <button className="btn btn-secondary">2</button>&nbsp;
-                            <button className="btn btn-primary disabled">3</button>&nbsp;
-                            <button className="btn btn-secondary">4</button>&nbsp;
-                            <button className="btn btn-secondary">&gt;</button>&nbsp;
-                            <button className="btn btn-secondary">&gt;&gt;</button>&nbsp;
-                        </div>
-                    </div>
                 </div>
-            </div>
+            </div >
         )
     }
 }

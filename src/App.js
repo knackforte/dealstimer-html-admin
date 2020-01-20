@@ -1,36 +1,31 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 //import logo from './logo.svg';
 //import './App.css';
 import Navbar from './components/Common/Navbar';
 import Footer from './components/Common/Footer';
 import MainMenu from './components/Common/MainMenu';
-import {BrowserRouter,Route,Switch} from 'react-router-dom';
-import DashBoard2 from './components/Admin/dashboard/DashBoard2';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Dashboard from './components/Admin/dashboard/Dashboard';
 import Users from './components/Admin/Users/users';
 import New from './components/Admin/Users/new';
 import Profile from './components/Admin/Users/profile';
 import Login from './components/Layouts/Login';
-class App extends React.Component{
-  render()
-  {
-    const auth = true;
-    return(
-      // <div data-open="click" data-menu="vertical-menu" data-col="2-columns" class="vertical-layout vertical-menu 2-columns  fixed-navbar  menu-expanded pace-done">
-      //   <Navbar />
-      //   <Footer/>
-      // </div>
+class App extends React.Component {
+  render() {
+    const auth = localStorage.getItem('isAuth');
+    return (
       <div className='Admin'>
-      { (auth) ? <Navbar/> : ""}
-      {(auth)? <MainMenu/>:""}
+        {(auth === "true") ? <Navbar /> : ""}
+        {(auth === "true") ? <MainMenu /> : ""}
         <BrowserRouter>
-          <Route exact path='/' component={DashBoard2}></Route>
-          <Route exact path='/login' component={(auth)?DashBoard2:Login}></Route>
-          <Route path='/dashboard' component={DashBoard2}></Route>
-          <Route exact path='/users' component={Users}/>
-          <Route path='/users/new' component={New}/>
-          <Route path='/users/profile' component={Profile}/>
+          <Route exact path='/' component={Login}></Route>
+          <Route path='/login' component={(auth === "true") ? Dashboard : Login}></Route>
+          <Route path='/dashboard' component={Dashboard}></Route>
+          <Route exact path='/users' component={Users} />
+          <Route path='/users/new' component={New} />
+          <Route path='/users/profile' component={Profile} />
         </BrowserRouter>
-        {(auth)? <Footer/>: ""}
+        {(auth === "true") ? <Footer /> : ""}
       </div>
     )
   }

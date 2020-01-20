@@ -1,12 +1,11 @@
-import React,{Component}from 'react';
+import React, { Component } from 'react';
 //import logo from './logo.svg';
 //import './App.css';
 //import Navbar from '../com'
 // import MainManu from '../Layouts/Main-Manu.js';
- import Footer from '../Common/Footer';
- import Navbar from '../Common/Navbar'; 
- import MainMenu from '../Common/MainMenu';
-import DashBoard2 from './dashboard/DashBoard2.js';
+import Footer from '../Common/Footer';
+import Navbar from '../Common/Navbar';
+import MainMenu from '../Common/MainMenu';
 // import '../../app-assets/css/bootstrap.css';
 // import '../../app-assets/fonts/icomoon.css';
 // import '../../app-assets/fonts/flag-icon-css/css/flag-icon.min.css';
@@ -37,19 +36,17 @@ import DashBoard2 from './dashboard/DashBoard2.js';
 // import '../../../public/custom-admin.js';
 //import dealstimer from '../../assets/images/dealstimer.png'
 
- 
 
 
 
-class Admin extends Component{
-  render()
-  {
-    return ( 
+
+class Admin extends Component {
+  render() {
+    return (
       <div className="Admin">
-         <Navbar/>
-         <MainMenu/>
-         <DashBoard2/>
-        <Footer/>  
+        <Navbar />
+        <MainMenu />
+        <Footer />
 
       </div>
     )

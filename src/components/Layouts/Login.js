@@ -1,8 +1,18 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import './Login.css';
 import dealstimer from '../../assets/images/dealstimer.png';
-import {validateAll} from 'indicative/validator';
+import { validateAll } from 'indicative/validator';
 import axios from 'axios';
+import { isLogin } from '../Common/utils';
 class Login extends Component {
+    constructor (props) {
+        super(props);
+        if (isLogin() === "false") {
+            this.props.history.push('/');
+        } else {
+            this.props.history.push('/dashboard');
+        }
+    }
     state = {
         email: '',
         password: '',
@@ -28,41 +38,37 @@ class Login extends Component {
         }
 
         validateAll(data, rules, messages).then(() => {
-            this.setState({isButtonDisabled: true});
+            this.setState({ isButtonDisabled: true });
             let config = {
                 headers: {
                     APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa'
                 }
             }
-            axios.post('http://clientdemo.knackforte.com/apidealstimer/api/user', {
+            axios.post('http://clientdemo.knackforte.com/apidealstimer/public/api/verifyUser', {
                 email: this.state.email,
                 password: this.state.password
             }, config).then(response => {
                 localStorage.setItem('isAuth', true);
-                window.location.href = "/Dashboard";
-                this.setState({error: false});
+                window.location.href = "/dashboard";
+                this.setState({ error: false });
                 //this.props.history.push('/Dashboard');
             }).catch(e => {
-                alert("Error while Signing!");
-                this.setState({error: true});
-                this.setState({isButtonDisabled: false});
+                this.setState({ error: true });
+                this.setState({ isButtonDisabled: false });
             })
         }).catch((errors) => {
             const formattedErrors = {}
             errors.forEach(error => formattedErrors[error.field] = error.message);
-            this.setState({errors: formattedErrors});
+            this.setState({ errors: formattedErrors });
         })
     }
     getErrorMsg() {
         if (this.state.error) {
-            console.log('Success');
             return (
                 <div class="alert alert-danger mb-2" role="alert">
-                    <strong>Error Login!</strong>
+                    <strong>Invalid Email or Password!</strong>
                 </div>
             );
-        } else {
-            return ('');
         }
     }
     render() {
@@ -79,12 +85,12 @@ class Login extends Component {
                                         <div className="card-title text-xs-center">
                                             <div className="p-1">
                                                 {/* Image */}
-                                                <img className="logo-login" src={dealstimer} alt="branding logo"/>
+                                                <img className="logo-login" src={dealstimer} alt="branding logo" />
                                             </div>
                                         </div>
                                         <h6
                                             className="card-subtitle line-on-side text-muted text-xs-center font-small-3 pt-2">
-                                            <span>Login with Robust</span>
+                                            <span>Login with DEALSTIMER</span>
                                         </h6>
                                     </div>
                                     <div className="card-body collapse in">
@@ -96,14 +102,14 @@ class Login extends Component {
                                                         type='email'
                                                         className="form-control form-control-lg input-lg "
                                                         id="user-name"
-                                                        placeholder="Your Username"
+                                                        placeholder="Your Email"
                                                         required
-                                                        onChange={this.handleInputChange}/>
+                                                        onChange={this.handleInputChange} />
                                                     <div className="form-control-position">
                                                         <i className="icon-head"></i>
                                                     </div>
                                                 </fieldset>
-                                                <fieldset className="form-group position-relative has-icon-left">
+                                                <fieldset className="form-group position-relative has-icon-left passfield">
                                                     <input
                                                         name='password'
                                                         type="password"
@@ -111,41 +117,29 @@ class Login extends Component {
                                                         id="user-password"
                                                         placeholder="Enter Password"
                                                         required
-                                                        onChange={this.handleInputChange}/>
+                                                        onChange={this.handleInputChange} />
                                                     <div className="form-control-position">
                                                         <i className="icon-key3"></i>
                                                     </div>
                                                 </fieldset>
-                                                {this.getErrorMsg()}
                                                 <fieldset className="form-group row">
                                                     <div className="col-md-6 col-xs-12 text-xs-center text-md-left">
                                                         <fieldset>
-                                                            <input type="checkbox" id="remember-me" className="chk-remember" required/>
+                                                            <input type="checkbox" id="remember-me" className="chk-remember" />
                                                             <label htmlFor="remember-me">&nbsp;Remember Me</label>
                                                         </fieldset>
                                                     </div>
-                                                    <div className="col-md-6 col-xs-12 text-xs-center text-md-right">
-                                                        <a href="recover-password.html" className="card-link">Forgot Password?</a>
-                                                    </div>
                                                 </fieldset>
+                                                {this.getErrorMsg()}
                                                 <button
                                                     type="submit"
                                                     className={this.state.isButtonDisabled
-                                                    ? 'btn btn-primary btn-lg btn-block:btn btn-primary btn-lg btn-block disabled'
-                                                    : 'btn btn-primary btn-lg btn-block:btn btn-primary btn-lg btn-block'}>
+                                                        ? 'btn btn-primary btn-lg btn-block:btn btn-primary btn-lg btn-block disabled'
+                                                        : 'btn btn-primary btn-lg btn-block:btn btn-primary btn-lg btn-block'}>
                                                     <i className="icon-unlock2"></i>
-                                                    &nbsp;Login</button>
+                                                    &nbsp;Login
+                                                </button>
                                             </form>
-                                        </div>
-                                    </div>
-                                    <div className="card-footer">
-                                        <div className="">
-                                            <p className="float-sm-left text-xs-center m-0">
-                                                <a href="recover-password.html" className="card-link">Recover password</a>
-                                            </p>
-                                            <p className="float-sm-right text-xs-center m-0">New to Robust?
-                                                <a href="register-simple.html" className="card-link">&nbsp;Sign Up</a>
-                                            </p>
                                         </div>
                                     </div>
                                 </div>
