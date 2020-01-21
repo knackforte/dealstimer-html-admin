@@ -1,10 +1,11 @@
-import React,{ Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-
-class AllProducts extends Component{
-    render (){
-      return (
-        <div>
+class ProductsAll extends Component {
+  render() {
+    return (
+      <div className="app-content content container-fluid">
+        <div className="content-wrapper">
           <div className="content-header row">
             <div className="content-header-left col-md-6 col-xs-12 mb-1">
               <h2 className="content-header-title">All Products</h2>
@@ -26,8 +27,8 @@ class AllProducts extends Component{
             <div className="col-md-12">
               <div className="card mb-1">
                 <div className="card-header">
-                  <h4 className="card-title" id="basic-layout-form"><i className="icon-search" /> Search</h4>
-                  <a className="heading-elements-toggle"><i className="icon-ellipsis font-medium-3" /></a>
+                  <h4 className="card-title" id="basic-layout-form"><i className="icon-search"></i> Search</h4>
+                  <a className="heading-elements-toggle"><i className="icon-ellipsis font-medium-3"></i></a>
                 </div>
                 <div className="card-body collapse in">
                   <div className="card-block pb-0">
@@ -44,11 +45,11 @@ class AllProducts extends Component{
                           </div>
                           <div className="col-md-3">
                             <button type="button" className="btn btn-warning">
-                              <i className="icon-cross2" /> Clear
-                            </button>
+                              <i className="icon-cross2"></i> Clear
+                                      </button>
                             <button type="submit" className="btn btn-primary">
-                              <i className="icon-search" /> View
-                            </button>
+                              <i className="icon-search"></i> View
+                                      </button>
                           </div>
                         </div>
                       </div>
@@ -119,8 +120,8 @@ class AllProducts extends Component{
                       </tbody>
                       <tfoot>
                         <tr>
-                          <th />
-                          <th colSpan={3}>Total Products Count</th>
+                          <th></th>
+                          <th colSpan="3">Total Products Count</th>
                           <th>2547</th>
                         </tr>
                       </tfoot>
@@ -131,21 +132,22 @@ class AllProducts extends Component{
             </div>
           </div>
           <div className="row">
-            <div className="col-md-12" style={{textAlign: 'right'}}>
+            <div className="col-md-12" style={{ textAlign: 'right' }}>
               <span>Page 3 of 4 </span>&nbsp;
-              <button className="btn btn-secondary">&lt;&lt;</button>
-              <button className="btn btn-secondary">&lt;</button>
+          <button className="btn btn-secondary">{'<<'}</button>
+              <button className="btn btn-secondary">{'<'}</button>
               <button className="btn btn-secondary">1</button>
               <button className="btn btn-secondary">2</button>
               <button className="btn btn-primary disabled">3</button>
               <button className="btn btn-secondary">4</button>
-              <button className="btn btn-secondary">&gt;</button>
-              <button className="btn btn-secondary">&gt;&gt;</button>
+              <button className="btn btn-secondary">></button>
+              <button className="btn btn-secondary">>></button>
             </div>
           </div>
         </div>
-      );
-    }
-  };
+      </div>
+    );
+  }
+}
 
-  export default AllProducts;
+export default ProductsAll;

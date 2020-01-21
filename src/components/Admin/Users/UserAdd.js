@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { validateAll } from 'indicative/validator';
 import { DropzoneArea } from 'material-ui-dropzone'
 import axios from 'axios';
-class New extends Component {
+class UserAdd extends Component {
     state = {
         first_name: "",
         last_name: "",
@@ -316,4 +317,4 @@ class New extends Component {
         )
     }
 }
-export default New;
+export default UserAdd;

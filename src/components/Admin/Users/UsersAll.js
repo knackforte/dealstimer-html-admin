@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
-class Users extends Component {
+class UsersAll extends Component {
     state = {
         users: []
     }
@@ -140,4 +141,4 @@ class Users extends Component {
     }
 }
 
-export default Users;
+export default UsersAll;
