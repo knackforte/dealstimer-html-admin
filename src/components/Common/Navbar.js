@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import auth from '../Auth/Auth';
 // Images
 import dealstimer from '../../assets/images/dealstimer.png';
 import avatar_s_one from '../../app-assets/images/portrait/small/avatar_s_one.png';
@@ -7,12 +8,7 @@ import avatar_s_2 from '../../app-assets/images/portrait/small/avatar_s_one.png'
 import avatar_s_3 from '../../app-assets/images/portrait/small/avatar_s_one.png';
 import avatar_s_6 from '../../app-assets/images/portrait/small/avatar_s_one.png';
 
-const Navbar = (props) => {
-
-  const handleLogout = () => {
-    localStorage.setItem('isAuth', false);
-    window.location.to = "/";
-  }
+const NavbarContent = (props) => {
   return (
     <nav className="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-semi-dark navbar-shadow">
       <div className="navbar-wrapper">
@@ -130,7 +126,7 @@ const Navbar = (props) => {
               </li>
               <li className="dropdown dropdown-user nav-item"><Link to="#" data-toggle="dropdown" className="dropdown-toggle nav-link dropdown-user-link"><span className="avatar avatar-online"><img src={avatar_s_one} alt="avatar" /><i /></span><span className="user-name">John Doe</span></Link>
                 <div className="dropdown-menu dropdown-menu-right"><Link to="#" className="dropdown-item"><i className="icon-head" /> Edit Profile</Link><Link to="#" className="dropdown-item"><i className="icon-mail6" /> My Inbox</Link><Link to="#" className="dropdown-item"><i className="icon-clipboard2" /> Task</Link><Link to="#" className="dropdown-item"><i className="icon-calendar5" /> Calender</Link>
-                  <div className="dropdown-divider" /><a className="dropdown-item" onClick={handleLogout}><i className="icon-power3" /> Logout</a>
+                  <div className="dropdown-divider" /><a className="dropdown-item" onClick={props.logout}><i className="icon-power3" /> Logout</a>
                 </div>
               </li>
             </ul>
@@ -138,6 +134,31 @@ const Navbar = (props) => {
         </div>
       </div>
     </nav>
+  );
+};
+
+const EmptyContent = () => {
+  return (
+    <div></div>
+  );
+}
+
+const Navbar = (props) => {
+
+  const handleLogout = () => {
+    localStorage.setItem('isAuth', false);
+    props.history.push("/");
+  }
+
+  let NavContent;
+  if (auth.isAuthenticated() === "true") {
+    NavContent = NavbarContent;
+  } else {
+    NavContent = EmptyContent;
+  }
+
+  return (
+    <NavContent logout={handleLogout} {...props} />
 
   );
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class ProductAdd extends Component {
     render() {
@@ -7,16 +8,14 @@ class ProductAdd extends Component {
                 <div className="content-wrapper">
                     <div className="content-header row">
                         <div className="content-header-left col-md-6 col-xs-12 mb-1">
-                            <h2 className="content-header-title">Add New Product</h2>
+                            <h2 className="content-header-title">Product Manager</h2>
                         </div>
                         <div className="content-header-right breadcrumbs-right breadcrumbs-top col-md-6 col-xs-12">
                             <div className="breadcrumb-wrapper col-xs-12">
                                 <ol className="breadcrumb">
-                                    <li className="breadcrumb-item"><a href="index.html">Home</a>
+                                    <li className="breadcrumb-item"><Link to="/dashboard">Dashboard</Link>
                                     </li>
-                                    <li className="breadcrumb-item"><a href="#">Prodocts</a>
-                                    </li>
-                                    <li className="breadcrumb-item active">Add New
+                                    <li className="breadcrumb-item active">Add Product
                     </li>
                                 </ol>
                             </div>
@@ -26,7 +25,7 @@ class ProductAdd extends Component {
                         <div className="col-md-12">
                             <div className="card">
                                 <div className="card-header">
-                                    <h4 className="card-title" id="basic-layout-form">Manual Product Entry</h4>
+                                    <h4 className="card-title" id="basic-layout-form">Add Product</h4>
                                     <a className="heading-elements-toggle"><i className="icon-ellipsis font-medium-3"></i></a>
                                     <div className="heading-elements">
                                         <ul className="list-inline mb-0">

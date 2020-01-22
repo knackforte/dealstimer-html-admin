@@ -8,14 +8,14 @@ class CommentsAndRatingsComments extends Component {
                 <div className="content-wrapper">
                     <div className="content-header row">
                         <div className="content-header-left col-md-6 col-xs-12 mb-1">
-                            <h2 className="content-header-title">Comments</h2>
+                            <h2 className="content-header-title">Comments and Ratings</h2>
                         </div>
                         <div
                             className="content-header-right breadcrumbs-right breadcrumbs-top col-md-6 col-xs-12">
                             <div className="breadcrumb-wrapper col-xs-12">
                                 <ol className="breadcrumb">
                                     <li className="breadcrumb-item">
-                                        <Link to="index.html">Dashboard</Link>
+                                        <Link to="/dashboard">Dashboard</Link>
                                     </li>
                                     <li className="breadcrumb-item active">Comments
                                     </li>

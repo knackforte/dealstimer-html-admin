@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-
-const MainMenu = (props) => {
+import auth from '../Auth/Auth';
+const MenuContent = () => {
     return (
         <div data-scroll-to-active="true" className="main-menu menu-fixed menu-dark menu-accordion menu-shadow">
             <div className="main-menu-header">
@@ -13,7 +13,7 @@ const MainMenu = (props) => {
                     id="main-menu-navigation"
                     data-menu="menu-navigation"
                     className="navigation navigation-main">
-                    <li className="nav-item dashboard  active ">
+                    <li className="nav-item dashboard">
                         <Link to="/dashboard">
                             <i className="icon-stats-bars"></i>
                             <span data-i18n="" className="menu-title">Dashboard</span>
@@ -31,7 +31,7 @@ const MainMenu = (props) => {
                                     to="/products/all"
                                     data-i18n=""
                                     className="menu-item">All Products
-                                    </Link>
+                        </Link>
                             </li>
                             <li className="">
                                 <Link
@@ -105,10 +105,10 @@ const MainMenu = (props) => {
                                 <Link to="/search-and-sort/companies" data-i18n="" className="menu-item">Companies</Link>
                             </li>
                             <li className="">
-                                <Link to="/search-and-sort/attributes" data-i18n="" className="menu-item">Search Attributes</Link>
+                                <Link to="/search-and-sort/attributes" data-i18n="" className="menu-item">Attributes</Link>
                             </li>
                             <li className="">
-                                <Link to="/search-and-sort/logs" data-i18n="" className="menu-item">Search Logs</Link>
+                                <Link to="/search-and-sort/logs" data-i18n="" className="menu-item">Logs</Link>
                             </li>
                         </ul>
                     </li>
@@ -187,6 +187,26 @@ const MainMenu = (props) => {
             </div>
 
         </div>
+    );
+};
+
+const EmptyContent = () => {
+    return (
+        <div></div>
+    );
+}
+
+const MainMenu = (props) => {
+
+    let MainMenuContent;
+    if (auth.isAuthenticated() === "true") {
+        MainMenuContent = MenuContent;
+    } else {
+        MainMenuContent = EmptyContent;
+    }
+
+    return (
+        < MainMenuContent {...props} />
     )
 }
 export default withRouter(MainMenu);

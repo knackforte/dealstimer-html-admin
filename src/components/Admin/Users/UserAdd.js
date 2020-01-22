@@ -91,7 +91,7 @@ class UserAdd extends Component {
                 axios.post('http://clientdemo.knackforte.com/apidealstimer/public/api/user', formData, config)
                     .then(response => {
                         localStorage.setItem('isAuth', true);
-                        this.props.history.push('/users');
+                        this.props.history.push('/users/all');
                         //this.props.history.push('/Dashboard');
                     })
                     .catch(e => {
@@ -113,19 +113,16 @@ class UserAdd extends Component {
                 <div className="content-wrapper">
                     <div className="content-header row">
                         <div className="content-header-left col-md-6 col-xs-12 mb-1">
-                            <h2 className="content-header-title">Add New Vendor</h2>
+                            <h2 className="content-header-title">User Manager</h2>
                         </div>
                         <div
                             className="content-header-right breadcrumbs-right breadcrumbs-top col-md-6 col-xs-12">
                             <div className="breadcrumb-wrapper col-xs-12">
                                 <ol className="breadcrumb">
                                     <li className="breadcrumb-item">
-                                        <a href="index.html">Home</a>
+                                        <Link to="/dashboard">Dashboard</Link>
                                     </li>
-                                    <li className="breadcrumb-item">
-                                        <a href="#">Users</a>
-                                    </li>
-                                    <li className="breadcrumb-item active">Add New
+                                    <li className="breadcrumb-item active">Add User
                                     </li>
                                 </ol>
                             </div>
@@ -136,7 +133,7 @@ class UserAdd extends Component {
                         <div className="col-md-12">
                             <div className="card">
                                 <div className="card-header">
-                                    <h4 className="card-title" id="basic-layout-form">Vendor Profile</h4>
+                                    <h4 className="card-title" id="basic-layout-form">Add User</h4>
                                     <a className="heading-elements-toggle">
                                         <i className="icon-ellipsis font-medium-3"></i>
                                     </a>

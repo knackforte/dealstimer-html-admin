@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { ProtectedRoute } from "./components/Auth/protected.route";
 import Navbar from './components/Common/Navbar';
 import Footer from './components/Common/Footer';
 import MainMenu from './components/Common/MainMenu';
@@ -40,57 +41,56 @@ import "./saas/main.scss";
 
 import "./app-assets/app-asset-main.scss";
 
-const auth = localStorage.getItem('isAuth');
 const routing = <Router>
     <div>
-        {(auth === "true") ? <Navbar /> : ""}
-        {(auth === "true") ? <MainMenu /> : ""}
+        <Navbar />
+        <MainMenu />
         <Switch>
             <Route exact path='/' component={Login} />
 
-            <Route path='/login' component={(auth === "true") ? Dashboard : Login} />
+            <Route path='/login' component={Login} />
 
-            <Route path='/dashboard' component={Dashboard} />
+            <ProtectedRoute path='/dashboard' component={Dashboard} />
 
-            <Route path='/products/all' component={(auth === "true") ? ProductsAll : Login} />
-            <Route path='/products/new' component={(auth === "true") ? ProductAdd : Login} />
-            <Route path='/products/edit' component={(auth === "true") ? ProductEdit : Login} />
-            <Route path='/products/attributes' component={(auth === "true") ? ProductAttributes : Login} />
-            <Route path='/products/categories' component={(auth === "true") ? ProductCatagories : Login} />
+            <ProtectedRoute path='/products/all' component={ProductsAll} />
+            <ProtectedRoute path='/products/new' component={ProductAdd} />
+            <ProtectedRoute path='/products/edit' component={ProductEdit} />
+            <ProtectedRoute path='/products/attributes' component={ProductAttributes} />
+            <ProtectedRoute path='/products/categories' component={ProductCatagories} />
 
-            <Route path='/packages/all' component={(auth === "true") ? PackagesAll : Login} />
-            <Route path='/packages/new' component={(auth === "true") ? PackageAdd : Login} />
-            <Route path='/packages/edit' component={(auth === "true") ? PackageEdit : Login} />
+            <ProtectedRoute path='/packages/all' component={PackagesAll} />
+            <ProtectedRoute path='/packages/new' component={PackageAdd} />
+            <ProtectedRoute path='/packages/edit' component={PackageEdit} />
 
-            <Route path='/coupons/all' component={(auth === "true") ? CouponsAll : Login} />
-            <Route path='/coupons/new' component={(auth === "true") ? CouponAdd : Login} />
-            <Route path='/coupons/edit' component={(auth === "true") ? CouponEdit : Login} />
-            <Route path='/coupons/deal-tags' component={(auth === "true") ? CouponDealTags : Login} />
+            <ProtectedRoute path='/coupons/all' component={CouponsAll} />
+            <ProtectedRoute path='/coupons/new' component={CouponAdd} />
+            <ProtectedRoute path='/coupons/edit' component={CouponEdit} />
+            <ProtectedRoute path='/coupons/deal-tags' component={CouponDealTags} />
 
-            <Route path='/search-and-sort/websites' component={(auth === "true") ? SearchAndSortWebsites : Login} />
-            <Route path='/search-and-sort/ads' component={(auth === "true") ? SearchAndSortAds : Login} />
-            <Route path='/search-and-sort/products' component={(auth === "true") ? SearchAndSortProducts : Login} />
-            <Route path='/search-and-sort/companies' component={(auth === "true") ? SearchAndSortCompanies : Login} />
-            <Route path='/search-and-sort/attributes' component={(auth === "true") ? SearchAndSortAttributes : Login} />
-            <Route path='/search-and-sort/logs' component={(auth === "true") ? SearchAndSortLogs : Login} />
+            <ProtectedRoute path='/search-and-sort/websites' component={SearchAndSortWebsites} />
+            <ProtectedRoute path='/search-and-sort/ads' component={SearchAndSortAds} />
+            <ProtectedRoute path='/search-and-sort/products' component={SearchAndSortProducts} />
+            <ProtectedRoute path='/search-and-sort/companies' component={SearchAndSortCompanies} />
+            <ProtectedRoute path='/search-and-sort/attributes' component={SearchAndSortAttributes} />
+            <ProtectedRoute path='/search-and-sort/logs' component={SearchAndSortLogs} />
 
-            <Route path='/subscriptions' component={(auth === "true") ? Subscriptions : Login} />
+            <ProtectedRoute path='/subscriptions' component={Subscriptions} />
 
-            <Route path='/comments-and-ratings/comments' component={(auth === "true") ? CommentsAndRatingsComments : Login} />
-            <Route path='/comments-and-ratings/reviews' component={(auth === "true") ? CommentsAndRatingsReviews : Login} />
-            <Route path='/comments-and-ratings/ratings' component={(auth === "true") ? CommentsAndRatingsRatings : Login} />
+            <ProtectedRoute path='/comments-and-ratings/comments' component={CommentsAndRatingsComments} />
+            <ProtectedRoute path='/comments-and-ratings/reviews' component={CommentsAndRatingsReviews} />
+            <ProtectedRoute path='/comments-and-ratings/ratings' component={CommentsAndRatingsRatings} />
 
-            <Route path='/wallet/payments' component={(auth === "true") ? WalletPayments : Login} />
-            <Route path='/wallet/receivings' component={(auth === "true") ? WalletReceivings : Login} />
-            <Route path='/wallet/ratings' component={(auth === "true") ? WalletRatings : Login} />
+            <ProtectedRoute path='/wallet/payments' component={WalletPayments} />
+            <ProtectedRoute path='/wallet/receivings' component={WalletReceivings} />
+            <ProtectedRoute path='/wallet/ratings' component={WalletRatings} />
 
-            <Route path='/users/all' component={(auth === "true") ? UsersAll : Login} />
-            <Route path='/users/new' component={(auth === "true") ? UserAdd : Login} />
-            <Route path='/users/edit' component={(auth === "true") ? UserEdit : Login} />
+            <ProtectedRoute path='/users/all' component={UsersAll} />
+            <ProtectedRoute path='/users/new' component={UserAdd} />
+            <ProtectedRoute path='/users/edit' component={UserEdit} />
 
-            <Route path='/settings' component={(auth === "true") ? Settings : Login} />
+            <ProtectedRoute path='/settings' component={Settings} />
         </Switch>
-        {(auth === "true") ? <Footer /> : ""}
+        <Footer />
     </div >
 </Router>
 ReactDOM.render(routing, document.getElementById('root'));

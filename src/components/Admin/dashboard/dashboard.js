@@ -4,11 +4,6 @@ import { isLogin } from '../../Common/utils';
 class Dashboard extends Component {
   constructor (props) {
     super(props);
-    if (isLogin() === "false") {
-      this.props.history.push('/');
-    } else {
-      this.props.history.push('/dashboard');
-    }
   }
   render() {
     return (

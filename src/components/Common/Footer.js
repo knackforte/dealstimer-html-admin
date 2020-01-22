@@ -1,35 +1,40 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import auth from '../Auth/Auth';
+const FooterContent = () => {
+    return (
+        <div className="Footer">
+
+            <footer className="footer footer-static footer-light navbar-border ">
+                <p className="clearfix text-muted text-sm-center mb-0 px-2">
+
+                    <span className="float-md-left d-xs-block d-md-inline-block">Copyright  © 2020 <a href='/#' target="_blank" className="text-bold-800 grey darken-2">DEALSTIMER </a>, All rights reserved. </span>
+                    <span className="float-md-right d-xs-block d-md-inline-block"></span>
+                </p>
+            </footer>
 
 
-// import '../../app-assets/css/bootstrap.css';
-// import '../../app-assets/fonts/icomoon.css';
-// import '../../app-assets/fonts/flag-icon-css/css/flag-icon.min.css';
-// import '../../app-assets/vendors/css/extensions/pace.css';
-// import '../../app-assets/css/bootstrap-extended.css';
-// //import '../../app-assets/css/app.css';
-// import '../../app-assets/css/colors.css';
-// import '../../app-assets/css/core/menu/menu-types/vertical-menu.css';
-// import '../../app-assets/css/core/menu/menu-types/vertical-overlay-menu.css';
-// import '../../app-assets/css/core/colors/palette-gradient.css';
-// import '../../assets/css/style.css';
+        </div>
+    );
+};
 
-class  Footer extends Component{
-    render()
-    {
-        return (
-            <div className="Footer">
-                
-<footer className="footer footer-static footer-light navbar-border ">
-    <p className="clearfix text-muted text-sm-center mb-0 px-2">
-
-        <span className="float-md-left d-xs-block d-md-inline-block">Copyright  © 2020 <a href='/#' target="_blank" className="text-bold-800 grey darken-2">DEALSTIMER </a>, All rights reserved. </span>
-        <span className="float-md-right d-xs-block d-md-inline-block"></span>
-    </p>
-</footer>
-
-
-            </div>
-        )
-    }
+const EmptyContent = () => {
+    return (
+        <div></div>
+    );
 }
-export default Footer;
+
+const Footer = (props) => {
+
+    let FooterC;
+    if (auth.isAuthenticated() === "true") {
+        FooterC = FooterContent;
+    } else {
+        FooterC = EmptyContent;
+    }
+
+    return (
+        <FooterC {...props} />
+    )
+}
+export default withRouter(Footer);

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class PackagesAll extends Component {
   render() {
@@ -7,16 +8,14 @@ class PackagesAll extends Component {
         <div className="content-wrapper">
           <div className="content-header row">
             <div className="content-header-left col-md-6 col-xs-12 mb-1">
-              <h2 className="content-header-title">Subscription Packages</h2>
+              <h2 className="content-header-title">Package Manager</h2>
             </div>
             <div className="content-header-right breadcrumbs-right breadcrumbs-top col-md-6 col-xs-12">
               <div className="breadcrumb-wrapper col-xs-12">
                 <ol className="breadcrumb">
-                  <li className="breadcrumb-item"><a href="{{url('/')}}">Home</a>
+                  <li className="breadcrumb-item"><Link to="/dashboard">Dashboard</Link>
                   </li>
-                  <li className="breadcrumb-item"><a href="#">Packages</a>
-                  </li>
-                  <li className="breadcrumb-item active">Package Manager
+                  <li className="breadcrumb-item active">All Packages
                   </li>
                 </ol>
               </div>
@@ -26,7 +25,7 @@ class PackagesAll extends Component {
             <div className="col-md-12">
               <div className="card">
                 <div className="card-header">
-                  <h4 className="card-title" id="basic-layout-form">Package Manager</h4>
+                  <h4 className="card-title" id="basic-layout-form">All Packages</h4>
                   <a className="heading-elements-toggle"><i className="icon-ellipsis font-medium-3"></i></a>
                   <div className="heading-elements">
                     <ul className="list-inline mb-0">
@@ -114,8 +113,8 @@ class PackagesAll extends Component {
                                 <tbody>
                                   <tr>
                                     <th scope="row">1</th>
-                                    <td>Gold <br /><a href="#" className="text-danger">Delete</a> <a
-                                      href="#" className="text-success">Edit</a></td>
+                                    <td>Gold <br /><Link to="#" className="text-danger">Delete</Link> <Link
+                                      to="#" className="text-success">Edit</Link></td>
                                     <td>1 Year</td>
                                     <td>100</td>
                                     <td>5000</td>
@@ -124,8 +123,8 @@ class PackagesAll extends Component {
                                   </tr>
                                   <tr>
                                     <th scope="row">2</th>
-                                    <td>Silver <br /><a href="#" className="text-danger">Delete</a> <a
-                                      href="#" className="text-success">Edit</a></td>
+                                    <td>Silver <br /><Link to="#" className="text-danger">Delete</Link> <Link
+                                      to="#" className="text-success">Edit</Link></td>
                                     <td>1 Year</td>
                                     <td>100</td>
                                     <td>5000</td>
@@ -134,8 +133,8 @@ class PackagesAll extends Component {
                                   </tr>
                                   <tr>
                                     <th scope="row">3</th>
-                                    <td>Platinum <br /><a href="#" className="text-danger">Delete</a> <a
-                                      href="#" className="text-success">Edit</a></td>
+                                    <td>Platinum <br /><Link to="#" className="text-danger">Delete</Link> <Link
+                                      to="#" className="text-success">Edit</Link></td>
                                     <td>1 Year</td>
                                     <td>100</td>
                                     <td>5000</td>

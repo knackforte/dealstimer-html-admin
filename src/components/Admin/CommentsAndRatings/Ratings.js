@@ -8,7 +8,7 @@ class CommentsAndRatingsRatings extends Component {
                 <div className="content-wrapper">
                     <div className="content-header row">
                         <div className="content-header-left col-md-6 col-xs-12 mb-1">
-                            <h2 className="content-header-title">Ratings</h2>
+                            <h2 className="content-header-title">Comments and Ratings</h2>
                         </div>
                         <div
                             className="content-header-right breadcrumbs-right breadcrumbs-top col-md-6 col-xs-12">

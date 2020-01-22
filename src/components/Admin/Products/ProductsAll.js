@@ -8,14 +8,12 @@ class ProductsAll extends Component {
         <div className="content-wrapper">
           <div className="content-header row">
             <div className="content-header-left col-md-6 col-xs-12 mb-1">
-              <h2 className="content-header-title">All Products</h2>
+              <h2 className="content-header-title">Product Manager</h2>
             </div>
             <div className="content-header-right breadcrumbs-right breadcrumbs-top col-md-6 col-xs-12">
               <div className="breadcrumb-wrapper col-xs-12">
                 <ol className="breadcrumb">
-                  <li className="breadcrumb-item"><a href="index.html">Home</a>
-                  </li>
-                  <li className="breadcrumb-item"><a href="#">Prodocts</a>
+                  <li className="breadcrumb-item"><Link to="/dashboard">Dashboard</Link>
                   </li>
                   <li className="breadcrumb-item active">All Products
                   </li>

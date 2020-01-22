@@ -8,14 +8,12 @@ class ProductCategories extends Component {
         <div className="content-wrapper">
           <div className="content-header row">
             <div className="content-header-left col-md-6 col-xs-12 mb-1">
-              <h2 className="content-header-title">Product Categories</h2>
+              <h2 className="content-header-title">Product Manager</h2>
             </div>
             <div className="content-header-right breadcrumbs-right breadcrumbs-top col-md-6 col-xs-12">
               <div className="breadcrumb-wrapper col-xs-12">
                 <ol className="breadcrumb">
-                  <li className="breadcrumb-item"><a href="index.html">Home</a>
-                  </li>
-                  <li className="breadcrumb-item"><a href="#">Prodocts</a>
+                  <li className="breadcrumb-item"><Link to="/dashboard">Dashboard</Link>
                   </li>
                   <li className="breadcrumb-item active">Categories
               </li>
@@ -27,7 +25,7 @@ class ProductCategories extends Component {
             <div className="col-md-12">
               <div className="card">
                 <div className="card-header">
-                  <h4 className="card-title" id="basic-layout-form">Product Categories list</h4>
+                  <h4 className="card-title" id="basic-layout-form">Product Categories</h4>
                   <a className="heading-elements-toggle"><i className="icon-ellipsis font-medium-3"></i></a>
                   <div className="heading-elements">
                     <ul className="list-inline mb-0">

@@ -3,11 +3,11 @@ import './Login.css';
 import dealstimer from '../../assets/images/dealstimer.png';
 import { validateAll } from 'indicative/validator';
 import axios from 'axios';
-import { isLogin } from '../Common/utils';
+import auth from '../Auth/Auth';
 class Login extends Component {
     constructor (props) {
         super(props);
-        if (isLogin() === "false") {
+        if (auth.isAuthenticated() === "false") {
             this.props.history.push('/');
         } else {
             this.props.history.push('/dashboard');
@@ -49,7 +49,7 @@ class Login extends Component {
                 password: this.state.password
             }, config).then(response => {
                 localStorage.setItem('isAuth', true);
-                window.location.href = "/dashboard";
+                this.props.history.push("/dashboard");
                 this.setState({ error: false });
                 //this.props.history.push('/Dashboard');
             }).catch(e => {
