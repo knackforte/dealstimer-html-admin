@@ -10,8 +10,7 @@ export const ProtectedRoute = ({
         <Route
             {...rest}
             render={props => {
-                console.log("isauthe: " + auth.isAuthenticated());
-                if (auth.isAuthenticated()) {
+                if (auth.isAuthenticated() === "true") {
                     return <Component {...props} />;
                 } else {
                     return (
