@@ -50,7 +50,8 @@
             }
             setTimeout(function () {
               // $.app.menu.container.scrollTop(position.top);
-              $.app.menu.container.stop().animate({ scrollTop: position.top }, 300);
+              // Saqlain
+              // $.app.menu.container.stop().animate({ scrollTop: position.top }, 300);
               $('.main-menu').data('scroll-to-active', 'false');
             }, 300);
           }
@@ -511,7 +512,6 @@
 
         var $listItem = $(this);
         $listItem.addClass('open');
-
         menuObj.expand($listItem);
 
         // If menu collapsible then do not take any action

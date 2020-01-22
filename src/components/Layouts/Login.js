@@ -49,8 +49,9 @@ class Login extends Component {
                 password: this.state.password
             }, config).then(response => {
                 localStorage.setItem('isAuth', true);
-                this.props.history.push("/dashboard");
                 this.setState({ error: false });
+                //this.props.history.push("/dashboard");
+                window.location.href = "/dashboard";
                 //this.props.history.push('/Dashboard');
             }).catch(e => {
                 this.setState({ error: true });
