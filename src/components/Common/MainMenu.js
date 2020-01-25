@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import auth from '../Auth/Auth';
+import { isAuthenticated } from '../Auth/Auth';
 const MainMenu = (props) => {
     return (
-        (auth.isAuthenticated() === "true") ?
+        (isAuthenticated() === "true") ?
             <div data-scroll-to-active="true" className="main-menu menu-fixed menu-dark menu-accordion menu-shadow">
                 <div className="main-menu-header">
                     <input type="text" placeholder="Search" className="menu-search form-control round" /></div>
@@ -45,6 +45,12 @@ const MainMenu = (props) => {
                                         to="/products/attributes"
                                         data-i18n=""
                                         className="menu-item">Attrbutes</Link>
+                                </li>
+                                <li className="">
+                                    <Link
+                                        to="/products/api-stores"
+                                        data-i18n=""
+                                        className="menu-item">API Stores</Link>
                                 </li>
                                 <li className="">
                                     <Link

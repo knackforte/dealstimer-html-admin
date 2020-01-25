@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { GET_VENDORS_API_URL } from '../../Common/Constants';
+import { GET_API_STORES_API_URL, IMAGE_PATH } from '../../Common/Constants';
 
-class UsersAll extends Component {
+class ProductApiStores extends Component {
     state = {
-        users: []
+        stores: []
     }
     componentDidMount() {
         let config = {
@@ -13,9 +13,9 @@ class UsersAll extends Component {
                 APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa'
             }
         }
-        axios.get(GET_VENDORS_API_URL, config)
+        axios.get(GET_API_STORES_API_URL, config)
             .then(response => {
-                this.setState({ users: response.data })
+                this.setState({ stores: response.data });
             })
             .catch(e => {
                 alert('Unable to fetch data from API.');
@@ -27,7 +27,7 @@ class UsersAll extends Component {
                 <div className="content-wrapper">
                     <div className="content-header row">
                         <div className="content-header-left col-md-6 col-xs-12 mb-1">
-                            <h2 className="content-header-title">User Manager</h2>
+                            <h2 className="content-header-title">API Stores</h2>
                         </div>
                         <div
                             className="content-header-right breadcrumbs-right breadcrumbs-top col-md-6 col-xs-12">
@@ -36,45 +36,9 @@ class UsersAll extends Component {
                                     <li className="breadcrumb-item">
                                         <Link to="/dashboard">Dashboard</Link>
                                     </li>
-                                    <li className="breadcrumb-item active">All Users
+                                    <li className="breadcrumb-item active">API Stores
                                     </li>
                                 </ol>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-12">
-                            <div className="card mb-1">
-                                <div className="card-header">
-                                    <h4 className="card-title" id="basic-layout-form"><i className="icon-search" />
-                                        Search</h4>
-                                    <a className="heading-elements-toggle"><i className="icon-ellipsis font-medium-3" /></a>
-                                </div>
-                                <div className="card-body collapse in">
-                                    <div className="card-block pb-0">
-                                        <form className="form mb-0">
-                                            <div className="form-body">
-                                                <div className="form-group row">
-                                                    <label className="col-md-2" htmlFor="projectinput1">User Name</label>
-                                                    <div className="col-md-3">
-                                                        <input
-                                                            type="text"
-                                                            id="projectinput1"
-                                                            className="form-control"
-                                                            placeholder="User Name"
-                                                            name="fname" />
-                                                    </div>
-                                                    <div className="col-md-3">
-                                                        <button type="submit" className="btn btn-primary">
-                                                            <i className="icon-search" />
-                                                            View
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -87,15 +51,14 @@ class UsersAll extends Component {
                                             <thead className="thead-inverse">
                                                 <tr>
                                                     <th>#</th>
-                                                    <th>Name</th>
-                                                    <th>Username</th>
-                                                    <th>Email</th>
-                                                    <th>Role</th>
-                                                    <th>Status</th>
+                                                    <th>Store Name</th>
+                                                    <th>Store Logo</th>
+                                                    <th>Store URL</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {this.state.users.map(data => {
+                                                {this.state.stores.map(data => {
                                                     return (
                                                         <tr>
                                                             <th scope="row">
@@ -105,16 +68,15 @@ class UsersAll extends Component {
                                                                     &nbsp;{data.id}
                                                                 </label>
                                                             </th>
-                                                            <td>{data.first_name + " " + data.last_name}
+                                                            <td>{data.store_name}
                                                                 <br />
                                                                 <a href="#">Edit</a>
                                                                 &nbsp;
                                                                     <a href="#" className="text-danger">Delete</a>
                                                             </td>
-                                                            <td>{data.username}</td>
-                                                            <td>{data.email}</td>
-                                                            <td>{data.display_name}</td>
-                                                            <td>Active</td>
+                                                            <td><img style={{ width: "100px", height: "50px" }} src={IMAGE_PATH + data.picture} alt="Store Image" /></td>
+                                                            <td><a href={data.store_url} target="_blank">{data.store_url}</a></td>
+                                                            <td><Link to={"/products/api-store/" + data.id}><button class="btn btn-default">Config</button></Link></td>
                                                         </tr>
                                                     );
                                                 })}
@@ -123,8 +85,8 @@ class UsersAll extends Component {
                                             <tfoot>
                                                 <tr>
                                                     <th />
-                                                    <th colSpan={3}>Total Users</th>
-                                                    <th>{this.state.users.length}</th>
+                                                    <th colSpan={3}>Total Stores</th>
+                                                    <th>{this.state.stores.length}</th>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -139,4 +101,4 @@ class UsersAll extends Component {
     }
 }
 
-export default UsersAll;
+export default ProductApiStores;

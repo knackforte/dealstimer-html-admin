@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { validateAll } from 'indicative/validator';
-import { DropzoneArea } from 'material-ui-dropzone'
+import { DropzoneArea } from 'material-ui-dropzone';
+import { ADD_VENDOR_API_URL } from '../../Common/Constants';
 import axios from 'axios';
 class UserAdd extends Component {
     state = {
@@ -88,7 +89,7 @@ class UserAdd extends Component {
                 formData.append('street_address', this.state.street_address);
                 formData.append('picture', this.state.picture[0]);
                 formData.append('role', "vendor");
-                axios.post('http://clientdemo.knackforte.com/apidealstimer/public/api/user', formData, config)
+                axios.post(ADD_VENDOR_API_URL, formData, config)
                     .then(response => {
                         localStorage.setItem('isAuth', true);
                         this.props.history.push('/users/all');

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ProtectedRoute } from "./components/Auth/protected.route";
+import { PrivateRoute } from "./components/Auth/private.route";
 import Navbar from './components/Common/Navbar';
 import Footer from './components/Common/Footer';
 import MainMenu from './components/Common/MainMenu';
@@ -21,6 +22,8 @@ import PackageAdd from './components/Admin/Packages/PackageAdd';
 import PackageEdit from './components/Admin/Packages/PackageEdit';
 import PackagesAll from './components/Admin/Packages/PackagesAll';
 import ProductAdd from './components/Admin/Products/ProductAdd';
+import ProductApiStores from './components/Admin/Products/ProductApiStores';
+import ProductApiStore from './components/Admin/Products/productApiStore';
 import ProductAttributes from './components/Admin/Products/ProductAttributes';
 import ProductCatagories from './components/Admin/Products/ProductCatagories';
 import ProductEdit from './components/Admin/Products/ProductEdit';
@@ -46,14 +49,16 @@ const routing = <Router>
         <Navbar />
         <MainMenu />
         <Switch>
-            <Route exact path='/' component={Login} />
+            <PrivateRoute exact path='/' component={Login} />
 
-            <Route path='/login' component={Login} />
+            <PrivateRoute path='/login' component={Login} />
 
             <ProtectedRoute path='/dashboard' component={Dashboard} />
 
             <ProtectedRoute path='/products/all' component={ProductsAll} />
             <ProtectedRoute path='/products/new' component={ProductAdd} />
+            <ProtectedRoute path='/products/api-stores' component={ProductApiStores} />
+            <ProtectedRoute path='/products/api-store/:id' component={ProductApiStore} />
             <ProtectedRoute path='/products/edit' component={ProductEdit} />
             <ProtectedRoute path='/products/attributes' component={ProductAttributes} />
             <ProtectedRoute path='/products/categories' component={ProductCatagories} />

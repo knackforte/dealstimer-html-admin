@@ -2,17 +2,9 @@ import React, { Component } from 'react';
 import './Login.css';
 import dealstimer from '../../assets/images/dealstimer.png';
 import { validateAll } from 'indicative/validator';
+import { LOGIN_API_URL } from '../Common/Constants';
 import axios from 'axios';
-import auth from '../Auth/Auth';
 class Login extends Component {
-    constructor (props) {
-        super(props);
-        if (auth.isAuthenticated() === "false") {
-            this.props.history.push('/');
-        } else {
-            this.props.history.push('/dashboard');
-        }
-    }
     state = {
         email: '',
         password: '',
@@ -44,7 +36,7 @@ class Login extends Component {
                     APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa'
                 }
             }
-            axios.post('http://clientdemo.knackforte.com/apidealstimer/public/api/verifyUser', {
+            axios.post(LOGIN_API_URL, {
                 email: this.state.email,
                 password: this.state.password
             }, config).then(response => {

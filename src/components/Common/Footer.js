@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { withRouter } from 'react-router-dom';
-import auth from '../Auth/Auth';
+import { isAuthenticated } from '../Auth/Auth';
 const FooterContent = () => {
     return (
         <div className="Footer">
@@ -27,7 +27,7 @@ const EmptyContent = () => {
 const Footer = (props) => {
 
     let FooterC;
-    if (auth.isAuthenticated() === "true") {
+    if (isAuthenticated() === "true") {
         FooterC = FooterContent;
     } else {
         FooterC = EmptyContent;

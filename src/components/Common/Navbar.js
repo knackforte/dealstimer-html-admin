@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import auth from '../Auth/Auth';
+import { isAuthenticated } from '../Auth/Auth';
 // Images
 import dealstimer from '../../assets/images/dealstimer.png';
 import avatar_s_one from '../../app-assets/images/portrait/small/avatar_s_one.png';
@@ -151,7 +151,7 @@ const Navbar = (props) => {
   }
 
   let NavContent;
-  if (auth.isAuthenticated() === "true") {
+  if (isAuthenticated() === "true") {
     NavContent = NavbarContent;
   } else {
     NavContent = EmptyContent;
