@@ -3,6 +3,9 @@ export const ADD_VENDOR_API_URL = 'http://127.0.0.1:8000/api/user';
 export const GET_VENDORS_API_URL = 'http://127.0.0.1:8000/api/user';
 export const GET_API_STORES_API_URL = 'http://127.0.0.1:8000/api/getApiStores';
 export const IMAGE_PATH = 'http://127.0.0.1:8000/images/';
+
+export const API_URL = 'https://9khjlg93j1-dsn.algolia.net/1/indexes/*/queries?x-algolia-agent=Algolia%20for%20vanilla%20JavaScript%203.24.9%3BJS%20Helper%202.23.2&x-algolia-application-id=9KHJLG93J1&x-algolia-api-key=e81d5b30a712bb28f0f1d2a52fc92dd0';
+
 export const TYPE_CATEGORY_VIEW = [
     {
         type: 'fashion',
@@ -27,8 +30,8 @@ export const TYPE_CATEGORY_VIEW = [
     }, {
         type: 'beautyandfragrances',
         typeName: 'Beauty & Fragrances',
-        category: ['makeup', 'fragrances', 'groomingappliances', 'healthandfitness', 'makeupbybrands', 'fragrancesbybrands', 'appliancesbybrands', 'bathandbody'],
-        categoryName: ['Makeup', 'Fragrances', 'Grooming Appliances', 'Health & Fitness', 'Makeup By Brands', 'Fragrances By Brands', 'Appliances By Brands', 'Bath & Body']
+        category: ['makeup', 'fragrances', 'groomingappliances', 'healthandfitness', 'fragrancesbybrands', 'appliancesbybrands', 'bathandbody'],
+        categoryName: ['Makeup', 'Fragrances', 'Grooming Appliances', 'Health & Fitness', 'Fragrances By Brands', 'Appliances By Brands', 'Bath & Body']
     }, {
         type: 'stationery',
         typeName: 'Stationery',
@@ -120,8 +123,8 @@ export const CATEGORY_SUBCATEGORY_VIEW = [
     },
     {
         category: 'itequipment',
-        subCategory: ['printersandinks', 'monitors', 'routers', 'software', 'warranties', 'harddrives'],
-        subCategoryName: ['Printers & Inks', 'Monitors', 'Routers', 'Software', 'Warranties', 'Hard Drives']
+        subCategory: ['printersandinks', 'monitors', 'routers', 'software', 'harddrives'],
+        subCategoryName: ['Printers & Inks', 'Monitors', 'Routers', 'Software', 'Hard Drives']
     },
     {
         category: 'camcorders',
@@ -150,8 +153,8 @@ export const CATEGORY_SUBCATEGORY_VIEW = [
     },
     {
         category: 'furniture',
-        subCategory: ['bedsandbedsets', 'spacesavers', 'wardrobes', 'shoeracks', 'cabinetsanddisplayunits', 'tvunitsshelvesandcabinets', 'diningandkitchenstorageunits', 'sofas', 'dressingtableandmirror', 'cabinets'],
-        subCategoryName: ['Beds and Bedsets', 'Space Savers', 'Wardrobes', 'Showracks', 'Cabinets and Display Units', 'TV units Shelves and Cabinets', 'Dining and Kitchen Storage Units', 'Sofas', 'Dressing Table and Mirror', 'Cabinets']
+        subCategory: ['bedsandbedsets', 'spacesavers', 'wardrobes', 'shoeracks', 'cabinetsanddisplayunits', 'tvunitsshelvesandcabinets', 'diningandkitchenstorageunits', 'sofas', 'dressingtableandmirrorcabinets'],
+        subCategoryName: ['Beds and Bedsets', 'Space Savers', 'Wardrobes', 'Showracks', 'Cabinets and Display Units', 'TV units Shelves and Cabinets', 'Dining and Kitchen Storage Units', 'Sofas', 'Dressing Table and Mirror Cabinets']
     },
     {
         category: 'household',
@@ -187,11 +190,6 @@ export const CATEGORY_SUBCATEGORY_VIEW = [
         category: 'healthandfitness',
         subCategory: ['weighingscales', 'massagers', 'fitnessequipment', 'smartwatches', 'treadmills', 'multivitaminsandnutrition', 'contraceptivesandwellness', 'pregnancyandbabyessentials', 'allwellnessessentials'],
         subCategoryName: ['Weighing Scales', 'Massagers', 'Fitness Equipment', 'Smartwatches', 'Treadmills', 'Multi-Vitamins & Nutrition', 'Contraceptives & Wellness', 'Pregnancy & Baby Essentials', 'All Wellness Essentials']
-    },
-    {
-        category: 'makeupbybrands',
-        subCategory: ['maybelline', 'loreal', 'mac', 'bourjois', 'nouba', 'revlon', 'maxfactor'],
-        subCategoryName: ['Maybelline', 'Loreal', 'Mac', 'Bourjois', 'Nouba', 'Revlon', 'Max Factor']
     },
     {
         category: 'fragrancesbybrands',
