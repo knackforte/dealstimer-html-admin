@@ -27,7 +27,6 @@ class ProductsAll extends Component {
     }
 
     openModal = (data) => {
-        console.log(data);
         this.setState({ modalIsOpen: true });
         this.setState({ activeItemName: data.post_title });
         this.setState({ activeItemImages: data.images });
