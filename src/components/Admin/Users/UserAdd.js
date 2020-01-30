@@ -223,8 +223,7 @@ class UserAdd extends Component {
                                                             onChange={this.handleInputChange}
                                                             className="form-control"
                                                             cols="30"
-                                                            rows="3"
-                                                            placeholder="Enter attribute values separated by '|'."></textarea>
+                                                            rows="3"></textarea>
                                                     </div>
                                                     <div className="col-md-4">
                                                         <label for="gender">Gender</label>
