@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Modal, Button } from "react-bootstrap";
 import { DropzoneArea } from 'material-ui-dropzone';
 import { validateAll } from 'indicative/validator';
 import axios from 'axios';

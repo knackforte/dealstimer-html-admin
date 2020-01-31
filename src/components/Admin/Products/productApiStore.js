@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { TYPE_CATEGORY_VIEW, CATEGORY_SUBCATEGORY_VIEW, API_URL } from '../../Common/Constants';
-import axios from 'axios';
+import { TYPE_CATEGORY_VIEW, CATEGORY_SUBCATEGORY_VIEW, SHARAF_DG_API_URL } from '../../Common/Constants';
 import Modal from './ProductAddModal';
+import axios from 'axios';
 
 class ProductsAll extends Component {
     constructor (props) {
@@ -645,11 +645,12 @@ class ProductsAll extends Component {
             }
         }
         axios.request({
-            url: API_URL,
+            url: SHARAF_DG_API_URL,
             method: 'post',
             data: formdata,
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
+                APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa',
             }
 
         }).then(response => {

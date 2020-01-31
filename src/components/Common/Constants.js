@@ -5,9 +5,9 @@ export const ADD_PRODUCT_API_URL = SERVER_ADDRESS + '/api/product';
 export const ADD_PRODUCT_MODAL_API_URL = SERVER_ADDRESS + '/api/storeViaModal';
 export const GET_VENDORS_API_URL = SERVER_ADDRESS + '/api/user';
 export const GET_API_STORES_API_URL = SERVER_ADDRESS + '/api/getApiStores';
+export const SHARAF_DG_API_URL = SERVER_ADDRESS + '/api/getProductsFromSharafDGAPI';
 export const IMAGE_PATH = SERVER_ADDRESS + '/images/';
-
-export const API_URL = 'https://9khjlg93j1-dsn.algolia.net/1/indexes/*/queries?x-algolia-agent=Algolia%20for%20vanilla%20JavaScript%203.24.9%3BJS%20Helper%202.23.2&x-algolia-application-id=9KHJLG93J1&x-algolia-api-key=e81d5b30a712bb28f0f1d2a52fc92dd0';
+export const API_URL = 'http://dealstimer-admin.toortechnologies.com/test/index.php';
 
 export const TYPE_CATEGORY_VIEW = [
     {
