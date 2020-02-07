@@ -4,10 +4,14 @@ export const ADD_VENDOR_API_URL = SERVER_ADDRESS + '/api/user';
 export const ADD_PRODUCT_API_URL = SERVER_ADDRESS + '/api/product';
 export const ADD_PRODUCT_MODAL_API_URL = SERVER_ADDRESS + '/api/storeViaModal';
 export const GET_VENDORS_API_URL = SERVER_ADDRESS + '/api/user';
+export const GER_PRODUCTS_API_URL = SERVER_ADDRESS + '/api/product';
 export const GET_API_STORES_API_URL = SERVER_ADDRESS + '/api/getApiStores';
 export const SHARAF_DG_API_URL = SERVER_ADDRESS + '/api/getProductsFromSharafDGAPI';
 export const IMAGE_PATH = SERVER_ADDRESS + '/images/';
-export const API_URL = 'http://dealstimer-admin.toortechnologies.com/test/index.php';
+export const GET_PRODUCT_TYPES_API_URL = SERVER_ADDRESS + '/api/getProductTypes';
+export const GET_PRODUCT_CATEGORIES_API_URL = SERVER_ADDRESS + '/api/getProductCategories';
+export const GET_PRODUCT_SUBCATEGORIES_API_URL = SERVER_ADDRESS + '/api/getProductSubcategories';
+
 
 export const TYPE_CATEGORY_VIEW = [
     {

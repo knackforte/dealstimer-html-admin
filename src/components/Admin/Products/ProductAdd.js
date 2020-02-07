@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { DropzoneArea } from 'material-ui-dropzone';
 import { validateAll } from 'indicative/validator';
 import axios from 'axios';
-import { TYPE_CATEGORY_VIEW, CATEGORY_SUBCATEGORY_VIEW, ADD_PRODUCT_API_URL } from '../../Common/Constants';
-
+import { TYPE_CATEGORY_VIEW, CATEGORY_SUBCATEGORY_VIEW, ADD_PRODUCT_API_URL, GET_PRODUCT_TYPES_API_URL, GET_PRODUCT_CATEGORIES_API_URL, GET_PRODUCT_SUBCATEGORIES_API_URL } from '../../Common/Constants';
 const initialState = {
     product_name: "",
     price: "",
@@ -20,13 +19,30 @@ const initialState = {
     picture: [],
     selectedView: 'select',
     selectedCategory: 'select',
-    selectedSubCategory: 'select'
+    selectedSubCategory: 'select',
+    productTypes: [],
+    productCategories: [],
+    productSubcategories: []
 };
 
 class ProductAdd extends Component {
     constructor (props) {
         super(props);
         this.state = initialState;
+    }
+    componentDidMount() {
+        let config = {
+            headers: {
+                APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa',
+            }
+        }
+        axios.post(GET_PRODUCT_TYPES_API_URL, {}, config)
+            .then(response => {
+                this.setState({ productTypes: response.data });
+            })
+            .catch(e => {
+                alert("Error getting product types from API.");
+            })
     }
     resetState = () => {
         this.setState(initialState);
@@ -45,11 +61,43 @@ class ProductAdd extends Component {
         this.setState({ type: e.target.value });
         this.setState({ selectedCategory: 'select' });
         this.setState({ selectedSubCategory: 'select' });
+        if (e.target.value !== "select") {
+            let config = {
+                headers: {
+                    APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa'
+                }
+            }
+            let formData = new FormData();
+            formData.append('typeName', e.target.value);
+            axios.post(GET_PRODUCT_CATEGORIES_API_URL, formData, config)
+                .then(response => {
+                    this.setState({ productCategories: response.data });
+                })
+                .catch(e => {
+                    alert("Error getting product categories from API.");
+                })
+        }
     }
     categoryChangeHandler = (e) => {
         this.setState({ selectedCategory: e.target.value });
         this.setState({ category: e.target.value });
         this.setState({ selectedSubCategory: 'select' });
+        if (e.target.value !== "select") {
+            let config = {
+                headers: {
+                    APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa'
+                }
+            }
+            let formData = new FormData();
+            formData.append('catName', e.target.value);
+            axios.post(GET_PRODUCT_SUBCATEGORIES_API_URL, formData, config)
+                .then(response => {
+                    this.setState({ productSubcategories: response.data });
+                })
+                .catch(e => {
+                    alert("Error getting product sub-categories from API.");
+                })
+        }
     }
     subCategoryChangeHandler = (e) => {
         this.setState({ selectedSubCategory: e.target.value });
@@ -118,18 +166,18 @@ class ProductAdd extends Component {
     render() {
         const getCategoryMethod = () => {
             if (this.state.selectedView !== "select") {
-                const categories = TYPE_CATEGORY_VIEW.filter(({ type }) => type === this.state.selectedView)[0];
                 return (
                     <div>
                         <select id="category" className={"form-control " + (this.state.errors.category ? 'border-danger' : "")} name="category" onChange={this.categoryChangeHandler} value={this.state.selectedCategory}>
                             <option value='select'>Select Category</option>
-                            {categories.category.map(function (name, index) {
-                                return <option value={name}>{categories.categoryName[index]}</option>;
-                            })}
+                            {this.state.productCategories.map(data =>
+                                <option value={data.name}>{data.display_name}</option>
+                            )}
                         </select>
                         <p className='danger lighten-2'>{(this.state.errors.category) ? this.state.errors.category : ''}</p>
                     </div>
                 );
+
             } else {
                 return (
                     <div>
@@ -144,14 +192,13 @@ class ProductAdd extends Component {
 
         const getSubCategoryMethod = () => {
             if (this.state.selectedCategory !== "select") {
-                const subCategories = CATEGORY_SUBCATEGORY_VIEW.filter(({ category }) => category === this.state.selectedCategory)[0]
                 return (
                     <div>
                         <select id="subCategory" className={"form-control " + (this.state.errors.subCategory ? 'border-danger' : "")} name="subCategory" onChange={this.subCategoryChangeHandler} value={this.state.selectedSubCategory}>
                             <option value="select">Select Subcategory</option>
-                            {subCategories.subCategory.map(function (name, index) {
-                                return <option value={name}>{subCategories.subCategoryName[index]}</option>;
-                            })}
+                            {this.state.productSubcategories.map(data =>
+                                <option value={data.name}>{data.display_name}</option>
+                            )}
                         </select>
                         <p className='danger lighten-2'>{(this.state.errors.subCategory) ? this.state.errors.subCategory : ''}</p>
                     </div>
@@ -265,7 +312,7 @@ class ProductAdd extends Component {
                                                     <div className="col-md-3">
                                                         <select id="type" className={"form-control " + (this.state.errors.type ? 'border-danger' : "")} name="type" onChange={this.typeChangeHandler} value={this.state.selectedView}>
                                                             <option value="select">Select Type</option>
-                                                            {TYPE_CATEGORY_VIEW.map(data => <option value={data.type}>{data.typeName}</option>)}
+                                                            {this.state.productTypes.map(data => <option value={data.name}>{data.display_name}</option>)}
                                                         </select>
                                                         <p className='danger lighten-2'>{(this.state.errors.type) ? this.state.errors.type : ''}</p>
                                                     </div>

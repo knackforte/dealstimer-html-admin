@@ -816,7 +816,7 @@ class ProductsAll extends Component {
                                                                 <td>{data.post_title}</td>
                                                                 <td>{data.price}</td>
                                                                 <td><img style={{ width: "50px", height: "50px" }} src={data.images} alt="Product Image" /></td>
-                                                                <td><a href={data.permalink} target="_blank">{data.permalink}</a></td>
+                                                                <td><a href={data.permalink} target="_blank" rel="noopener noreferrer">{data.permalink}</a></td>
                                                                 <td><button className="btn btn-primary" onClick={() => this.openModal(data)}>Add Product</button></td>
                                                             </tr>
                                                         )

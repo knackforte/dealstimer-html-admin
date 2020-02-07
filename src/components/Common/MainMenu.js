@@ -27,36 +27,42 @@ const MainMenu = (props) => {
 
                             </a>
                             <ul className="menu-content">
-                                <li className="">
+                                <li >
                                     <Link
                                         to="/products/all"
                                         data-i18n=""
                                         className="menu-item">All Products
                         </Link>
                                 </li>
-                                <li className="">
+                                <li >
                                     <Link
                                         to="/products/new"
                                         data-i18n=""
                                         className="menu-item">Add New</Link>
                                 </li>
-                                <li className="">
-                                    <Link
-                                        to="/products/attributes"
-                                        data-i18n=""
-                                        className="menu-item">Attrbutes</Link>
-                                </li>
-                                <li className="">
+                                <li >
                                     <Link
                                         to="/products/api-stores"
                                         data-i18n=""
                                         className="menu-item">API Stores</Link>
                                 </li>
-                                <li className="">
+                                <li >
+                                    <Link
+                                        to="/products/types"
+                                        data-i18n=""
+                                        className="menu-item">Types</Link>
+                                </li>
+                                <li >
                                     <Link
                                         to="/products/categories"
                                         data-i18n=""
                                         className="menu-item">Categories</Link>
+                                </li>
+                                <li >
+                                    <Link
+                                        to="/products/subcategories"
+                                        data-i18n=""
+                                        className="menu-item">Subcategories</Link>
                                 </li>
                             </ul>
                         </li>
@@ -66,10 +72,10 @@ const MainMenu = (props) => {
                                 <span data-i18n="" className="menu-title">Packages</span>
                             </Link>
                             <ul className="menu-content">
-                                <li className="">
+                                <li >
                                     <Link to="/packages/all" data-i18n="" className="menu-item">All Packages</Link>
                                 </li>
-                                <li className="">
+                                <li >
                                     <Link to="/packages/new" data-i18n="" className="menu-item">Add New</Link>
                                 </li>
                             </ul>
@@ -81,13 +87,13 @@ const MainMenu = (props) => {
 
                             </Link>
                             <ul className="menu-content">
-                                <li className="">
+                                <li >
                                     <Link to="/coupons/all" data-i18n="" className="menu-item">All Coupons</Link>
                                 </li>
-                                <li className="">
+                                <li >
                                     <Link to="/coupons/new" data-i18n="" className="menu-item">Add New</Link>
                                 </li>
-                                <li className="">
+                                <li >
                                     <Link to="/coupons/deal-tags" data-i18n="" className="menu-item">Deal Tags</Link>
                                 </li>
                             </ul>
@@ -99,22 +105,22 @@ const MainMenu = (props) => {
 
                             </Link>
                             <ul className="menu-content">
-                                <li className="">
+                                <li >
                                     <Link to="/search-and-sort/websites" data-i18n="" className="menu-item">Websites</Link>
                                 </li>
-                                <li className="">
+                                <li >
                                     <Link to="/search-and-sort/ads" data-i18n="" className="menu-item">Ads</Link>
                                 </li>
-                                <li className="">
+                                <li >
                                     <Link to="/search-and-sort/products" data-i18n="" className="menu-item">Products</Link>
                                 </li>
-                                <li className="">
+                                <li >
                                     <Link to="/search-and-sort/companies" data-i18n="" className="menu-item">Companies</Link>
                                 </li>
-                                <li className="">
+                                <li >
                                     <Link to="/search-and-sort/attributes" data-i18n="" className="menu-item">Attributes</Link>
                                 </li>
-                                <li className="">
+                                <li >
                                     <Link to="/search-and-sort/logs" data-i18n="" className="menu-item">Logs</Link>
                                 </li>
                             </ul>
@@ -132,13 +138,13 @@ const MainMenu = (props) => {
 
                             </Link>
                             <ul className="menu-content">
-                                <li className="">
+                                <li >
                                     <Link to="/comments-and-ratings/comments" data-i18n="" className="menu-item">Comments</Link>
                                 </li>
-                                <li className="">
+                                <li >
                                     <Link to="/comments-and-ratings/reviews" data-i18n="" className="menu-item">Reviews</Link>
                                 </li>
-                                <li className="">
+                                <li >
                                     <Link to="/comments-and-ratings/ratings" data-i18n="" className="menu-item">Ratings</Link>
                                 </li>
                             </ul>
@@ -150,13 +156,13 @@ const MainMenu = (props) => {
 
                             </Link>
                             <ul className="menu-content">
-                                <li className="">
+                                <li >
                                     <Link to="/wallet/payments" data-i18n="" className="menu-item">Payments</Link>
                                 </li>
-                                <li className="">
+                                <li >
                                     <Link to="/wallet/receivings" data-i18n="" className="menu-item">Receivings</Link>
                                 </li>
-                                <li className="">
+                                <li >
                                     <Link to="/wallet/ratings" data-i18n="" className="menu-item">Ratings</Link>
                                 </li>
                             </ul>
@@ -168,10 +174,10 @@ const MainMenu = (props) => {
 
                             </Link>
                             <ul className="menu-content">
-                                <li className="">
+                                <li >
                                     <Link to="/users/all" className="menu-item">All Users</Link>
                                 </li>
-                                <li className="">
+                                <li >
 
                                     <Link to="/users/new" className="menu-item">Add New Vendor</Link>
                                 </li>

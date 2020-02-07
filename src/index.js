@@ -24,8 +24,9 @@ import PackagesAll from './components/Admin/Packages/PackagesAll';
 import ProductAdd from './components/Admin/Products/ProductAdd';
 import ProductApiStores from './components/Admin/Products/ProductApiStores';
 import ProductApiStore from './components/Admin/Products/productApiStore';
-import ProductAttributes from './components/Admin/Products/ProductAttributes';
+import ProductTypes from './components/Admin/Products/ProductTypes';
 import ProductCatagories from './components/Admin/Products/ProductCatagories';
+import ProductSubCatagories from './components/Admin/Products/ProductSubCatagories';
 import ProductEdit from './components/Admin/Products/ProductEdit';
 import ProductsAll from './components/Admin/Products/ProductsAll';
 import SearchAndSortAds from './components/Admin/SearchAndSort/SearchAndSortAds';
@@ -60,8 +61,9 @@ const routing = <Router>
             <ProtectedRoute path='/products/api-stores' component={ProductApiStores} />
             <ProtectedRoute path='/products/api-store/:id' component={ProductApiStore} />
             <ProtectedRoute path='/products/edit' component={ProductEdit} />
-            <ProtectedRoute path='/products/attributes' component={ProductAttributes} />
+            <ProtectedRoute path='/products/types' component={ProductTypes} />
             <ProtectedRoute path='/products/categories' component={ProductCatagories} />
+            <ProtectedRoute path='/products/subcategories' component={ProductSubCatagories} />
 
             <ProtectedRoute path='/packages/all' component={PackagesAll} />
             <ProtectedRoute path='/packages/new' component={PackageAdd} />

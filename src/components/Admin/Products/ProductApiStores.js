@@ -61,13 +61,7 @@ class ProductApiStores extends Component {
                                                 {this.state.stores.map(data => {
                                                     return (
                                                         <tr>
-                                                            <th scope="row">
-                                                                <label className="checkbox-container">
-                                                                    <input type="checkbox" />
-                                                                    <span className="checkmark" />
-                                                                    &nbsp;{data.id}
-                                                                </label>
-                                                            </th>
+                                                            <th scope="row">{data.id}</th>
                                                             <td>{data.store_name}
                                                                 <br />
                                                                 <a href="#">Edit</a>

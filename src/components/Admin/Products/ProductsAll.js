@@ -1,7 +1,26 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { GER_PRODUCTS_API_URL, IMAGE_PATH } from '../../Common/Constants';
 
 class ProductsAll extends Component {
+  state = {
+    products: []
+  }
+  componentDidMount() {
+    let config = {
+      headers: {
+        APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa'
+      }
+    }
+    axios.get(GER_PRODUCTS_API_URL, config)
+      .then(response => {
+        this.setState({ products: response.data })
+      })
+      .catch(e => {
+        alert('Unable to fetch data from API.');
+      })
+  }
   render() {
     return (
       <div className="app-content content container-fluid">
@@ -67,79 +86,40 @@ class ProductsAll extends Component {
                         <tr>
                           <th>#</th>
                           <th>Product Name</th>
-                          <th>Categories</th>
-                          <th>Store Count</th>
-                          <th>Lowest Price($)</th>
+                          <th>Picture</th>
+                          <th>Category</th>
+                          <th>Price (AED)</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>25</td>
-                          <td>647.25</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>12</td>
-                          <td>65.52</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>33</td>
-                          <td>400.00</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">4</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>25</td>
-                          <td>647.25</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">5</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>12</td>
-                          <td>65.52</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">6</th>
-                          <td>Larry</td>
-                          <td>the Bird</td>
-                          <td>33</td>
-                          <td>400.00</td>
-                        </tr>
+                        {this.state.products.map(data => {
+                          return (
+                            <tr>
+                              <th scope="row">{data.id}</th>
+                              <td>{data.name}
+                                <br />
+                                <a href="#">Edit</a>
+                                &nbsp;
+                                <a href="#" className="text-danger">Delete</a>
+                              </td>
+                              <td><a href={IMAGE_PATH + data.picture} target="_blank" rel="noopener noreferrer"><img style={{ width: "50px", height: "50px" }} src={IMAGE_PATH + data.picture} alt="Store Image" /></a></td>
+                              <td>{data.display_name}</td>
+                              <td>{data.sale_price}</td>
+                            </tr>
+                          );
+                        })}
                       </tbody>
                       <tfoot>
                         <tr>
                           <th></th>
                           <th colSpan="3">Total Products Count</th>
-                          <th>2547</th>
+                          <th>{this.state.products.length}</th>
                         </tr>
                       </tfoot>
                     </table>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-md-12" style={{ textAlign: 'right' }}>
-              <span>Page 3 of 4 </span>&nbsp;
-          <button className="btn btn-secondary">{'<<'}</button>
-              <button className="btn btn-secondary">{'<'}</button>
-              <button className="btn btn-secondary">1</button>
-              <button className="btn btn-secondary">2</button>
-              <button className="btn btn-primary disabled">3</button>
-              <button className="btn btn-secondary">4</button>
-              <button className="btn btn-secondary">></button>
-              <button className="btn btn-secondary">>></button>
             </div>
           </div>
         </div>
