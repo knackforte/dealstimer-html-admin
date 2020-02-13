@@ -225,3 +225,431 @@ export const CATEGORY_SUBCATEGORY_VIEW = [
         subCategoryName: ['Novelty', 'Gifts Sets', 'Flower Bouquet', 'Vases', 'Mugs', 'Travel Accessories', 'Cases & Wallets', 'Perfumes Gifts Sets', 'Watches Gifts Sets']
     },
 ];
+
+
+
+
+export const CPS_TYPE_CATEGORY_VIEW = [
+    {
+        type: 'womensfashion',
+        typeName: 'Women\'s Fasion',
+        category: ['womensclothing', 'specialtyfit', 'sportsandactivewear', 'womenstops', 'womensbottom', 'lingerie','shoes','winterwear','bagsandwallets','travelandluggage','fashionaccessories','beauty','topbrands'],
+        categoryName: ['Women\s Cloting', 'Specialty Fit', 'Sports & Activewear', 'Women\s Tops', 'Women\s Bottoms', 'Lingerie','Shoes','Winterwear','Bags & Wallets','Travel & Luggage','Fashion Accessories','Beauty','Top Brands']
+    },
+    {
+        type:'mensfashion',
+        typeName:'Men\s Fasion',
+        category:['mensclothing','tops','bottoms','winterwear','sportsandactivewear','sleepwear','innerwear','plussizeclothing','shoes','bagsandwallets','travelandluggage','fashionaccessories','mensgrooming','topbrands','shopbycharacter'],
+        categoryName:['Men\s Clothing','Tops','Bottoms','Winterwear','Sports & Activewear','Sleepwear','Innerwear','Plus Size Clothing','Shoes','Bags & Wallets','Travel & Luggage','Fashion Accessories','Men\s Grooming','Top Brans','Shop by Character']
+    },
+    {
+        type:'kidsfashion',
+        typeName:'Kid\s Fasion',
+        category:['girlsclothing(4+years)','girlsfashionaccessories','boysclothing(4+years)','boysfasionaccessories','girlsshoes(4+years)','boysshoes(4+years)','backtoschool','stationery','toysandgames','topbrands'],
+        categoryName:['Girls Clothing(4+ Years)','Girls Fasion Accessories','Boys\ Clothing(4+ Years)','Boys\ Fasion Accessories','Girls\ Shoes(4+ Years)','Boys\s Shoes(4+ Years)','Back To School','Stationery','Toys & Games','Top Brands']
+    },
+    {
+        type:'babyandtoys',
+        typeName:'Baby & Tosy',
+        category:['travelgear','nurseryandbedding','diapersandwipes','feeding','healthandsafety','babygirlsclothing','babyboysclothing','babygirlsfootwear','babyboysfootwear','toysandgames','topbrands','babyaccessories','moms'],
+        categoryName:['Travel Gear','Nursery & Bedding','Diapers & Wipes','Feeding','Health & Safety','Baby Girl\s Clothing','Baby Boys\ Clothing','Baby Girls\ Footwear','Baby Boy\s Footwear','Toys & Games','Top Brands','Baby Accessories','Moms']
+    },
+    {
+        type:'beauty',
+        typeName:'Beauty',
+        category:['face','eyes','lips','nails','mackuptools','fragrances','bathandbody','make-upaccessories','mensgrooming','haircare','exlusivebrands','topsbrands'],
+        categoryName:['Face','Eyes','Lips','Nails','Makeup Tools','Franrances','Bath & Body','Make-up Accessories','Men\s Grooming','Hair Care','Exclusive Brands','Top Brands']
+    },
+    {
+        type:'homeandliving',
+        typeName:'Home & Living',
+        category:['homefurnishings','windowtreatments','walldecor','homefurniture','diningandserving','homedecor','lighting','homefragrance','bathdecor','shopbyroom','schoolessentials','stationery','gadgets'],
+        categoryName:['Home Furnishings','Window Treatments','Wall Decor','Home Furniture','Dining & Serving','Home Decor','Lighting','Home Fragrance','Bath Decor','Shop by Room','School Essentials','Stationery','Gadgets']
+    } 
+
+]
+
+export const CPS_CATEGORY_SUBCATEGORY_VIEW = [
+    {
+        category: 'womensclothing',
+        subCategory: ['dresses', 'tops', 'jumpsuits','bottoms','sportsandactivewear','sleepwear','lingerieandunderwear','winterwear'],
+        subCategoryName: ['Dresses', 'Tops', 'Jumpsuits & Playsuits','Bottoms','Sports & Activewear','Sleepwear','Lingerie & Underwear','Winterwear']
+    },
+    {
+        category: 'specialtyfit',
+        subCategory: ['plussizeclothing','maternityclothing'],
+        subCategoryName:['Plus Size Clothing','Maternity Clothing']
+    },
+    {
+        category:'sportsandactivewear',
+        subCategory:['sportsbras','t-shirtsandvests','bottoms','joggers'],
+        subCategoryName:['Sports Bar','T-Shirts & Vests','Bottoms','Joggers']
+    },
+    {
+        category:'womenstops',
+        subCategory:['shirtsandblouses','t-shirtsandpolos','tunicsandkimonos','hoodiesandsweatshirts','vestsandcamisoles'],
+        subCategoryName:['Shirts & Blouses','T-Shirts & Polos','Tunics & Kimonos','Hoodies & Sweatshirts','Vests & Camisoles']
+    },
+    {
+        category:'womensbottoms',
+        subCategory:['pantsandchinos','jeans','leggingsandjeggings','shorts','skirts','joggers'],
+        subCategoryName:['Pants & Chinos','Jeans','Leggings & jeggings','Shorts','Skirts','Joggers']
+    },
+    {
+        category:'lingerie',
+        subCategory:['bra','panties','sets'],
+        subCategoryName:['Bra','Panties','Sets']
+    },
+    {
+        category:'shoes',
+        subCategory:['sportsshoes','casualshoes','heels','boots','flats','flipflops','ballerina','bedroomslippers'],
+        subCategoryName:['Sports Shoes','Casual Shoes','Heels','Boots','Flats','Flip Flops','Ballerina','Bedroom Slippers']
+    },
+    {
+        category:'winterwear',
+        subCategory:['cardigansandsweaters','coatsandjackets','hoodiesandsweatshirts'],
+        subCategoryName:['Cardigans & Sweaters','Coats & jackets','Hoodies & Sweatshirts']
+    },
+    {
+        category:'bagsandwallets',
+        subCategory:['bags','backpacks','wallets'],
+        subCategoryName:['Bags','Backpacks','Wallets']
+    },
+    {
+        category:'travelandluggage',
+        subCategory:['suitcase','travelaccessories','travelpillow'],
+        subCategoryName:['Suitcase','Travel Accessories','TravelPillow']
+    },
+    {
+        category:'fashonaccessories',
+        subCategory:['jewellery','scarves','capsandhats','socksandstockings','belts','jewellerystorage'],
+        subCategoryName:['Jewellery','Scarves','Caps & Hats','Socks & stockings','Belts','Jewellery Storage']
+    },
+    {
+        category:'beauty',
+        subCategory:['makeup','perfumes','haircare','bathandbody'],
+        subCategoryName:['Makeup','Perfumes','Hair Care','Bath & Body']
+    },
+    {
+        category:'topbrands',
+        subCategory:['2xtrems','elle','kappa','leecooper','missy','paprika','skechers','celeste','sasha','guess','fiorelli'],
+        subCategoryName:['2Xtremz','Elle','Kappa','Lee Cooper','Missy','Paprika','Skechers','Celeste','Sasha','Guess','Fiorelli']
+    },
+    {
+        category:'mensclothing',
+        subCategory:[''],
+        subCategoryName:['']
+    },
+    {
+        category:'tops',
+        subCategory:['t-shirts','polos','shirts','hoodiesandsweatshirts'],
+        subCategoryName:['T-Shirts','Polos','Shirts','Hoodies & Sweatshirts']
+    },
+    {
+        category:'bottoms',
+        subCategory:['jeans','pantsandchinos','joggers','shorts'],
+        subCategoryName:['Jeans','Pants & Chinos','Joggers','Shorts']
+    },
+    {
+        category:'winterwear',
+        subCategory:['sweatersandpullovers','coatsandjackets','hoodiesandsweatshirts'],
+        subCategoryName:['Sweaters & Pullovers','Coats & Jackets','Hoodies 7 Sweatshorts']
+    },
+    {
+        category:'sportsandactivewear',
+        subCategory:['t-shirtsandvests','bottoms','jackets'],
+        subCategoryName:['T-Shirts & Vests','Bottoms','Jackets']
+    },
+    {
+        category:'sleepwear',
+        subCategory:['Boxers','pyjamasets'],
+        subCategoryName:['Boxers','Pyjama Sets']
+    },
+    {
+        category:'innerwear',
+        subCategory:['underwear','vests'],
+        subCategoryName:['Underwear','Vests']
+    },
+    {
+        category:'plussizeclothing',
+        subCategory:['tops','bottoms'],
+        subCategoryName:['Tops','Bottoms']
+    },
+    {
+        category:'shoes',
+        subCategory:['sportsshoes','casualshoes','formalshoes','boots','sandals','flipflops','bedroomslippers'],
+        subCategoryName:['Sports Shoes','Casual Shoes','Formal Shoes','Boots','Sandals','Flip Flops','Bedroom Slippers']
+    },
+    {
+        category:'bagsandwallets',
+        subCategory:['messengerbags','backpacks','wallets'],
+        subCategoryName:['Messenger bags','Backpacks','Wallets']
+    },
+    {
+        category:'travelandluggage',
+        subCategory:['suitcase','travelaccessories','travelpillow'],
+        subCategoryName:['Suitcase','Travel Accessories','Travel Pillow']
+    },
+    {
+        category:'fashionaccessories',
+        subCategory:['capsandhats','socks','tiesandpocketsquares','jewellery','sunglasses'],
+        subCategoryName:['Caps & Hats','Belts','Socks','Ties & Pocket Squares','Jewellery','Sunglasses']
+    },
+    {
+        category:'mensgrooming',
+        subCategory:['shaving','haircare'],
+        subCategoryName:['Shaving','Hair Care']
+    },
+    {
+        category:'topbrands',
+        subCategory:['leecooper','jockey','bossini','kappa','beinghuman','iconic','duchini','skechers','adidas'],
+        subCategoryName:['Lee Cooper','Jockey','Bossini','Kappa','Being Human','Iconic','Duchini','Skechers','Adidas']
+    },
+    {
+        category:'shopbycharacter',
+        subCategory:[''],
+        subCategoryName:['']
+    },
+    {
+        category:'girlsclothing(4+years)',
+        subCategory:['tops','dresses','rompersandjumpsuits','bottoms','sets','nightwear','innerwear','winterwear','swimwear'],
+        subCategoryName:['Tops','Dresses','Rompers & Jumpsuits','Bottoms','Sets','Nightwear','Innerwear','Winterwear','Swimwear']
+    },
+    {
+        category:'girlsfasionaccessories',
+        subCategory:['kidsfasionbags','socks','jewellery','watches','capsandhats','novelties'],
+        subCategoryName:['Kids Fasion bags','Socks','Jewellery','Watches','Caps & Hats','Novelties']
+    },
+    {
+        category:'boysclothing(4+years)',
+        subCategory:['tops','bottoms','sets','nightwear','winterwear','swimwear'],
+        subCategoryName:['Tops','Bottoms','Sets','Nightwear','Winterwear','Swimwear']
+    },
+    {
+        category:'boysfashionaccessories',
+        subCategory:['kidsfasionbags','socks','capsandhats','kidstrolleybags','watches','sunglasses','novelties'],
+        subCategoryName:['Kids fAsion Bags','Socks','Caps & Hats','Kids Trolley Bags','Watches','Sunglasses','Novelties']
+    },
+    {
+        category:'girlsshoes(4+years)',
+        subCategory:['sportsshoes','casualshoes','schoolshoes','ballerinas','sandals','flipflops','boots'],
+        subCategoryName:['Sports Shoes','Casual Shoes','School Shoes','Ballerinas','Sandals','Flip Flops','Boots']
+    },
+    {
+        category:'boysshoes(4+years)',
+        subCategory:['sportsshoes','casualshoes','schoolshoes','sandals','flipflops','boots'],
+        subCategoryName:['Sports Shoes','Casual Shoes','School Shoes','Sandals','Flip Flops','Boots']
+    },
+    {
+        category:'backtoschool',
+        subCategory:['schoolbackpacks','schooltrolleybags','lunchboxandbags','waterbottles','boysschoolshoes','girlsschoolshoes'],
+        subCategoryName:['School Backpacks','School Trolley Bags','Lunch Box & Bags','Water Bottles','Boys School Shoes','Girls School Shoes']
+    },
+    {
+        category:'stationery',
+        subCategory:['notebooks','pencilcases','pensandpencils','planners','desksupplies','books'],
+        subCategoryName:['Notebooks','Pencil','Pens & Pencils','Planners','Desk Supplies','Books']
+    },
+    {
+        category:'toysandgames',
+        subCategory:['babyandpreschool','dollsandplaysets','puzzlesandboardgames','educationaltoys','outdoortoys','scootersandvehicles','remotecontrolcars','softtoys'],
+        subCategoryName:['Baby & Preschool','Dolls & Playsets','Puzzles & Board Games','Educational Toys','Outdoor Toys','Outdoor Toys','Scooters & Vehicles','Remote Control Cars','Soft Toys']
+    },
+    {
+        category:'topbrands',
+        subCategory:['juniors','eligo','leecooper','disney','barbie','skechers'],
+        subCategoryName:['Juniors','Eligo','Lee Cooper','Disney','Barbie','Skechers']
+    },
+    {
+        category:'travelgear',
+        subCategory:['strollersandprams','carseats','babaycarriers','travelcots','carrycots','infantactivity'],
+        subCategoryName:['Strollers and Parms','Carseats','Baby Carriers','Travel cots','Carry cots','Infant activity']
+    },
+    {
+        category:'nurseryandbedding',
+        subCategory:['cribsandbeddings','changingtables','bedsheetsandlinens'],
+        subCategoryName:['Cribs & Beddings','Changing tables','Bed sheets and Linens']
+    },
+    {
+        category:'diapersandwipes',
+        subCategory:['diaperbags','babywipes','diapers'],
+        subCategoryName:['Diaper Bags','Baby Wipes','Diapers']
+    },
+    {
+        category:'feeding',
+        subCategory:['highchairsandboosters','feedingbottles','breastfeeding','pacifiersandteething','mealtimeessentials','foodprocessors'],
+        subCategoryName:['Highchairs and Boosters','Feeding Bottles','Breast Feeding','Pacifiers and Teething','Mealtime Essentials','Food Processors']
+    },
+    {
+        category:'healthandsafety',
+        subCategory:['bathandpottytraining','safetyessentialsandhygiene','haircare','grooming','babymonitors','humidifiersandnebulizers','personalcare'],
+        subCategoryName:['Both & Potty Training','Safety Essentials & Hygiene','Hair Care','Grooming','Baby Monitors','Humidifiers & Nebulizers','Personal Care']
+    },
+    {
+        category:'babygirlsclothing',
+        subCategory:['bodysuits','sets','tops','dresses','rompersandjumpsuits','bottoms','nightwear','innerwear','winterwear'],
+        subCategoryName:['Bodysuits','Sets','Tops','Dresses','Rompers & Jumpsuits','Bottoms','Nightwear','Innerwear','Winterwear']
+    },
+    {
+        category:'babyboysclothing',
+        subCategory:['bodysuits','sets','tops','rompersandjumpsuits','bottoms','nightwear','winterwear'],
+        subCategoryName:['Bodysuits','Sets','Tops','Rompers & Jumpsuits','Bottoms','Nightwear','Winterwear']
+    },
+    {
+        category:'babygirlsfootwear',
+        subCategory:['booties','casualshoes','sandals'],
+        subCategoryName:['Booties','Casual Shoes','Sandals']
+    },
+    {
+        category:'babyboysfootwear',
+        subCategory:['booties','casualshoes','sandals'],
+        subCategoryName:['Booties','Casual Shoes','Sandals']
+    },
+    {
+        category:'toysandgames',
+        subCategory:['babyandpreschool','dollsandplaysets','puzzlesandboardgames','educationaltoys','outdoortoys','softtoys'],
+        subCategoryName:['Baby & Preschool','Dolls & Playsets','Puzzles & Board Games','Educational Toys','Outdoor Toys','Soft Toys']
+    },
+    {
+        category:'topbrands',
+        subCategory:['avent','chicco','canopalbabies','cambrass','graco','joie','summerinfant','sunveno'],
+        subCategoryName:['Avent','Chicco','Canopal Babies','Cambrass','Graco','Joie','Summer Infant','Sunveno']
+    },
+    {
+        category:'babyaccessories',
+        subCategory:['capsandhats','socks','watches','novelties','hairaccessories','mittens'],
+        subCategoryName:['Caps & Hats','Socks','Watches','Novelties','Hair Accessories','Mittens']
+    },
+    {
+        category:'moms',
+        subCategory:['maternityclothing','books'],
+        subCategoryName:['Maternity Clothing','Books']
+    },
+    {
+        category:'face',
+        subCategory:['foundations','facepowders','concealers','contours','faceprimers','blushes','bbandcccreams'],
+        subCategoryName:['Foundation','Face Powders','Concealers','Contours','Face Primers','Blushes','Bronzers','BB & CC Creams']
+    },
+    {
+        category:'eyes',
+        subCategory:['mascaras','eyebrows','eyeshadows','falselashes','eyeliners'],
+        subCategoryName:['Mascaras','Eyebrows','Eye Shadows','False Lashes','Eyeliners']
+    },
+    {
+        category:'lips',
+        subCategory:['lipssticks','liquidlipsticks','lipliners','lipglossesandbalms'],
+        subCategoryName:['Lipsticks','Liquid Lipsticks','Lip Liners','Lip Glosses & Balms']
+    },
+    {
+        category:'nails',
+        subCategory:['nailpolishes','nailtools','polishremovers','topcoats','basecoats'],
+        subCategoryName:['Nail Polishes','Nail Tools','Polish Removers','Top Coats','Base Coats']
+    },
+    {
+        category:'makeuptoos',
+        subCategory:['brushes','sponges'],
+        subCategoryName:['Brushes','Sponges']
+    },
+    {
+        category:'frangrances',
+        subCategory:[''],
+        subCategoryName:['']
+    },
+    {
+        category:'bathandbody',
+        subCategory:['masks','giftsets','bathaccessories','bodyandhandlotions','bodywashesandshowergels','bodyscrubs','bodysprays'],
+        subCategoryName:['Masks','Gift Sets','Bath Accessories','Body & Hand Lotions','Body Washes & Shower Gels','Body Scrubs','Body Sprays']
+    },
+    {
+        category:'make-up-accessories',
+        subCategory:['cosmeticcasesandbags','cosmeticorganizers','compactandvanitymirrors'],
+        subCategoryName:['Cosmetic Cases & Bags','Cosmetic Organizers','Compact & Vanity Mirrors']
+    },
+    {
+        category:'mensgrooming',
+        subCategory:['haircare','giftsets'],
+        subCategoryName:['Hair Care','Gift Sets']
+    },
+    {
+        category:'haircare',
+        subCategory:['shampoosandconditioners','oilsandtreatments','hairaccessories','hairbrushesandcombs'],
+        subCategoryName:['Shapmoos & Conditioners','Oils & Treatments','Hair Accessories','Hair Brushes & Combs']
+    },
+    {
+        category:'exclusivebrands',
+        subCategory:['catrice','thebalm','physiciansformula','attitudeliving','naturasiberica','superfacialist','treehut','featheranddown','clubmanpinaud','beardguyz','bubbles'],
+        subCategoryName:['Catrica','The Balm','Physicians Formula','Attitude Living','Natura Siberica','Super Facialist','Tree Hut','Feather & Down','Clubman Pinaud','Beard Guyz','Bubbles']
+    },
+    {
+        category:'topbrands',
+        subCategory:['wycon','lepalaisdesperfums','nyxprofessionalmakeup','klara','revlon','bourjois','isadora','gosh','maybellinenewyork','maxfactor','lorealparis','note','rimmel'],
+        subCategoryName:['Wycon','Le Palais Des Perfums','NYX Professional Makeup','Klara','Revlon','Bourjois','Isadora','GOSH','Maybelline New York','Max Factor','L\Oreal Paris','NOTE','Rimmel']
+    },
+    {
+        category:'homefurnishings',
+        subCategory:['cushions','throws','tablelinens','blacketsandquilts','floorcoverings','comfortersets','kitchenlinens'],
+        subCategoryName:['Cusions','Throws','Blankets & Quilts','Floor Coverings','Comforter Sets','Kitchen Linens']
+    },
+    {
+        category:'windowtreatments',
+        subCategory:['curtains','curtainrodsandhooks'],
+        subCategoryName:['Curtains','Curtain Rods & Hooks']
+    },
+    {
+        category:'walldecor',
+        subCategory:['decorativemirrors','wallart'],
+        subCategoryName:['Decorative Mirrors','Wall Art']
+    },
+    {
+        category:'homefurniture',
+        subCategory:['tablesandconsoles','benchesandottomans','beanbags','chestofdrawers'],
+        subCategoryName:['Tables & Consoles','Benches & Otoomans','Bean Bags','Chest of Drawers']
+    },
+    {
+        category:'diningandserving',
+        subCategory:['tableware','trays','teaandcoffee','drinkware','storage','bowls','plates','cakestands','tissueholders'],
+        subCategoryName:['Tableware','Trays','Tea & Coffee','Drinkware','Storage','Bowls','Plates','Cake Stands','Tissue Holders']
+    },
+    {
+        category:'homedecor',
+        subCategory:['vases','figurines','bowls','decorativetraysandplatters','clocks','photoframes','decoraccessories','storageboxes'],
+        subCategoryName:['Vases','Figurines','Bowls','Decorative Trays & Platters','Clocks','Photo Frames','Decor Accessories','Storage Boxes']
+    },
+    {
+        category:'lighting',
+        subCategory:['tablelamps','floorlamps','uplights'],
+        subCategoryName:['Table Lamps','Floor Lamps','uplights']
+    },
+    {
+        category:' homefragrance',
+        subCategory:['flamelessfragrance','candles','burners','diffusers','candleholders','electricaldiffusers'],
+        subCategoryName:['flameless Frangrance','Candles','Burners','Diffusers','Candle Holders','Electrical Diffusers']
+    },
+    {
+        category:'bathdecor',
+        subCategory:['lotiondispensers','towels','tumblers','bathmats','accessorysets','wastebings','soapdishes','tissueholders'],
+        subCategoryName:['Lotion Dispensers','Towels','Tumblers','Bath Mats','Accessory Sets','Waste Bins','Soap Dishes','Tissue Holders']
+    },
+    {
+        category:'shopbyroom',
+        subCategory:['bedroom','livingroom','diningroom','bathroom'],
+        subCategoryName:['Bedroom','Living Room','Dining Room','Bathroom']
+    },
+    {
+        category:'schoolessentials',
+        subCategory:['lunchboxesandbags','waterbottles'],
+        subCategoryName:['Lunch Boxes & Bags','Water Bottles']
+    },
+    {
+        category:'Stationery',
+        subCategory:['supplies','giftwrapping'],
+        subCategoryName:['Supplies','Gift Wrapping']
+    },
+    {
+        category:'gadets',
+        subCategory:['headphonesandearphones','portablecharges'],
+        subCategoryName:['Headphones & Earphones','Portable Chargers']
+    }
+
+
+]

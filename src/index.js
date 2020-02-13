@@ -7,7 +7,7 @@ import Navbar from './components/Common/Navbar';
 import Footer from './components/Common/Footer';
 import MainMenu from './components/Common/MainMenu';
 import Login from './components/Layouts/Login';
-import Dashboard from './components/Admin/dashboard/Dashboard';
+import Dashboard from './components/Admin/dashboard/dashboard';
 import UsersAll from './components/Admin/Users/UsersAll';
 import UserAdd from './components/Admin/Users/UserAdd';
 import UserEdit from './components/Admin/Users/UserEdit';
