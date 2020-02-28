@@ -3,14 +3,11 @@ import { Link } from 'react-router-dom';
 import { DropzoneArea } from 'material-ui-dropzone';
 import { validateAll } from 'indicative/validator';
 import axios from 'axios';
-import { TYPE_CATEGORY_VIEW, CATEGORY_SUBCATEGORY_VIEW, ADD_PRODUCT_API_URL, GET_PRODUCT_TYPES_API_URL, GET_PRODUCT_CATEGORIES_API_URL, GET_PRODUCT_SUBCATEGORIES_API_URL } from '../../Common/Constants';
+import { ADD_PRODUCT_API_URL, GET_PRODUCT_TYPES_API_URL, GET_PRODUCT_CATEGORIES_API_URL, GET_PRODUCT_SUBCATEGORIES_API_URL } from '../../Common/Constants';
 const initialState = {
     product_name: "",
     price: "",
-    discount: "",
-    sale_price: "",
     in_stock: false,
-    product_url: "",
     type: "",
     category: "",
     subCategory: "",
@@ -22,7 +19,8 @@ const initialState = {
     selectedSubCategory: 'select',
     productTypes: [],
     productCategories: [],
-    productSubcategories: []
+    productSubcategories: [],
+    userId: localStorage.getItem("userId")
 };
 
 class ProductAdd extends Component {
@@ -30,7 +28,8 @@ class ProductAdd extends Component {
         super(props);
         this.state = initialState;
     }
-    componentDidMount() {
+    initializeProductTypes = () => {
+
         let config = {
             headers: {
                 APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa',
@@ -44,8 +43,15 @@ class ProductAdd extends Component {
                 alert("Error getting product types from API.");
             })
     }
+    componentDidMount() {
+        this.initializeProductTypes();
+    }
+
     resetState = () => {
-        this.setState(initialState);
+        this.setState(initialState, this.initializeProductTypes);
+    }
+    handleFilesSave = (files) => {
+        console.log(files);
     }
     handleFileChange = (picture) => {
         this.setState({
@@ -54,6 +60,9 @@ class ProductAdd extends Component {
     }
     handleInputChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
+    }
+    handleCheckboxChange = (event) => {
+        this.setState({ [event.target.name]: event.target.checked });
     }
 
     typeChangeHandler = (e) => {
@@ -109,9 +118,6 @@ class ProductAdd extends Component {
         const rules = {
             product_name: "required|string",
             price: "required",
-            discount: "required",
-            sale_price: "required",
-            product_url: "required",
             type: "required",
             category: "required",
             subCategory: "required"
@@ -136,14 +142,13 @@ class ProductAdd extends Component {
                 let formData = new FormData();
                 formData.append('name', this.state.product_name);
                 formData.append('price', this.state.price);
-                formData.append('discount', this.state.discount);
-                formData.append('sale_price', this.state.sale_price);
                 formData.append('in_stock', this.state.in_stock);
                 formData.append('permalink', this.state.product_url);
                 formData.append('type', this.state.type);
                 formData.append('category', this.state.category);
                 formData.append('sub_category', this.state.subCategory);
                 formData.append('picture', this.state.picture[0]);
+                formData.append('created_by', this.state.userId);
 
                 axios.post(ADD_PRODUCT_API_URL, formData, config)
                     .then(response => {
@@ -252,44 +257,40 @@ class ProductAdd extends Component {
                                                 <div className="row form-group">
                                                     <div className="col-md-8">
                                                         <div className="row">
-                                                            <div className="col-md-12">
-                                                                <label for="product_name">Product Name</label>
+                                                            <div className="col-md-8">
+                                                                <label htmlFor="product_name">Product Name</label>
                                                                 <input name='product_name' type="text" id="product_name" className={"form-control " + (this.state.errors.product_name ? 'border-danger' : "")} onChange={this.handleInputChange} value={this.state.product_name} />
                                                                 <p className='danger lighten-2'>{(this.state.errors.product_name) ? this.state.errors.product_name : ''}</p>
                                                             </div>
-                                                        </div>
-                                                        <div className="row">
                                                             <div className="col-md-4">
-                                                                <label for="price">Price
-                                                        </label>
+                                                                <label htmlFor="price">Price
+                                                                </label>
                                                                 <input type="number" step="0.01" id="price" className={"form-control " + (this.state.errors.price ? 'border-danger' : "")} name="price" onChange={this.handleInputChange} value={this.state.price} />
                                                                 <p className='danger lighten-2'>{(this.state.errors.price) ? this.state.errors.price : ''}</p>
                                                             </div>
+                                                        </div>
+                                                        <div className="row">
                                                             <div className="col-md-4">
-                                                                <label for="discount">Discount
-                                                        </label>
-                                                                <input type="number" step="0.01" id="discount" className={"form-control " + (this.state.errors.discount ? 'border-danger' : "")} name="discount" onChange={this.handleInputChange} value={this.state.discount} />
-                                                                <p className='danger lighten-2'>{(this.state.errors.discount) ? this.state.errors.discount : ''}</p>
+                                                                <label htmlFor="type">Type</label>
+                                                                <select id="type" className={"form-control " + (this.state.errors.type ? 'border-danger' : "")} name="type" onChange={this.typeChangeHandler} value={this.state.selectedView}>
+                                                                    <option value="select">Select Type</option>
+                                                                    {this.state.productTypes.map(data => <option value={data.name}>{data.display_name}</option>)}
+                                                                </select>
+                                                                <p className='danger lighten-2'>{(this.state.errors.type) ? this.state.errors.type : ''}</p>
                                                             </div>
                                                             <div className="col-md-4">
-                                                                <label for="sale_price">Sale Price
-                                                        </label>
-                                                                <input type="number" step="0.01" id="sale_price" className={"form-control " + (this.state.errors.sale_price ? 'border-danger' : "")} name="sale_price" onChange={this.handleInputChange} value={this.state.sale_price} />
-                                                                <p className='danger lighten-2'>{(this.state.errors.sale_price) ? this.state.errors.sale_price : ''}</p>
+                                                                <label htmlFor="projectinput2">Category</label>
+                                                                {getCategoryMethod()}
+                                                            </div>
+                                                            <div className="col-md-4">
+                                                                <label htmlFor="projectinput2">Sub Category</label>
+                                                                {getSubCategoryMethod()}
                                                             </div>
                                                         </div>
                                                         <div className="row">
-                                                            <div className="col-md-12">
-                                                                <label for="in_stock">In Stock ?</label>
-                                                                <input type="checkbox" id="in_stock" className="checkmarkMe" name="in_stock" onChange={this.handleInputChange} checked={this.state.in_stock} />
-                                                            </div>
-                                                        </div>
-
-                                                        <div className="row">
-                                                            <div className="col-md-12">
-                                                                <label for="product_url">Product URL</label>
-                                                                <input type="text" id="product_url" className={"form-control " + (this.state.errors.product_url ? 'border-danger' : "")} name="product_url" onChange={this.handleInputChange} value={this.state.product_url} />
-                                                                <p className='danger lighten-2'>{(this.state.errors.product_url) ? this.state.errors.product_url : ''}</p>
+                                                            <div className="col-md-4">
+                                                                <label htmlFor="in_stock">In Stock ?</label>
+                                                                <input type="checkbox" id="in_stock" className="checkmarkMe" name="in_stock" onChange={this.handleCheckboxChange} checked={this.state.in_stock} />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -301,31 +302,14 @@ class ProductAdd extends Component {
                                                                     dropzoneText='Add Product Picture'
                                                                     acceptedFiles={['image/jpeg', 'image/png', 'image/bmp']}
                                                                     onChange={this.handleFileChange}
+                                                                    onDrop={this.handleFileOnDrop}
                                                                     filesLimit={1}
+                                                                    onSave={this.handleFilesSave}
                                                                 />
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className="row">
-                                                    <label className="col-md-1" htmlFor="type">Type:</label>
-                                                    <div className="col-md-3">
-                                                        <select id="type" className={"form-control " + (this.state.errors.type ? 'border-danger' : "")} name="type" onChange={this.typeChangeHandler} value={this.state.selectedView}>
-                                                            <option value="select">Select Type</option>
-                                                            {this.state.productTypes.map(data => <option value={data.name}>{data.display_name}</option>)}
-                                                        </select>
-                                                        <p className='danger lighten-2'>{(this.state.errors.type) ? this.state.errors.type : ''}</p>
-                                                    </div>
-                                                    <label className="col-md-1" htmlFor="projectinput2">Category:</label>
-                                                    <div className="col-md-3">
-                                                        {getCategoryMethod()}
-                                                    </div>
-                                                    <label className="col-md-1" htmlFor="projectinput2">Sub Category:</label>
-                                                    <div className="col-md-3">
-                                                        {getSubCategoryMethod()}
-                                                    </div>
-                                                </div>
-
                                             </div>
 
                                             <div className="form-actions">

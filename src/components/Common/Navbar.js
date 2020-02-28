@@ -147,6 +147,7 @@ const Navbar = (props) => {
 
   const handleLogout = () => {
     localStorage.setItem('isAuth', false);
+    localStorage.removeItem('userId');
     props.history.push("/");
   }
 

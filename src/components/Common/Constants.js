@@ -11,7 +11,7 @@ export const IMAGE_PATH = SERVER_ADDRESS + '/images/';
 export const GET_PRODUCT_TYPES_API_URL = SERVER_ADDRESS + '/api/getProductTypes';
 export const GET_PRODUCT_CATEGORIES_API_URL = SERVER_ADDRESS + '/api/getProductCategories';
 export const GET_PRODUCT_SUBCATEGORIES_API_URL = SERVER_ADDRESS + '/api/getProductSubcategories';
-
+export const GET_ADMIN_PRODUCTS_API_URL = SERVER_ADDRESS + '/api/getAdminProducts';
 
 export const TYPE_CATEGORY_VIEW = [
     {

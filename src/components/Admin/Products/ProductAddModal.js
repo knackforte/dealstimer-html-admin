@@ -3,7 +3,7 @@ import { Modal, Button } from "react-bootstrap";
 import { validateAll } from 'indicative/validator';
 import axios from 'axios';
 import '../../../app-assets/css/customModal.css';
-import { TYPE_CATEGORY_VIEW, CATEGORY_SUBCATEGORY_VIEW, ADD_PRODUCT_MODAL_API_URL, GET_PRODUCT_TYPES_API_URL, GET_PRODUCT_CATEGORIES_API_URL, GET_PRODUCT_SUBCATEGORIES_API_URL } from '../../Common/Constants';
+import { TYPE_CATEGORY_VIEW, CATEGORY_SUBCATEGORY_VIEW, ADD_PRODUCT_MODAL_API_URL, GET_PRODUCT_TYPES_API_URL, GET_PRODUCT_CATEGORIES_API_URL, GET_PRODUCT_SUBCATEGORIES_API_URL, GET_ADMIN_PRODUCTS_API_URL } from '../../Common/Constants';
 
 const initialState = {
     product_name: "",
@@ -21,9 +21,11 @@ const initialState = {
     selectedView: 'select',
     selectedCategory: 'select',
     selectedSubCategory: 'select',
+    selectedProduct: 'select',
     productTypes: [],
     productCategories: [],
-    productSubcategories: []
+    productSubcategories: [],
+    products: []
 };
 
 class ProductAddModal extends Component {
@@ -69,6 +71,7 @@ class ProductAddModal extends Component {
         this.setState({ type: e.target.value });
         this.setState({ selectedCategory: 'select' });
         this.setState({ selectedSubCategory: 'select' });
+        this.setState({ selectedProduct: 'select' });
 
         if (e.target.value !== "select") {
             let config = {
@@ -92,6 +95,7 @@ class ProductAddModal extends Component {
         this.setState({ selectedCategory: e.target.value });
         this.setState({ category: e.target.value });
         this.setState({ selectedSubCategory: 'select' });
+        this.setState({ selectedProduct: 'select' });
         if (e.target.value !== "select") {
             let config = {
                 headers: {
@@ -112,6 +116,30 @@ class ProductAddModal extends Component {
     subCategoryChangeHandler = (e) => {
         this.setState({ selectedSubCategory: e.target.value });
         this.setState({ subCategory: e.target.value });
+        this.setState({ selectedProduct: 'select' });
+
+        if (e.target.value !== "select") {
+            let config = {
+                headers: {
+                    APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa'
+                }
+            }
+            let formData = new FormData();
+            formData.append('typeName', this.state.type);
+            formData.append('catName', this.state.category);
+            formData.append('subCatName', e.target.value);
+            axios.post(GET_ADMIN_PRODUCTS_API_URL, formData, config)
+                .then(response => {
+                    this.setState({ products: response.data });
+                })
+                .catch(e => {
+                    alert("Error getting products from API.");
+                })
+        }
+    }
+    productChangeHandler = (e) => {
+        this.setState({ selectedProduct: e.target.value });
+        this.setState({ products: e.target.value });
     }
     handleSubmit = (event) => {
         event.preventDefault();
@@ -119,8 +147,6 @@ class ProductAddModal extends Component {
         const rules = {
             product_name: "required|string",
             price: "required",
-            discount: "required",
-            sale_price: "required",
             product_url: "required",
             type: "required",
             category: "required",
@@ -203,7 +229,30 @@ class ProductAddModal extends Component {
                 );
             }
         }
-
+        const getProductsMethod = () => {
+            if (this.state.selectedProduct !== "select") {
+                return (
+                    <div>
+                        <select id="products" className={"form-control " + (this.state.errors.products ? 'border-danger' : "")} name="products" onChange={this.productChangeHandler} value={this.state.selectedProduct}>
+                            <option value="select">Select Product</option>
+                            {this.state.products.map(data =>
+                                <option value={data.name}>{data.display_name}</option>
+                            )}
+                        </select>
+                        <p className='danger lighten-2'>{(this.state.errors.products) ? this.state.errors.products : ''}</p>
+                    </div>
+                );
+            } else {
+                return (
+                    <div>
+                        <select id="products" className={"form-control " + (this.state.errors.products ? 'border-danger' : "")} name="products" onChange={this.productChangeHandler} value={this.state.selectedProduct}>
+                            <option value="select">Select Product</option>
+                        </select>
+                        <p className='danger lighten-2'>{(this.state.errors.products) ? this.state.errors.products : ''}</p>
+                    </div>
+                );
+            }
+        }
         const getSubCategoryMethod = () => {
             if (this.state.selectedCategory !== "select") {
                 return (
@@ -311,7 +360,12 @@ class ProductAddModal extends Component {
                                             {getSubCategoryMethod()}
                                         </div>
                                     </div>
-
+                                    <div className="row">
+                                        <label className="col-md-1" htmlFor="projectinput2">Product:</label>
+                                        <div className="col-md-7">
+                                            {getProductsMethod()}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </Modal.Body>
