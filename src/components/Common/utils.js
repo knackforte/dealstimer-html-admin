@@ -628,7 +628,7 @@
 //             } else if (sub_cat === "") {
 //                 formdata = {   };
 //             }
-            
+
 //         }else if(cat ==="womenstops")
 //         {
 //             if (sub_cat === "shirtsandblouses") {
@@ -1012,7 +1012,7 @@
 //                     }  
 //                 }else if (cat === "shopbycharacter") {
 //                     if (sub_cat === "") {
-                         
+
 
 //                     }else if (sub_cat === " ") {
 
@@ -1196,7 +1196,7 @@
 //             }else if (cat === "topbrands") {
 //                 if (sub_cat === "juniors") {
 //                     formdata ={"requests":[{"indexName":"prod_uae_centrepoint_Product","params":"query=*&hitsPerPage=42&page=0&facets=*&facetFilters=%5B%22inStock%3A1%22%2C%22approvalStatus%3A1%22%2C%22allCategories%3Acpkids%22%2C%22badge.title.en%3A-Outlet%22%2C%5B%22manufacturerName.en%3AJuniors%22%5D%5D&getRankingInfo=1&clickAnalytics=true&attributesToHighlight=null&analyticsTags=%5B%22cpkids%22%5D&attributesToRetrieve=concept%2CmanufacturerName%2Curl%2C333WX493H%2C345WX345H%2C505WX316H%2C550WX550H%2C499WX739H%2Cbadge%2Cname%2Csummary%2CwasPrice%2Cprice%2CemployeePrice%2CshowMoreColor%2CproductType%2CchildDetail%2Csibiling%2CthumbnailImg%2CgallaryImages%2CisConceptDelivery&numericFilters=price%20%3E%201&query=*&maxValuesPerFacet=500&tagFilters=%5B%5B%22babyshop%22%2C%22splash%22%2C%22lifestyle%22%2C%22shoemart%22%2C%22centrepoint%22%2C%22shoexpress%22%5D%5D"},{"indexName":"prod_uae_centrepoint_Product","params":"query=*&hitsPerPage=1&getRankingInfo=1&clickAnalytics=true&attributesToHighlight=%5B%5D&analyticsTags=%5B%22cpkids%22%5D&facets=manufacturerName.en&page=0&attributesToRetrieve=%5B%5D&numericFilters=price%20%3E%201&query=*&maxValuesPerFacet=500&tagFilters=%5B%5B%22babyshop%22%2C%22splash%22%2C%22lifestyle%22%2C%22shoemart%22%2C%22centrepoint%22%2C%22shoexpress%22%5D%5D&attributesToSnippet=%5B%5D&facetFilters=%5B%22inStock%3A1%22%2C%22approvalStatus%3A1%22%2C%22allCategories%3Acpkids%22%2C%22badge.title.en%3A-Outlet%22%5D&analytics=false"}]} ;
- 
+
 //                 }else if (sub_cat === "eligo") {
 //                     formdata = {"requests":[{"indexName":"prod_uae_centrepoint_Product","params":"query=*&hitsPerPage=42&page=0&facets=*&facetFilters=%5B%22inStock%3A1%22%2C%22approvalStatus%3A1%22%2C%22allCategories%3Acpkids%22%2C%22badge.title.en%3A-Outlet%22%2C%5B%22manufacturerName.en%3AEligo%22%5D%5D&getRankingInfo=1&clickAnalytics=true&attributesToHighlight=null&analyticsTags=%5B%22cpkids%22%5D&attributesToRetrieve=concept%2CmanufacturerName%2Curl%2C333WX493H%2C345WX345H%2C505WX316H%2C550WX550H%2C499WX739H%2Cbadge%2Cname%2Csummary%2CwasPrice%2Cprice%2CemployeePrice%2CshowMoreColor%2CproductType%2CchildDetail%2Csibiling%2CthumbnailImg%2CgallaryImages%2CisConceptDelivery&numericFilters=price%20%3E%201&query=*&maxValuesPerFacet=500&tagFilters=%5B%5B%22babyshop%22%2C%22splash%22%2C%22lifestyle%22%2C%22shoemart%22%2C%22centrepoint%22%2C%22shoexpress%22%5D%5D"},{"indexName":"prod_uae_centrepoint_Product","params":"query=*&hitsPerPage=1&getRankingInfo=1&clickAnalytics=true&attributesToHighlight=%5B%5D&analyticsTags=%5B%22cpkids%22%5D&facets=manufacturerName.en&page=0&attributesToRetrieve=%5B%5D&numericFilters=price%20%3E%201&query=*&maxValuesPerFacet=500&tagFilters=%5B%5B%22babyshop%22%2C%22splash%22%2C%22lifestyle%22%2C%22shoemart%22%2C%22centrepoint%22%2C%22shoexpress%22%5D%5D&attributesToSnippet=%5B%5D&facetFilters=%5B%22inStock%3A1%22%2C%22approvalStatus%3A1%22%2C%22allCategories%3Acpkids%22%2C%22badge.title.en%3A-Outlet%22%5D&analytics=false"}]};
 
