@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import { TYPE_CATEGORY_VIEW, CATEGORY_SUBCATEGORY_VIEW, SHARAF_DG_API_URL } from '../../Common/Constants';
 import Modal from './ProductAddModal';
 import axios from 'axios';
+import { Cascader } from 'antd';
+import 'antd/dist/antd.css';
+import { HelpBlock } from 'react-bootstrap';
 
+ 
 class ProductsAll extends Component {
     constructor (props) {
         super(props);
@@ -25,6 +29,8 @@ class ProductsAll extends Component {
         activeItemInStock: 0,
         activeItemDiscount: 0
     }
+
+    
 
     openModal = (data) => {
         this.setState({ modalIsOpen: true });
@@ -73,6 +79,9 @@ class ProductsAll extends Component {
         this.setState({ prevBtnDisabled: true });
         this.setState({ pageId: (this.state.pageId - 1) }, () => { this.searchProduct(); });
     }
+     
+
+    
 
     searchProduct = () => {
         let type = this.state.selectedView;
@@ -682,6 +691,46 @@ class ProductsAll extends Component {
 
     render() {
 
+        const options = [
+            {
+              value: 'zhejiang',
+              label: 'Zhejiang',
+              children: [
+                {
+                  value: 'hangzhou',
+                  label: 'Hangzhou',
+                  children: [
+                    {
+                      value: 'xihu',
+                      label: 'West Lake',
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              value: 'jiangsu',
+              label: 'Jiangsu',
+              children: [
+                {
+                  value: 'nanjing',
+                  label: 'Nanjing',
+                  children: [
+                    {
+                      value: 'zhonghuamen',
+                      label: 'Zhong Hua Men',
+                    },
+                  ],
+                },
+              ],
+            },
+            
+          ];
+          const mystyle = {
+            
+            display: 'block' // display: block
+          };
+
         const getCategoryMethod = () => {
             if (this.state.selectedView !== "select") {
                 const categories = TYPE_CATEGORY_VIEW.filter(({ type }) => type === this.state.selectedView)[0];
@@ -689,6 +738,7 @@ class ProductsAll extends Component {
                     <div>
                         <select id="category" className="form-control" name="category" onChange={this.categoryChangeHandler} value={this.state.selectedCategory}>
                             <option value='select'>Select Category</option>
+                            
                             {categories.category.map(function (name, index) {
                                 return <option value={name}>{categories.categoryName[index]}</option>;
                             })}
@@ -700,6 +750,7 @@ class ProductsAll extends Component {
                     <div>
                         <select id="category" className="form-control" name="category" onChange={this.categoryChangeHandler} value={this.state.selectedCategory}>
                             <option value='select'>Select Category</option>
+                            
                         </select>
                     </div>
                 );
@@ -764,21 +815,11 @@ class ProductsAll extends Component {
                                             <div className="form mb-0">
                                                 <div className="form-body">
                                                     <div className="form-group row">
-                                                        <label className="col-md-1" htmlFor="type">Type:</label>
-                                                        <div className="col-md-2">
-                                                            <select id="type" className="form-control" name="type" onChange={this.typeChangeHandler}>
-                                                                <option value="select">Select Type</option>
-                                                                {TYPE_CATEGORY_VIEW.map(data => <option value={data.type}>{data.typeName}</option>)}
-                                                            </select>
+                                                        <div className="col-md-11">
+                                                        <Cascader options={options}  style={mystyle} placeholder="Please select" />
                                                         </div>
-                                                        <label className="col-md-1" htmlFor="projectinput2">Category:</label>
-                                                        <div className="col-md-3">
-                                                            {getCategoryMethod()}
-                                                        </div>
-                                                        <label className="col-md-1" htmlFor="projectinput2">Sub Category:</label>
-                                                        <div className="col-md-3">
-                                                            {getSubCategoryMethod()}
-                                                        </div>
+                                                    
+                                                        
                                                         <div className="col-md-1">
                                                             <button type="submit" className="btn btn-primary" onClick={this.searchProduct}>
                                                                 <i className="icon-search"></i>
