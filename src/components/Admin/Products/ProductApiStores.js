@@ -76,7 +76,7 @@ class ProductApiStores extends Component {
                                                             </td>
                                                             <td><img style={{ width: "100px", height: "50px" }} src={IMAGE_PATH + data.picture} alt="Store Image" /></td>
                                                             <td><a href={data.store_url} target="_blank">{data.store_url}</a></td>
-                                                            <td><Link to={"/products/api-store/" + data.id}><button class="btn btn-default">Config</button></Link></td>
+                                                            <td><Link to={"/products/api-store/" + data.user_id}><button class="btn btn-default">Config</button></Link></td>
                                                         </tr>
                                                     );
                                                 })}

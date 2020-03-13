@@ -1,66 +1,46 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import {Cascader } from 'antd';
-import 'antd/dist/antd.css';
 import { DropzoneArea } from 'material-ui-dropzone';
 import { validateAll } from 'indicative/validator';
 import axios from 'axios';
-import { ADD_PRODUCT_API_URL, GET_PRODUCT_TYPES_API_URL, GET_PRODUCT_CATEGORIES_API_URL } from '../../Common/Constants';
-import { HelpBlock } from 'react-bootstrap';
+import { Cascader } from 'antd';
+import 'antd/dist/antd.css';
+
+import { GET_CATEGORIES, ADD_PRODUCT_API_URL } from '../../Common/Constants';
+
 const initialState = {
     product_name: "",
     price: "",
-    in_stock: false,
-    type: "",
     category: "",
-     
-    subCategory: "",
     errors: {},
     isButtonDisabled: false,
     picture: [],
-    selectedView: 'select',
-    selectedCategory: 'select',
-    selectedSubCategory: 'select',
-    productTypes: [],
-    productCategories: [],
-    productSubcategories: [],
-    userId: localStorage.getItem("userId")
-    
+    options:[]
 };
-
 
 class ProductAdd extends Component {
     constructor (props) {
         super(props);
         this.state = initialState;
     }
-
-     
-    initializeProductTypes = () => {
-
-        // let config = {
-        //     headers: {
-        //         APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa',
-        //     }
-        // }
-        // axios.post(GET_PRODUCT_TYPES_API_URL, {}, config)
-        //     .then(response => {
-        //         this.setState({ productTypes: response.data });
-        //     })
-        //     .catch(e => {
-        //         alert("Error getting product types from API.");
-        //     })
-
-    }
-    componentDidMount() {
-        this.initializeProductTypes();
+    componentDidMount(){
+        let config = {
+            headers: {
+                APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa'
+            }
+        }
+        axios.get(GET_CATEGORIES, config)
+            .then(response => {
+                this.setState({options: response.data});
+            })
+            .catch(e => {
+                alert(e.response.data);
+            })    
     }
 
+    
     resetState = () => {
-        this.setState(initialState, this.initializeProductTypes);
-    }
-    handleFilesSave = (files) => {
-        console.log(files);
+        this.setState(initialState);
     }
     handleFileChange = (picture) => {
         this.setState({
@@ -70,58 +50,18 @@ class ProductAdd extends Component {
     handleInputChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
     }
-    handleCheckboxChange = (event) => {
-        this.setState({ [event.target.name]: event.target.checked });
+
+    handleCategory = (value) =>{
+        this.setState({
+            category: value[value.length-1]
+        });
     }
-
-    handleCategory = (event) => {
-        // console.log()
-        this.setState({category: event[event.length - 1]});
-
-        // this.state.list.map(item => (
-        //     <li key={item}>{item}</li>
-        //   ));
-    }
-
-    // typeChangeHandler = (e) => {
-    //     console.log(e.target.value)
-    //     // console.log(this.refs.mainType.value);
-    //     this.setState({ selectedView: e.target.value });
-    //     this.setState({ type: e.target.value });
-    //     this.setState({ selectedCategory: 'select' });
-    //     this.setState({ selectedSubCategory: 'select' });
-    //     if (e.target.value !== "select") {
-    //         let config = {
-    //             headers: {
-    //                 APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa'
-    //             }
-    //         }
-    //         let formData = new FormData();
-    //         formData.append('id', e.target.value);
-
-    //         axios.post(GET_PRODUCT_CATEGORIES_API_URL, formData, config)
-    //             .then(response => {
-    //                 this.setState({ productCategories: response.data });
-    //                 console.log(response.data)
-    //             })
-    //             .catch(e => {
-    //                 alert("Error getting product categories from API.");
-    //             })
-    //     }
-    // }
-    // subCategoryChangeHandler = (e) => {
-    //     this.setState({ selectedSubCategory: e.target.value });
-    //     this.setState({ subCategory: e.target.value });
-    // }
     handleSubmit = (event) => {
         event.preventDefault();
         const data = this.state;
         const rules = {
             product_name: "required|string",
-            price: "required",
-            type: "required",
-            category: "required",
-            subCategory: "required"
+            category: "required"
         };
 
         const messages = {
@@ -143,13 +83,9 @@ class ProductAdd extends Component {
                 let formData = new FormData();
                 formData.append('name', this.state.product_name);
                 formData.append('price', this.state.price);
-                formData.append('in_stock', this.state.in_stock);
-                formData.append('permalink', this.state.product_url);
-                formData.append('type', this.state.type);
-                formData.append('category', this.state.category);
-                formData.append('sub_category', this.state.subCategory);
+                formData.append('category_id', this.state.category);
                 formData.append('picture', this.state.picture[0]);
-                formData.append('created_by', this.state.userId);
+                formData.append('created_by', 1);
 
                 axios.post(ADD_PRODUCT_API_URL, formData, config)
                     .then(response => {
@@ -170,99 +106,9 @@ class ProductAdd extends Component {
             })
     }
     render() {
-
-         
-        const getCategoryMethod = () => {
-            const selectTemplate = 
-                <div class="selectTemp">
-                    <select onChange={this.typeChangeHandler} id="category" className={"form-control " + (this.state.errors.category ? 'border-danger' : "")} name="category" value={this.state.selectedCategory}>
-                        <option value='select'>Select Category</option>
-                        {this.state.productCategories.map(data =>
-                            <option value={data.category_id}>{data.display_name}</option>
-                        )}
-                    </select>
-                    <p className='danger lighten-2'>{(this.state.errors.category) ? this.state.errors.category : ''}</p>
-                </div>
-            if (this.state.productCategories.length > 0) {
-                return (
-                    
-                    selectTemplate
-                    // <div>
-                    //     <select onChange={this.typeChangeHandler} id="category" className={"form-control " + (this.state.errors.category ? 'border-danger' : "")} name="category" value={this.state.selectedCategory}>
-                    //         <option value='select'>Select Category</option>
-                    //         {this.state.productCategories.map(data =>
-                    //             <option value={data.category_id}>{data.display_name}</option>
-                    //         )}
-                    //     </select>
-                    //     <p className='danger lighten-2'>{(this.state.errors.category) ? this.state.errors.category : ''}</p>
-                    // </div>
-                );
-            }
-        }
-
-
-        const options = [
-            {
-              value: 'zhejiang',
-              label: 'Zhejiang',
-              children: [
-                {
-                  value: 'hangzhou',
-                  label: 'Hangzhou',
-                  children: [
-                    {
-                      value: 'xihu',
-                      label: 'West Lake',
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              value: 'jiangsu',
-              label: 'Jiangsu',
-              children: [
-                {
-                  value: 'nanjing',
-                  label: 'Nanjing',
-                  children: [
-                    {
-                      value: 'zhonghuamen',
-                      label: 'Zhong Hua Men',
-                    },
-                  ],
-                },
-              ],
-            },
-            
-          ];
         
 
-       
-        const getSubCategoryMethod = () => {
-            if (this.state.selectedCategory !== "select") {
-                return (
-                    <div>
-                        <select id="subCategory" className={"form-control " + (this.state.errors.subCategory ? 'border-danger' : "")} name="subCategory" onChange={this.subCategoryChangeHandler} value={this.state.selectedSubCategory}>
-                            <option value="select">Select Subcategory</option>
-                            {this.state.productSubcategories.map(data =>
-                                <option value={data.name}>{data.display_name}</option>
-                            )}
-                        </select>
-                        <p className='danger lighten-2'>{(this.state.errors.subCategory) ? this.state.errors.subCategory : ''}</p>
-                    </div>
-                );
-            } else {
-                return (
-                    <div>
-                        <select id="subCategory" className={"form-control " + (this.state.errors.subCategory ? 'border-danger' : "")} name="subCategory" onChange={this.subCategoryChangeHandler} value={this.state.selectedSubCategory}>
-                            <option value="select">Select Subcategory</option>
-                        </select>
-                        <p className='danger lighten-2'>{(this.state.errors.subCategory) ? this.state.errors.subCategory : ''}</p>
-                    </div>
-                );
-            }
-        }
+        
         return (
             <div className="app-content content container-fluid">
                 <div className="content-wrapper">
@@ -302,47 +148,31 @@ class ProductAdd extends Component {
                                                     <div className="col-md-8">
                                                         <div className="row">
                                                             <div className="col-md-12">
-                                                                <label htmlFor="product_name">Product Name</label>
+                                                                <label for="product_name">Product Name</label>
                                                                 <input name='product_name' type="text" id="product_name" className={"form-control " + (this.state.errors.product_name ? 'border-danger' : "")} onChange={this.handleInputChange} value={this.state.product_name} />
                                                                 <p className='danger lighten-2'>{(this.state.errors.product_name) ? this.state.errors.product_name : ''}</p>
                                                             </div>
-                                                            {/* <div className="col-md-4">
-                                                                <label htmlFor="price">Price
-                                                                </label>
-                                                                <input type="number" step="0.01" id="price" className={"form-control " + (this.state.errors.price ? 'border-danger' : "")} name="price" onChange={this.handleInputChange} value={this.state.price} />
-                                                                <p className='danger lighten-2'>{(this.state.errors.price) ? this.state.errors.price : ''}</p>
-                                                            </div> */}
                                                         </div>
                                                         <div className="row">
-                                                            <div className="col-md-12">
-                                                                <div><label>Category</label></div>
-
-                                                            <Cascader name='category' id="category" onChange={this.handleCategory} options={options}  style={{display: 'block'}} placeholder="Please select" />
-
-
-    
-                                                                {/* <label htmlFor="type">Type</label>
-                                                                <select ref="mainType" id="type" className={"form-control " + (this.state.errors.type ? 'border-danger' : "")} name="type" onChange={this.typeChangeHandler} value={this.state.selectedView}>
-                                                                    <option value="select">Select Type</option>
-                                                                    {this.state.productTypes.map(data => <option value={data.category_id}>{data.display_name}</option>)}
-                                                                </select>
-                                                                <p className='danger lighten-2'>{(this.state.errors.type) ? this.state.errors.type : ''}</p>
-                                                            </div>
                                                             <div className="col-md-4">
-                                                                <label htmlFor="projectinput2">Category</label> */}
-                                                                {/* {getCategoryMethod()} */}
+                                                                <label for="price">Price
+                                                        </label>
+                                                                <input type="number" step="0.01" id="price" className={"form-control " + (this.state.errors.price ? 'border-danger' : "")} name="price" onChange={this.handleInputChange} value={this.state.price} />
+                                                                <p className='danger lighten-2'>{(this.state.errors.price) ? this.state.errors.price : ''}</p>
                                                             </div>
-                                                            {/* <div className="col-md-4">
-                                                                <label htmlFor="projectinput2">Sub Category</label>
-                                                                {getSubCategoryMethod()}
-                                                            </div> */}
+                                                            <div className="col-md-8">
+                                                            <label>Product Category
+                                                        </label>
+                                                            <Cascader
+                                                        options={this.state.options}
+                                                        onChange={this.handleCategory}
+                                                        style={{"display":"block"}}
+                                                        name="category_id"
+                                                    />
+                                                            </div>
                                                         </div>
-                                                        {/* <div className="row">
-                                                            <div className="col-md-4">
-                                                                <label htmlFor="in_stock">In Stock ?</label>
-                                                                <input type="checkbox" id="in_stock" className="checkmarkMe" name="in_stock" onChange={this.handleCheckboxChange} checked={this.state.in_stock} />
-                                                            </div>
-                                                        </div> */}
+                                                        
+
                                                     </div>
                                                     <div className="col-md-4">
                                                         <div style={{ textAlign: "center" }}>
@@ -352,14 +182,13 @@ class ProductAdd extends Component {
                                                                     dropzoneText='Add Product Picture'
                                                                     acceptedFiles={['image/jpeg', 'image/png', 'image/bmp']}
                                                                     onChange={this.handleFileChange}
-                                                                    onDrop={this.handleFileOnDrop}
-                                                                    filesLimit={20}
-                                                                    onSave={this.handleFilesSave}
+                                                                    filesLimit={1}
                                                                 />
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+
                                             </div>
 
                                             <div className="form-actions">

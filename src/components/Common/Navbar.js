@@ -8,6 +8,7 @@ import avatar_s_2 from '../../app-assets/images/portrait/small/avatar_s_one.png'
 import avatar_s_3 from '../../app-assets/images/portrait/small/avatar_s_one.png';
 import avatar_s_6 from '../../app-assets/images/portrait/small/avatar_s_one.png';
 
+
 const NavbarContent = (props) => {
   return (
     <nav className="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-semi-dark navbar-shadow">
@@ -147,7 +148,6 @@ const Navbar = (props) => {
 
   const handleLogout = () => {
     localStorage.setItem('isAuth', false);
-    localStorage.removeItem('userId');
     props.history.push("/");
   }
 
