@@ -562,3 +562,394 @@ export const getSharafDGFormData = (type, cat, sub_cat) => {
         }
     }
 }
+
+export const getBabyshopUrl = (type, cat) => {
+    let url;
+    if (type === "newin") {
+        url = "https://www.babyshop.com/new-in/s/927";
+    }
+    else if (type === "clothing") {
+        if (cat === "tops") {
+            url = "https://www.babyshop.com/tops/s/629";
+        } else if (cat === "sweaterandknitwear") {
+            url = "https://www.babyshop.com/sweaters-and-knitwear/s/1291";
+        } else if (cat === "dresses") {
+            url = "https://www.babyshop.com/dresses/s/631";
+        }
+        else if (cat === "bottoms") {
+            url = "https://www.babyshop.com/bottoms/s/630";
+        }
+        else if (cat === "skirts") {
+            url = "https://www.babyshop.com/skirts/s/643";
+        }
+        else if (cat === "shorts") {
+            url = "https://www.babyshop.com/shorts/s/646";
+        }
+        else if (cat === "clothingsets") {
+            url = "https://www.babyshop.com/clothing-sets/s/1560";
+        }
+        else if (cat === "suits") {
+            url = "https://www.babyshop.com/suits/s/1597";
+        }
+        else if (cat === "fleece") {
+            url = "https://www.babyshop.com/fleece/s/662";
+        }
+        else if (cat === "coatsandjackets") {
+            url = "https://www.babyshop.com/coats-jackets/s/658";
+        }
+        else if (cat === "coveralls") {
+            url = "https://www.babyshop.com/coveralls/s/659";
+        }
+        else if (cat === "skipantsandsalopettes") {
+            url = "https://www.babyshop.com/ski-pants-and-salopettes/s/1621";
+        }
+        else if (cat === "rainwear") {
+            url = "https://www.babyshop.com/rainwear/s/661";
+        }
+        else if (cat === "sleepwear") {
+            url = "https://www.babyshop.com/sleepwear/s/635";
+        }
+        else if (cat === "uderwear") {
+            url = "https://www.babyshop.com/underwear/s/632";
+        }
+        else if (cat === "baselayers") {
+            url = "https://www.babyshop.com/baselayers/s/663";
+        }
+        else if (cat === "uvproductsandswimwear") {
+            url = "https://www.babyshop.com/uv-products-swimwear/s/634";
+        }
+        else if (cat === "childrenclothing0to2years") {
+            url = "https://www.babyshop.com/childrens-clothing-0-2-years/s/1006";
+        }
+        else if (cat === "childrenclothing2to4years") {
+            url = "https://www.babyshop.com/childrens-clothing-2-4-years/s/1007";
+        }
+        else if (cat === "childrenclothing4to10years") {
+            url = "https://www.babyshop.com/childrens-clothing-4-10-years/s/1008";
+        }
+        else if (cat === "ecofashion") {
+            url = "https://www.babyshop.com/eco-fashion/s/1885";
+        }
+        else if (cat === "sport") {
+            url = "https://www.babyshop.com/sport/s/1665";
+        }
+        else if (cat === "beachholiday") {
+            url = "https://www.babyshop.com/beach-holiday/s/1134";
+        }
+        else if (cat === "outerwear") {
+            url = "https://www.babyshop.com/outerwear/s/636";
+        }
+        else if (cat === "newarrivalschildrenclothes") {
+            url = "https://www.babyshop.com/new-arrivals-childrens-clothes/s/1030";
+        }
+        else if (cat === "skiwear") {
+            url = "https://www.babyshop.com/ski-wear/s/1835";
+        }
+        else if (cat === "premium") {
+            url = "https://www.babyshop.com/premium/s/1302";
+        }
+        else if (cat === "threelayerprinciple") {
+            url = "https://www.babyshop.com/three-layer-principle/s/1077";
+        }
+        else if (cat === "woolclothes") {
+            url = "https://www.babyshop.com/wool-clothes/s/1099";
+        }
+        else if (cat === "partywear") {
+            url = "https://www.babyshop.com/partywear/s/492";
+        }
+
+    }
+    else if (type === "footwear") {
+        if (cat === "classicshoes") {
+            url = "https://www.babyshop.com/classic-shoes/s/1164";
+        } else if (cat === "ballerinasandmaryjanes") {
+            url = "https://www.babyshop.com/ballerinas-mary-janes/s/1520";
+        }
+        else if (cat === "sandals") {
+            url = "https://www.babyshop.com/sandals/s/676";
+        }
+        else if (cat === "sneakers") {
+            url = "https://www.babyshop.com/sneakers/s/674";
+        }
+        else if (cat === "sportfootwear") {
+            url = "https://www.babyshop.com/sport-footwear/s/1533";
+        }
+        else if (cat === "bootsandwintershoes") {
+            url = "https://www.babyshop.com/boots-and-winter-shoes/s/673";
+        }
+        else if (cat === "rubbershoes") {
+            url = "https://www.babyshop.com/rubber-boots/s/672";
+        }
+        else if (cat === "firstwalker") {
+            url = "https://www.babyshop.com/first-walkers/s/675";
+        }
+        else if (cat === "babybooties") {
+            url = "https://www.babyshop.com/baby-booties/s/677";
+        }
+        else if (cat === "indoorshoesandmoccasins") {
+            url = "https://www.babyshop.com/indoor-shoes-moccasins/s/678";
+        }
+        else if (cat === "childrensshoes0to2years") {
+            url = "https://www.babyshop.com/childrens-shoes-0-2-years/s/1009";
+        }
+        else if (cat === "childrensshoes2to4years") {
+            url = "https://www.babyshop.com/childrens-shoes-2-4-years/s/1010";
+        }
+        else if (cat === "childrensshoes4to10years") {
+            url = "https://www.babyshop.com/childrens-shoes-4-10-years/s/1011";
+        }
+        else if (cat === "newarrivalschildrensshoes") {
+            url = "https://www.babyshop.com/new-arrivals-childrens-shoes/s/1031";
+        }
+    }
+    else if (type === "accessories") {
+        if (cat === "headwear") {
+            url = "https://www.babyshop.com/headwear/s/666";
+        }
+        else if (cat === "scarves") {
+            url = "https://www.babyshop.com/scarves/s/664";
+        }
+        else if (cat === "glovesandmittens") {
+            url = "https://www.babyshop.com/gloves-and-mittens/s/665";
+        }
+        else if (cat === "eyewear") {
+            url = "https://www.babyshop.com/eyewear/s/1611";
+        }
+        else if (cat === "hairaccessories") {
+            url = "https://www.babyshop.com/hair-accessories/s/1615";
+        }
+        else if (cat === "bags") {
+            url = "https://www.babyshop.com/bags/s/737";
+        }
+        else if (cat === "tieandbows") {
+            url = "https://www.babyshop.com/ties-bows/s/1617";
+        }
+        else if (cat === "beltsandsuspenders") {
+            url = "https://www.babyshop.com/belts-suspenders/s/669";
+        }
+        else if (cat === "jewelleryandwatches") {
+            url = "https://www.babyshop.com/jewellery-and-watches/s/1616";
+        }
+        else if (cat === "umbrellas") {
+            url = "https://www.babyshop.com/umbrellas/s/1618";
+        }
+    }
+    else if (type === "stollers") {
+        if (cat === "convertiblestrollers") {
+            url = "https://www.babyshop.com/convertible-strollers/s/681";
+        }
+        else if (cat === "doublestrollers") {
+            url = "https://www.babyshop.com/duo-strollers/s/679";
+        }
+        else if (cat === "lightweightstrollers") {
+            url = "https://www.babyshop.com/lightweight-strollers/s/1760";
+        }
+        else if (cat === "travelstrollersandumbrellastrollers") {
+            url = "https://www.babyshop.com/travel-umbrella-strollers/s/1002";
+        }
+        else if (cat === "footmuffs") {
+            url = "https://www.babyshop.com/footmuffs/s/1057";
+        }
+        else if (cat === "strollerpartsandcustomisation") {
+            url = "https://www.babyshop.com/stroller-parts-and-customisation/s/1634";
+        }
+        else if (cat === "strolleraccessories") {
+            url = "https://www.babyshop.com/stroller-accessories/s/683";
+        }
+    }
+    else if (type === "carseats") {
+        if (cat === "carseatbases") {
+            url = "https://www.babyshop.com/car-seat-bases/s/1648";
+        }
+        else if (cat === "infrontcarseats") {
+            url = "https://www.babyshop.com/infant-car-seats/s/692";
+        }
+        else if (cat === "rearfacingcarseats") {
+            url = "https://www.babyshop.com/rear-facing-car-seats/s/693";
+        }
+        else if (cat === "forwardfacingcarseats") {
+            url = "https://www.babyshop.com/forward-facing-car-seats/s/694";
+        }
+        else if (cat === "carseatsaccessories") {
+            url = "https://www.babyshop.com/car-seats-accessories/s/695";
+        }
+    }
+    else if (type === "babygear") {
+        if (cat === "babyfeeding") {
+            url = "https://www.babyshop.com/baby-feeding/s/547";
+        }
+        else if (cat === "babychanging") {
+            url = "https://www.babyshop.com/baby-changing/s/747";
+        }
+        else if (cat === "babybathing") {
+            url = "https://www.babyshop.com/baby-bathing/s/750";
+        }
+        else if (cat === "toiletries") {
+            url = "https://www.babyshop.com/toiletries/s/1681";
+        }
+        else if (cat === "diaperbags") {
+            url = "https://www.babyshop.com/diaper-bags/s/739";
+        }
+        else if (cat === "babycarriers") {
+            url = "https://www.babyshop.com/baby-carriers/s/741";
+        }
+        else if (cat === "pacifiersandpacifierclips") {
+            url = "https://www.babyshop.com/pacifiers-pacifier-clips/s/752";
+        }
+        else if (cat === "babysitters") {
+            url = "https://www.babyshop.com/babysitters/s/742";
+        }
+        else if (cat === "babysafety") {
+            url = "https://www.babyshop.com/baby-safety/s/743";
+        }
+        else if (cat === "babyshower") {
+            url = "https://www.babyshop.com/baby-shower/s/2020";
+        }
+        else if (cat === "newbornessentials") {
+            url = "https://www.babyshop.com/newborn-essentials/s/1888";
+        }
+    }
+    else if (type === "maternity") {
+        if (cat === "maternitytops") {
+            url = "https://www.babyshop.com/maternity-tops/s/808";
+        }
+        else if (cat === "maternitysweaterandcardigans") {
+            url = "https://www.babyshop.com/maternity-sweaters-cardigans/s/702";
+        }
+        else if (cat === "maternitydresses") {
+            url = "https://www.babyshop.com/maternity-dresses/s/704";
+        }
+        else if (cat === "maternitybottoms") {
+            url = "https://www.babyshop.com/maternity-bottoms/s/703";
+        }
+        else if (cat === "maternityjacketsandcoats") {
+            url = "https://www.babyshop.com/maternity-jackets-coats/s/809";
+        }
+        else if (cat === "pregnancysleepwear") {
+            url = "https://www.babyshop.com/pregnancy-sleepwear/s/1609";
+        }
+        else if (cat === "maternityunderwear") {
+            url = "https://www.babyshop.com/maternity-underwear/s/705";
+        }
+        else if (cat === "maternityswimwear") {
+            url = "https://www.babyshop.com/maternity-swimwear/s/706";
+        }
+        else if (cat === "breatsfeeding") {
+            url = "https://www.babyshop.com/breast-feeding/s/1601";
+        }
+    }
+    else if (type === "home") {
+        if (cat === "furniture") {
+            url = "https://www.babyshop.com/furniture/s/709";
+        }
+        else if (cat === "textiles") {
+            url = "https://www.babyshop.com/textiles/s/710";
+        }
+        else if (cat === "eatanddrink") {
+            url = "https://www.babyshop.com/eat-drink/s/755";
+        }
+        else if (cat === "storage") {
+            url = "https://www.babyshop.com/storage/s/711";
+        }
+        else if (cat === "lighting") {
+            url = "https://www.babyshop.com/lighting/s/735";
+        }
+        else if (cat === "homeaccessories") {
+            url = "https://www.babyshop.com/home-accessories/s/1673";
+        }
+        else if (cat === "bathroomaccessories") {
+            url = "https://www.babyshop.com/bathroom-accessories/s/1680";
+        }
+        else if (cat === "partydecoration") {
+            url = "https://www.babyshop.com/party-decorations/s/712";
+        }
+        else if (cat === "newarrivalsinterior") {
+            url = "https://www.babyshop.com/new-arrivals-interior/s/1130";
+        }
+        else if (cat === "bohemianvintage") {
+            url = "https://www.babyshop.com/bohemian-vintage/s/2204";
+        }
+        else if (cat === "electicedge") {
+            url = "https://www.babyshop.com/eclectic-edge/s/2203";
+        }
+        else if (cat === "scandinaviansimplicity") {
+            url = "https://www.babyshop.com/scandinavian-simplicity/s/2202";
+        }
+
+    }
+    else if (type === "toys") {
+        if (cat === "bicyclesandoutdoorplay") {
+            url = "https://www.babyshop.com/tops/s/629";
+        }
+        else if (cat === "buildingblockslegoansconstruction") {
+            url = "https://www.babyshop.com/building-blocks-lego-construction/s/1654";
+        }
+        else if (cat === "costumes") {
+            url = "https://www.babyshop.com/costumes/s/1655";
+        }
+        else if (cat === "dollsanddollhouses") {
+            url = "https://www.babyshop.com/dolls-and-doll-houses/s/1656";
+        }
+        else if (cat === "figurinesandplaysets") {
+            url = "https://www.babyshop.com/figurines-and-playsets/s/1658";
+        }
+        else if (cat === "firsttoysandbabytoys") {
+            url = "https://www.babyshop.com/first-toys-and-baby-toys/s/1649";
+        }
+        else if (cat === "musicalinstrumentsandtoys") {
+            url = "https://www.babyshop.com/musical-instruments-and-toys/s/1659";
+        }
+        else if (cat === "reading") {
+            url = "https://www.babyshop.com/reading/s/1664";
+        }
+        else if (cat === "rideonsandwalker") {
+            url = "https://www.babyshop.com/ride-ons-and-walkers/s/1661";
+        }
+        else if (cat === "rolepaly") {
+            url = "https://www.babyshop.com/role-play/s/1662";
+        }
+        else if (cat === "stationery") {
+            url = "https://www.babyshop.com/stationery/s/1038";
+        }
+        else if (cat === "watertoys") {
+            url = "https://www.babyshop.com/water-toys/s/1663";
+        }
+        else if (cat === "puzzlesandgames") {
+            url = "https://www.babyshop.com/puzzles-and-games/s/715";
+        }
+        else if (cat === "softtoys") {
+            url = "https://www.babyshop.com/soft-toys/s/717";
+        }
+        else if (cat === "vehicles") {
+            url = "https://www.babyshop.com/vehicles/s/716";
+        }
+    }
+    else if (type === "outlet") {
+        if (cat === "tops") {
+            url = "https://www.babyshop.com/tops/s/629";
+        }
+        else if (cat === "clothingoutlet") {
+            url = "https://www.babyshop.com/clothing-outlet/s/784";
+        }
+        else if (cat === "footwearoutlet") {
+            url = "https://www.babyshop.com/footwear-outlet/s/795";
+        }
+        else if (cat === "accessoriesoutlet") {
+            url = "https://www.babyshop.com/accessories-outlet/s/794";
+        }
+        else if (cat === "maternityoutlet") {
+            url = "https://www.babyshop.com/maternity-outlet/s/805";
+        }
+        else if (cat === "babygearoutlet") {
+            url = "https://www.babyshop.com/baby-gear-outlet/s/807";
+        }
+        else if (cat === "interioroutlet") {
+            url = "https://www.babyshop.com/interior-outlet/s/806";
+        }
+        else if (cat === "toysoutlet") {
+            url = "https://www.babyshop.com/toys-outlet/s/1695";
+        }
+    }
+
+    return url;
+}

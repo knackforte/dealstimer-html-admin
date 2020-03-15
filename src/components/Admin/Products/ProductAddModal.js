@@ -156,18 +156,18 @@ class ProductAddModal extends Component {
 
         const getSubCategoryMethod = () => {
             if (this.state.selectedCategory !== "select") {
-                const subCategories = CATEGORY_SUBCATEGORY_VIEW.filter(({ category }) => category === this.state.selectedCategory)[0]
-                return (
-                    <div>
-                        <select id="subCategory" className={"form-control " + (this.state.errors.subCategory ? 'border-danger' : "")} name="subCategory" onChange={this.subCategoryChangeHandler} value={this.state.selectedSubCategory}>
-                            <option value="select">Select Subcategory</option>
-                            {subCategories.subCategory.map(function (name, index) {
-                                return <option value={name}>{subCategories.subCategoryName[index]}</option>;
-                            })}
-                        </select>
-                        <p className='danger lighten-2'>{(this.state.errors.subCategory) ? this.state.errors.subCategory : ''}</p>
-                    </div>
-                );
+                // const subCategories = CATEGORY_SUBCATEGORY_VIEW.filter(({ category }) => category === this.state.selectedCategory)[0]
+                // return (
+                //     <div>
+                //         <select id="subCategory" className={"form-control " + (this.state.errors.subCategory ? 'border-danger' : "")} name="subCategory" onChange={this.subCategoryChangeHandler} value={this.state.selectedSubCategory}>
+                //             <option value="select">Select Subcategory</option>
+                //             {subCategories.subCategory.map(function (name, index) {
+                //                 return <option value={name}>{subCategories.subCategoryName[index]}</option>;
+                //             })}
+                //         </select>
+                //         <p className='danger lighten-2'>{(this.state.errors.subCategory) ? this.state.errors.subCategory : ''}</p>
+                //     </div>
+                // );
             } else {
                 return (
                     <div>
