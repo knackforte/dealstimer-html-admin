@@ -10,8 +10,8 @@ export const GET_CATEGORIES = SERVER_ADDRESS + '/api/getCategories';
 export const IMAGE_PATH = SERVER_ADDRESS + '/images/';
 export const API_URL = 'http://dealstimer-admin.toortechnologies.com/test/index.php';
 
-
-export const TYPE_CATEGORY_VIEW = [
+ 
+export const TYPE_CATEGORY_VIEW= [
     {
         'value':'fashion',
         'label':'Fashion',
@@ -2756,9 +2756,9 @@ export const BABYSHOP_CATEGORIES = [
 
 // ];
 
-
+ // CATEGORIES HAVE TO CHANGE
  
-export const AMAZON_CATEGORIES = [
+export const AMAZON_CATEGORIES= [
     {
         'value':'sportsandoutdoors',
         'label':'Sports and Outdoors',
@@ -5013,138 +5013,2943 @@ export const AMAZON_CATEGORIES = [
         
             },
             {
-                'value':'automotiveenthusiast',
-                'label':'Automotive Enthusiast',
-                'children':[]
+                'value':'automotiveenthusiastmerchandise',
+                'label':'Automotive Enthusiast Merchandise',
+                'children':[
+                    {
+                        'value':'vehicleaccessories',
+                        'label':'Vehicle Accessories',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'apparel',
+                        'label':'Apparel',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'bagsandaccessories',
+                        'label':'Bags & Accessories',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'homeandoffice',
+                        'label':'Home & Office',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'jewelryandwatches',
+                        'label':'Jewelry & Watches',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'toysandmodels',
+                        'label':'Toys & Models',
+                        'children':[]
+                
+                    }, 
+                ]
         
             },
             {
-                'value':'merchandise',
-                'label':'Merchandise',
-                'children':[]
+                'value':'heavydutyandcommercialvehicleequipment',
+                'label':'Heavy Duty & Commercial Vehicle Equipment',
+                'children':[
+                    {
+                        'value':'heavydutyandcommercialvehicleaccessories',
+                        'label':'Heavy Duty & Commercial Vehicle accessories',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'heavydutyandcommercialvehiclesparts',
+                        'label':'Heavy Duty & Commercial Vehicles Parts',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'heavydutyfleetnavigationandcommunicationsupplies',
+                        'label':'Heavy Duty Fleet Navigation & Communication Supplies',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'heavydutyoilsandfluids',
+                        'label':'Heavy Duty Oils & Fluids',
+                        'children':[]
+                
+                    }, 
+                ]
         
             },
-            {
-                'value':'heavydutyandcommercial',
-                'label':'Heavy Duty & Commercial',
-                'children':[]
-        
-            },
-            {
-                'value':'vehicleequipment',
-                'label':'Vehicle Equipment',
-                'children':[]
-        
-            }, 
+             
         ]
 
     },
     {
         'value':'artsandcrafts',
         'label':'Arts & Crafts',
-        'children':[]
+        'children':[
+            {
+                'value':'beadingandjewelrymaking',
+                'label':'Beading & Jewelry Making',
+                'children':[
+                    {
+                        'value':'beadingsupplies',
+                        'label':'Beading Supplies',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'beadsandbeadassortments',
+                        'label':'Beads & Bead Assortments',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'charms',
+                        'label':'Charms',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'engravingmachinesandtools',
+                        'label':'Engraving Machines & Tools',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'fusibleglasssupplies',
+                        'label':'Fusible Glass Supplies',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'jewelrycastingsuuplies',
+                        'label':'Jewelry Casting Supplies',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'jewelryfindings',
+                        'label':'Jewelry Findings',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'jewelrymakingdisplayandpackagingsupplies',
+                        'label':'Jewelry Making Display & Packaging Supplies',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'jewelrymakingkits',
+                        'label':'Jewelry Making Kits',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'jewelrymakingtoolsandaccessories',
+                        'label':'Jewelry Making Tools & Accessories',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'jewelrypatterns',
+                        'label':'Jewelry Patterns',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'metalstampingtools',
+                        'label':'Metal Stamping Tools',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'polishingandbuffing',
+                        'label':'Metal Stamping Tools',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'polishingandbuffing',
+                        'label':'Polishing & Buffing',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'pursemaking',
+                        'label':'Pure Making',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'storage',
+                        'label':'Storage',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'waxmoldingmaterials',
+                        'label':'Wax Molding Materials',
+                        'children':[]
+                
+                    },
+                ]
+        
+            },
+            {
+                'value':'crafting',
+                'label':'Crafting',
+                'children':[
+                    {
+                        'value':'basketmaking',
+                        'label':'Basket Making',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'candlemaking',
+                        'label':'Candle Making',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'cecamicsandpottery',
+                        'label':'Ceramics & Pottery',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'craftsupplies',
+                        'label':'Craft Supplies',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'dollmaking',
+                        'label':'Doll Making',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'fabricribbons',
+                        'label':'Fabric Ribbons',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'floralarranging',
+                        'label':'Floral arranging',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'leathercraft',
+                        'label':'Leathercraft',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'mosaicmaking',
+                        'label':'Mosaic Making',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'paperandpapercrafts',
+                        'label':'Paper & Paper Crafts',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'pictureframing',
+                        'label':'Picture Framing',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'scratchboardsandfoilengraving',
+                        'label':'Scratchboards & Foil Engraving',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'sculpturesupplies',
+                        'label':'sculpture Supplies',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'soapmaking',
+                        'label':'Soap Making',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'stainedglassmaking',
+                        'label':'Stained Glass Making',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'suncatchersupplies',
+                        'label':'Suncatcher Supplies',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'wearingandspinning',
+                        'label':'Weaving & spinning',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'woodcrafts',
+                        'label':'Woodcrafts',
+                        'children':[]
+                
+                    },
+                ]
+        
+            },
+            {
+                'value':'fabric',
+                'label':'Fabric',
+                'children':[
+                     
+                ]
+        
+            },
+            {
+                'value':'fabricdecorating',
+                'label':'Fabric Decorating',
+                'children':[
+                    {
+                        'value':'applicationtools',
+                        'label':'Application Tools',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'dyes',
+                        'label':'Dyes',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'fabricandtextilepaints',
+                        'label':'Fabric & Textile Paints',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'fabricdecoratingkits',
+                        'label':'Fabric Decorating Kits',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'fixatives',
+                        'label':'Fixatives',
+                        'children':[]
+                
+                    },
+                ]
+        
+            },
+            {
+                'value':'giftwrapping',
+                'label':'Gift Wrapping Supplies',
+                'children':[
+                    {
+                        'value':'enclosurecards',
+                        'label':'Enclosure Cards',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'giftbags',
+                        'label':'Gift bags',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'giftboxes',
+                        'label':'Gift Boxes',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'giftwrapbows',
+                        'label':'Gift Wrap Bows',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'giftwrapcellophane',
+                        'label':'Gift Wrap Cellophange',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'giftwrapcellophanebags',
+                        'label':'Gift Wrap Cellophange Bags',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'giftwrapcrinkleandfillerpaper',
+                        'label':'Gift Wrap Crinkle & Filler Paper',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'giftwrappaper',
+                        'label':'Gift Wrap Paper',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'giftwrapribbons',
+                        'label':'Gift Wrap Ribbons',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'giftwraptags',
+                        'label':'Gift Wrap Tags',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'wrappingsets',
+                        'label':'Wrapping Sets',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'wrappingtissue',
+                        'label':'Wrapping Tissue',
+                        'children':[]
+                
+                    },
+                ]
+        
+            },
+            {
+                'value':'knittingandcrochet',
+                'label':'Knitting & Crohet',
+                'children':[
+                    {
+                        'value':'ballwinders',
+                        'label':'Ball Winders',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'crochethooks',
+                        'label':'Crochet Hooks',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'crochetkits',
+                        'label':'Crochet kits',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'crochetpatterns',
+                        'label':'Crochet Patterns',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'crochetthread',
+                        'label':'Crochet Thread',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'knittingandcrochetnotions',
+                        'label':'knitting & Crochet Notions',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'knittingkits',
+                        'label':'Knitting Kits',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'knittingloomsandboards',
+                        'label':'Knitting Looms & Boards',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'knittingneedles',
+                        'label':'Knitting Needles',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'knittingpatterns',
+                        'label':'Knitting Patterns',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'needlecases',
+                        'label':'Needle Cases',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'yarn',
+                        'label':'Yarn',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'yarnstorage',
+                        'label':'Yarn Storage',
+                        'children':[]
+                
+                    },
+                ]
+        
+            },
+            {
+                'value':'needlework',
+                'label':'Needlework',
+                'children':[
+                    {
+                        'value':'crossstitch',
+                        'label':'Cross-Stitch',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'embroidery',
+                        'label':'Embroidery',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'feltappliquekits',
+                        'label':'Felt Applique Kits',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'latchhook',
+                        'label':'Latch Hook',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'needlefeltingsupplies',
+                        'label':'Needle Felting Supplies',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'needlepoint',
+                        'label':'Needlepoint',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'punchneedleandrugpunch',
+                        'label':'Punch Needle & Rug Punch',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'tattingandlacemaking',
+                        'label':'Tatting & Lacemaking',
+                        'children':[]
+                
+                    }, 
+                ]
+        
+            },
+            {
+                'value':'organizationstorageandtransport',
+                'label':'Organization, Storage & Transport',
+                'children':[
+                    {
+                        'value':'artandpostertubes',
+                        'label':'Art & Poster Tubes',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'arttoolandsketchboxes',
+                        'label':'Art Tool & Sketch Boxes',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'beadingstorage',
+                        'label':'Beading storage',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'craftandsewingsuppliesstorage',
+                        'label':'Craft & Sewing Supplies Storage',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'dryingandprintracks',
+                        'label':'Drying & Print Racks',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'flatandverticalfiles',
+                        'label':'Flat & Vertical Files',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'paintbrushorganizersandholders',
+                        'label':'Paint Brush Organizers & Holders',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'penpencileandmarkercases',
+                        'label':'Pen, Pencil & Marker Cases',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'portfolios',
+                        'label':'Portfolios',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'storageboxesandorganizers',
+                        'label':'Storage Boxes & Organizers',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'storagecabinets',
+                        'label':'Storge Cabinets',
+                        'children':[]
+                
+                    }, 
+                ]
+        
+            },
+            {
+                'value':'paintingdrawingandartsupplies',
+                'label':'Painting, Drawing & Art Supplies',
+                'children':[
+                    {
+                        'value':'artpaper',
+                        'label':'Art Paper',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'boardsandcanvas',
+                        'label':'Boards & Canvas',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'drawing',
+                        'label':'Drawing',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'easels',
+                        'label':'Easels',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'painting',
+                        'label':'Painting',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'brushandpencleaners',
+                        'label':'Brush & Pen Cleaners',
+                        'children':[]
+                
+                    }, 
+                ]
+        
+            },
+            {
+                'value':'partydecorationsandsupplies',
+                'label':'Party Decorations & Supplies',
+                'children':[
+                    {
+                        'value':' aislerunners',
+                        'label':'Aisle Runners',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'ballons',
+                        'label':'Balloons',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'bannersandgarlands',
+                        'label':'Banners & Garlands',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'cardboxes',
+                        'label':'Car Boxes',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'cardboardcutouts',
+                        'label':'Cardboard Cutouts',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'centerpieces',
+                        'label':'Centerpieces',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'confetti',
+                        'label':'Confetti',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'guestbooks',
+                        'label':'Guestbooks',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'luminarias',
+                        'label':'Luminarias',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'skylanterns',
+                        'label':'Sky Lanterns',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'streamers',
+                        'label':'Streamers',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'tablecovers',
+                        'label':'Tablecovers',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'tissuepompoms',
+                        'label':'Tissue Pom Poms',
+                        'children':[]
+                
+                    },
+                ]
+        
+            },
+            {
+                'value':'printmaking',
+                'label':'Pringmaking',
+                'children':[
+                    {
+                        'value':' etchingsupplies',
+                        'label':'Etching Supplies',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'heatpressmachinesandaccessories',
+                        'label':'Heat Press Machines & Accessories',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'printmakinginks',
+                        'label':'Printmaking Inks',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'reliefandblockprinting',
+                        'label':'Relief & Block Printing',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'materials',
+                        'label':'Materials',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'screenprinting',
+                        'label':'Screen Printing',
+                        'children':[]
+                
+                    }, 
+                ]
+        
+            },
+            {
+                'value':'scrapbookingandstamping',
+                'label':'Scrapbooking & Stamping',
+                'children':[
+                    {
+                        'value':' adhesivevinyl',
+                        'label':'Adhesive Vinyl',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'adhesives',
+                        'label':'Adhesives',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'albumsandrefills',
+                        'label':'Albums & Refills',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'chipboard',
+                        'label':'Chipboard',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'cuttingmats',
+                        'label':'Cutting Mats',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'diecuttingandembossing',
+                        'label':'Die-Cutting & Embossing',
+                        'children':[]
+                
+                    },{
+                        'value':'kits',
+                        'label':'Kits',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'paperandcardstock',
+                        'label':'Paper & Card Stock',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'paperpunches',
+                        'label':'Paper Punches',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'pensandmarkers',
+                        'label':'Pens & Markers',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'phototransferandcoloringsupplies',
+                        'label':'Photo Tranfer & Coloring Supplies',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'scrapbookingembellishments',
+                        'label':'Scrapbooking Embellishments',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'scrapbookingtools',
+                        'label':'Scrapbooking Tools',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'stampsandinkpads',
+                        'label':'Stamps and Ink Pads',
+                        'children':[]
+                
+                    },{
+                        'value':'stickersandstickermachines',
+                        'label':'Stickers & Sticker Machines',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'storage',
+                        'label':'Storage',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'stencilsandtemplates',
+                        'label':'stencils & Templates',
+                        'children':[]
+                
+                    }, 
+                ]
+        
+            },
+            {
+                'value':'sewing',
+                'label':'Sewing',
+                'children':[
+                    {
+                        'value':'embrioderymachines',
+                        'label':'Embroidery Machines',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'industrialmachines',
+                        'label':'Industrial Mahines',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'quilting',
+                        'label':'Quilting',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'sergerandoverlockmachineaccessories',
+                        'label':'Sergers & Overlock Machines Accessories',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'sewingmachines',
+                        'label':'Sewing Machines',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'sewingnotionsandsupplies',
+                        'label':'Sewing Notions & Supplies',
+                        'children':[]
+                
+                    },{
+                        'value':'sewingpatternsandtemplates',
+                        'label':'sewingpatternsandtemplates',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'sewingprojectkits',
+                        'label':'Sewing Project Kits',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'storageandfurniture',
+                        'label':'Storage and Furniture',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'threadandfloss',
+                        'label':'Thread & Floss',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'trimandembellishments',
+                        'label':'Trim & Embellishments',
+                        'children':[]
+                
+                    }, 
+                ]
+        
+            },
+        ]
 
     },
     {
         'value':'beautyandpersonalcare',
         'label':'Beauty and personal care',
-        'children':[]
+        'children':[
+            {
+                'value':'makeup',
+                'label':'Makeup',
+                'children':[
+                    {
+                        'value':'body',
+                        'label':'Body',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'eyes',
+                        'label':'Eyes',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'face',
+                        'label':'Face',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'lips',
+                        'label':'Lips',
+                        'children':[]
+                
+                    },{
+                        'value':'makeuppalettes',
+                        'label':'Makeup Ralettes',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'sewingprojectkits',
+                        'label':'Sewing Project Kits',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'makeupremover',
+                        'label':'Makeup Remover',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'makeupsets',
+                        'label':'Makeup Sets',
+                        'children':[]
+                
+                    }, 
+                ]
+        
+            },
+            {
+                'value':'skincare',
+                'label':'Skin care',
+                'children':[
+                    {
+                        'value':'body',
+                        'label':'Body',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'eyes',
+                        'label':'Eyes',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'face',
+                        'label':'Face',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'lipcare',
+                        'label':'Lip Care',
+                        'children':[]
+                
+                    },{
+                        'value':'maternity',
+                        'label':'Maternity',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'setsandkits',
+                        'label':'Sets & Kits',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'sunscreensandtrainingproducts',
+                        'label':'Sucscreens & Tanning Products',
+                        'children':[]
+                
+                    },
+                ]
+        
+            },
+            {
+                'value':'haircare',
+                'label':'Hair Care',
+                'children':[
+                    {
+                        'value':'extensionswigsandaccessories',
+                        'label':'Extensions, Wigs & Accessories',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'hairandscalptreatments',
+                        'label':'Hair & Scalp Treatments',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'hairaccessories',
+                        'label':'Hair Accessories',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'haircoloringproducts',
+                        'label':'Hair Coloring Products',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'haircuttingtools',
+                        'label':'Hair Cutting Tools',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'hairlossproducts',
+                        'label':'Hair Loss Products',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'hairmasks',
+                        'label':'Hair Masks',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'hairpermsrelaxersandtexturizers',
+                        'label':'Hair Perms, Relaxers & texturizers',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'hairtreatmentoils',
+                        'label':'Hair Treatment Oils',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'shampooandconditioner',
+                        'label':'Shampoo & Conditioner',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'stylingproducts',
+                        'label':'Styling Products',
+                        'children':[]
+                
+                    },{
+                        'value':'stylingtoolsandappliances',
+                        'label':'Styling Tools & Appliances',
+                        'children':[]
+                
+                    }, 
+                ]
+        
+            },
+            {
+                'value':'fragrance',
+                'label':'Fragrance',
+                'children':[
+                    {
+                        'value':'childrens',
+                        'label':'Children\'s',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'dustingpowders',
+                        'label':'Dusting Powders',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'haircoloringproducts',
+                        'label':'Hair Coloring Products',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'mens',
+                        'label':'Men\'s',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'sets',
+                        'label':'Sets',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'womens',
+                        'label':'Women\'s',
+                        'children':[]
+                
+                    },
+                ]
+        
+            },{
+                'value':'foothandandnailcare',
+                'label':'Foot, Hand & Nail Care',
+                'children':[
+                    
+                    {
+                        'value':'footandhandcare',
+                        'label':'Foot & Hand Care',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'nailartandpolish',
+                        'label':'Nail Art & Polish',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'nailcare',
+                        'label':'Nail Care',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'toolsandaccessories',
+                        'label':'Tools & Accessories',
+                        'children':[]
+                
+                    }, 
+                ]
+        
+            },
+            {
+                'value':'toolsandaccessories',
+                'label':'Tools & Accessories',
+                'children':[
+                    {
+                        'value':'bagsandcases',
+                        'label':'Bags & Cases',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'bathingaccessories',
+                        'label':'Bathing Accessories',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'cottonballsandswabs',
+                        'label':'Cotton Balls & Swabs',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'haircuttingtools',
+                        'label':'Hair Cutting Tools',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'hairstylingtoolsandappliances',
+                        'label':'Hair Styling Tools & Appliances',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'makeupbrushesandtools',
+                        'label':'Makeup Brushes & Tools',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'mirrors',
+                        'label':'Mirrors',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'salonandspaequipment',
+                        'label':'Salon & Spa Equipment',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'shaveandhairremoval',
+                        'label':'Shave & Hair Removal',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'skincaretools',
+                        'label':'Skin Care Tools',
+                        'children':[]
+                
+                    },
+
+                ]
+        
+            },
+            {
+                'value':'shaveandhairremoval',
+                'label':'Shave & Hair Removal',
+                'children':[
+                    {
+                        'value':'mens',
+                        'label':'Men\'s',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'womens',
+                        'label':'Women\'s',
+                        'children':[]
+                
+                    },
+                ]
+        
+            },
+            {
+                'value':'personalcare',
+                'label':'Personal Care',
+                'children':[
+                    {
+                        'value':'bathandbathingaccessories',
+                        'label':'Bath & Bathing Accessories',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'deodorantsandantiperspirants',
+                        'label':'Deodorants & Antiperspirants',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'haircare',
+                        'label':'Hair Care',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'lipcare',
+                        'label':'Lip Care',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'oralcare',
+                        'label':'Oral Care',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'piercingandtattoosupplies',
+                        'label':'Piercing & Tattoo Supplies',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'shaveandhairremoval',
+                        'label':'Shave & Hair Removal',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'skincare',
+                        'label':'Skin Care',
+                        'children':[]
+                
+                    },
+                ]
+        
+            },
+            {
+                'value':'oralcare',
+                'label':'Oral Care',
+                'children':[
+                    {
+                        'value':'breathfresheners',
+                        'label':'Breath Fresheners',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'childrensdentalcare',
+                        'label':'Children\'s Dental Care',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'dentalflossandpicks',
+                        'label':'Dental Floss & Picks',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'denturecare',
+                        'label':'Denture Care',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'drymouthrelief',
+                        'label':'Dry Mouth Relief',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'gumstimulators',
+                        'label':'Gum Stimulators',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'mouthwash',
+                        'label':'Mouthwash',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'oralpainrelief',
+                        'label':'Oral Pain Relief',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'orthodonticsupplies',
+                        'label':'Orthodontic Supplies',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'sensitivitytreatments',
+                        'label':'Sensitivity Treatments',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'teethgrindingguards',
+                        'label':'Teeth Grinding Guards',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'teethwhitening',
+                        'label':'Teeth Whitening',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'tonguecleaners',
+                        'label':'Tongue Cleaners',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'toothbrushesandaccessories',
+                        'label':'Toothbrushes & Accessories',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'toothpaste',
+                        'label':'Toothpaste',
+                        'children':[]
+                
+                    }, 
+                ]
+        
+            },
+        ]
 
     },
     {
         'value':'computers',
-        'label':'Computers',
-        'children':[]
-
+        'label':'Computer',
+        'children':[{
+            'value':'computeraccessoriesandperipherals',
+            'label':'Computer Accessories and Peripherals',
+            'children':[{
+                'value':'audioandvideoaccessories',
+                'label':'Audio and Video Accessories',
+                'children':[]
+            },
+            {
+                'value':'blankmedia',
+                'label':'Blank Media',
+                'children':[]
+            },
+            {
+                'value':'bluelightblockingglasses',
+                'label':'Blue Light Blocking Glasses',
+                'children':[]
+            },
+            {
+                'value':'cablesecuritydevices',
+                'label':'Cable Security Devices',
+                'children':[]
+            },
+            {
+                'value':'cablesandinterconnects',
+                'label':'Cables and Interconnects',
+                'children':[]
+            },
+            {
+                'value':'cleaningandrepair',
+                'label':'Cleaning and Repair',
+                'children':[]
+            },
+            {
+                'value':'computercableadaptors',
+                'label':'Computer Cable Adaptors',
+                'children':[]
+            },
+            {
+                'value':'gamehardware',
+                'label':'Game Hardware',
+                'children':[]
+            },
+            {
+                'value':'inputdevices',
+                'label':'Input Devices',
+                'children':[]
+            },
+            {
+                'value':'keyboard,miceandaccessories',
+                'label':'Keyboard, Mice and Accessories',
+                'children':[]
+            },
+            {
+                'value':'memorycardaccessories',
+                'label':'Memory Card Accessories',
+                'children':[]
+            },
+            {
+                'value':'memorycards',
+                'label':'Memory Cards',
+                'children':[]
+            },
+            {
+                'value':'monitoraccessories',
+                'label':'Monitor Accessories',
+                'children':[]
+            },
+            {
+                'value':'printeraccessories',
+                'label':'Printer Accessories',
+                'children':[]
+            },
+            {
+                'value':'printerinkandtoner',
+                'label':'Printer Ink and Toner',
+                'children':[]
+            },
+            {
+                'value':'scannersaccessories',
+                'label':'Scanners Accessories',
+                'children':[]
+            },
+            {
+                'value':'usbgadgets',
+                'label':'USB Gadgets',
+                'children':[]
+            },
+            {
+                'value':'usbhuns',
+                'label':'USB Hubs',
+                'children':[]
+            },
+            {
+                'value':'uninterruptiblepowersupply',
+                'label':'Uninterruotible Power Supply(UPS)',
+                'children':[]
+            },
+            {
+                'value':'videoprojectoraccessories',
+                'label':'Video Projector Accessories',
+                'children':[]
+            }
+            ]
+        },
+        {
+            'value':'computercomponents',
+            'label':'Computer Components',
+            'children':[{
+                'value':'desktopbearbones',
+                'label':'Desktop Bearbones',
+                'children':[]
+            },
+            {
+                'value':'externalcomponents',
+                'label':'external Components',
+                'children':[]
+            },
+            {
+                'value':'internalcomponents',
+                'label':'Internal Components',
+                'children':[]
+            },
+            {
+                'value':'laptopreplacementparts',
+                'label':'Laptop Replacement Parts',
+                'children':[]
+            },
+            {
+                'value':'singleboardcomputers',
+                'label':'Single Board Computers',
+                'children':[]
+            },
+            ]
+        },
+        {
+            'value':'computersandtablets',
+            'label':'Computers and Tablets',
+            'children':[{
+                'value':'desktops',
+                'label':'Desktops',
+                'children':[]
+            },
+            {
+                'value':'laptops',
+                'label':'Laptops',
+                'children':[]
+            },
+            {
+                'value':'tablets',
+                'label':'Tablets',
+                'children':[]
+            },
+            ]
+        },
+        {
+            'value':'datastorage',
+            'label':'Data Storage',
+            'children':[{
+                'value':'externalharddrives',
+                'label':'External Hard Drives',
+                'children':[]
+            },
+            {
+                'value':'externalsolidstatedrives',
+                'label':'External Solid State Drives',
+                'children':[]
+            },
+            {
+                'value':'externalzipdrives',
+                'label':'External Zip Drives',
+                'children':[]
+            },
+            {
+                'value':'floopyandtapedrives',
+                'label':'Floopy and Tape Drives',
+                'children':[]
+            },
+            {
+                'value':'internalsolidstatedrives',
+                'label':'Internal Solid State Drives',
+                'children':[]
+            },
+            {
+                'value':'networkattachedstorage',
+                'label':'Network Attached Storage',
+                'children':[]
+            },
+            {
+                'value':'tapelibraries',
+                'label':'Tape Libraries',
+                'children':[]
+            },
+            {
+                'value':'usbflashdrives',
+                'label':'USB Flash Drives',
+                'children':[]
+            }
+            ]
+        },
+        {
+            'value':'externalcomponents',
+            'label':'External Components',
+            'children':[
+                {
+                    'value':'computercases',
+                    'label':'Computer Cases',
+                    'children':[]
+                },
+                {
+                    'value':'externalharddrives',
+                    'label':'External Hard Drives',
+                    'children':[]
+                },
+                {
+                    'value':'Externalsolidstatedrives',
+                    'label':'External Solid State Drives',
+                    'children':[]
+                },
+                {
+                    'value':'externalsoundcards',
+                    'label':'External Sound Cards',
+                    'children':[]
+                },
+                {
+                    'value':'externaltvtuners',
+                    'label':'External TV Tuners',
+                    'children':[]
+                },
+                {
+                    'value':'kvmswitches',
+                    'label':'KVM Switches',
+                    'children':[]
+                },
+                {
+                    'value':'opticaldrives',
+                    'label':'Optical Drives',
+                    'children':[]
+                },]
+        },
+        {
+            'value':'laptopaccessories',
+            'label':'Laptop Accessories',
+            'children':[{
+                'value':'bags,casesandsleeves',
+                'label':'Bags, Cases and Sleeves',
+                'children':[]
+            },
+            {
+                'value':'batteries',
+                'label':'Batteries',
+                'children':[]
+            },
+            {
+                'value':'chargersandadapters',
+                'label':'Chargers and Adapters',
+                'children':[]
+            },
+            {
+                'value':'coolingpadsandexternalfans',
+                'label':'Cooling Pads and External Fans',
+                'children':[]
+            },
+            {
+                'value':'dockingstation',
+                'label':'Docking Station',
+                'children':[]
+            },
+            {
+                'value':'lapdesks',
+                'label':'Lapdesks',
+                'children':[]
+            },
+            {
+                'value':'mount',
+                'label':'Mount',
+                'children':[]
+            },
+            {
+                'value':'replacementscreens',
+                'label':'Replacement Screens',
+                'children':[]
+            },
+            {
+                'value':'screenfilters',
+                'label':'Screen Filters',
+                'children':[]
+            },
+            {
+                'value':'screen protectors',
+                'label':'Screen Protectors',
+                'children':[]
+            },
+            {
+                'value':'securitylocks',
+                'label':'Security Locks',
+                'children':[]
+            },
+            {
+                'value':'skinsanddecals',
+                'label':'Skins and Decals',
+                'children':[]
+            },
+            {
+                'value':'stands',
+                'label':'Stands',
+                'children':[]
+            },
+            ]
+        },
+        {
+            'value':'monitors',
+            'label':'Monitors',
+            'children':[]
+        },
+        {
+            'value':'networkingproducts',
+            'label':'Networking Products',
+            'children':[{
+                'value':'deviceservices',
+                'label':'Device Services',
+                'children':[]
+            },
+            {
+                'value':'hubs',
+                'label':'Hubs',
+                'children':[]
+            },
+            {
+                'value':'modenroutercombos',
+                'label':'Modern Router Combos',
+                'children':[]
+            },
+            {
+                'value':'modems',
+                'label':'Modems',
+                'children':[]
+            },
+            {
+                'value':'networkadaptors',
+                'label':'Network Adaptors',
+                'children':[]
+            },
+            {
+                'value':'networkantennas',
+                'label':'Network Antennas',
+                'children':[]
+            },
+            {
+                'value':'networkattachedstorage',
+                'label':'Network Attached Storage',
+                'children':[]
+            },
+            {
+                'value':'networktransceivers',
+                'label':'Network Transceivers',
+                'children':[]
+            },
+            {
+                'value':'printservers',
+                'label':'Print Servers',
+                'children':[]
+            },
+            {
+                'value':'repeaters',
+                'label':'Repeaters',
+                'children':[]
+            },
+            {
+                'value':'routers',
+                'label':'Routers',
+                'children':[]
+            },
+            {
+                'value':'streamingmediaplayers',
+                'label':'Streaming Media Players',
+                'children':[]
+            },
+            {
+                'value':'switches',
+                'label':'Switches',
+                'children':[]
+            },
+            {
+                'value':'wholehomemeshandmeshwifisystems',
+                'label':'Whole Home Mesh and Mesh Wi-Fi Systems',
+                'children':[]
+            },
+            {
+                'value':'wirelessaccesspoints',
+                'label':'Wireless Access Points',
+                'children':[]
+            },
+            ]
+        },
+        {
+            'value':'powertripsandsurgeprotectors',
+            'label':'Power Strips and Surge Protectors',
+            'children':[
+                {
+                    'value':'powerstrips',
+                    'label':'Powe Strips',
+                    'children':[]
+                },
+                {
+                    'value':'surgeprotectors',
+                    'label':'Surge Protectors',
+                    'children':[]
+                },]
+        },
+        {
+            'value':'printers',
+            'label':'Printer',
+            'children':[
+                {
+                    'value':'dotmatrixprinters',
+                    'label':'Dot Matrix Printers',
+                    'children':[]
+                },
+                {
+                    'value':'inkjetprinter',
+                    'label':'Inkjet Printers',
+                    'children':[]
+                },
+                {
+                    'value':'labelprinters',
+                    'label':'Label Printers',
+                    'children':[]
+                },
+                {
+                    'value':'laserprinters',
+                    'label':'Laser Printers',
+                    'children':[]
+                },
+                {
+                    'value':'photoprinters',
+                    'label':'Photo Printers',
+                    'children':[]
+                },
+                {
+                    'value':'wideformatandplotterprinters',
+                    'label':'Wide Format and Plotter Printers',
+                    'children':[]
+                },]
+        },
+        {
+            'value':'Scanners',
+            'label':'Scanners',
+            'children':[
+                {
+                    'value':'buisnesscardscanners',
+                    'label':'Buisness Card Scanners',
+                    'children':[]
+                },
+                {
+                    'value':'documentscanners',
+                    'label':'Document Scanners',
+                    'children':[]
+                },
+                {
+                    'value':'flatbedandphotoscanners',
+                    'label':'Flatbed and Photo Scanners',
+                    'children':[]
+                },
+                {
+                    'value':'slideandnegativescanners',
+                    'label':'Slide and Negative Scanners',
+                    'children':[]
+                },]
+        },
+        {
+            'value':'servers',
+            'label':'Servers',
+            'children':[]
+        },
+        {
+            'value':'tabletacessories',
+            'label':'Tablet Accessories',
+            'children':[
+                {
+                    'value':'bags,casesandsleeves',
+                    'label':'Bags, Cases and Sleeves',
+                    'children':[]
+                },
+                {
+                    'value':'bluelightblockingglasses',
+                    'label':'Bluelight Blocking Glasses',
+                    'children':[]
+                },
+                {
+                    'value':'chargersandadapters',
+                    'label':'Chargers and Adapters',
+                    'children':[]
+                },
+                {
+                    'value':'keyboardcases',
+                    'label':'Keyboard Cases',
+                    'children':[]
+                },
+                {
+                    'value':'Keyboards',
+                    'label':'Keyboards',
+                    'children':[]
+                },
+                {
+                    'value':'mounts',
+                    'label':'Mounts',
+                    'children':[]
+                },
+                {
+                    'value':'reapirkits',
+                    'label':'Repair Kits',
+                    'children':[]
+                },
+                {
+                    'value':'screenprotectors',
+                    'label':'Screen Protectors',
+                    'children':[]
+                },
+                {
+                    'value':'stands',
+                    'label':'Stands',
+                    'children':[]
+                },
+                {
+                    'value':'styluses',
+                    'label':'Styluses',
+                    'children':[]
+                },
+                ]
+        },
+        {
+            'value':'tabletreplacementparts',
+            'label':'Tablet Replacement Parts',
+            'children':[
+                {
+                    'value':'digitizers',
+                    'label':'Digitizers',
+                    'children':[]
+                },
+                {
+                    'value':'flexcables',
+                    'label':'FlexCables',
+                    'children':[]
+                },
+                {
+                    'value':'lcddisplays',
+                    'label':'LCD Displays',
+                    'children':[]
+                },
+                {
+                    'value':'Screens',
+                    'label':'Screens',
+                    'children':[]
+                },]
+        },
+        {
+            'value':'warrantiesandservices',
+            'label':'Warranties and Services',
+            'children':[
+                {
+                    'value':'computerequipmentwarranties',
+                    'label':'Computer Equipment Warranties',
+                    'children':[]
+                },
+                {
+                    'value':'serviceplans',
+                    'label':'Service Plans',
+                    'children':[]
+                },]
+        },
+        ]
     },
+    
     {
         'value':'electronics',
         'label':'Electronics',
-        'children':[]
-
+        'children':[
+            {
+                'value':'accessoriesandsupplies',
+                'label':'Accessories and Supplies',
+                'children':[
+                    {
+                        'value':'audioandvideoaccessories',
+                        'label':'Audio and Video Accesssories',
+                        'children':[]
+                    },
+                    {
+                        'value':'cameraandphotoaccessories',
+                        'label':'Camera and Photo Accessories',
+                        'children':[]
+                    },
+                    {
+                        'value':'cellphoneaccessories',
+                        'label':'Cell Phone Accessories',
+                        'children':[]
+                    },
+                    {
+                        'value':'computeraccessories',
+                        'label':'Computer Accessories',
+                        'children':[]
+                    },
+                    {
+                        'value':'gpssystemaccessories',
+                        'label':'GPS System Accessories',
+                        'children':[]
+                    },
+                    {
+                        'value':'homeaudioaccessories',
+                        'label':'Home Audio Accessories',
+                        'children':[]
+                    },
+                    {
+                        'value':'officeelectronicsaccessories',
+                        'label':'Office Electronics Accessories',
+                        'children':[]
+                    },
+                    {
+                        'value':'vehicleelectronicsaccessories',
+                        'label':'Vehicle Electronics Accessories',
+                        'children':[]
+                    },
+                    {
+                        'value':'batteries,chargersandaccessories',
+                        'label':'Batteries, Chargers and Accessories',
+                        'children':[]
+                    },
+                    {
+                        'value':'powerstripsandsurgeprotectors',
+                        'label':'Power Strips and Surge Protectors',
+                        'children':[]
+                    },
+                    {
+                        'value':'telephoneaccessories',
+                        'label':'Telephone Accessories',
+                        'children':[]
+                    },
+                    {
+                        'value':'blankmedia',
+                        'label':'Blank Media',
+                        'children':[]
+                    },
+                    {
+                        'value':'cables',
+                        'label':'Cables',
+                        'children':[]
+                    },
+                    {
+                        'value':'mounts',
+                        'label':'Mounts',
+                        'children':[]
+                    },
+                    {
+                        'value':'microphones',
+                        'label':'Microphones',
+                        'children':[]
+                    },
+                    {
+                        'value':'powerprotection',
+                        'label':'Power Protection',
+                        'children':[]
+                    },
+                    {
+                        'value':'cordmanagement',
+                        'label':'Cord Management',
+                        'children':[]
+                    },
+                    {
+                        'value':'electronicorganizers',
+                        'label':'Electronic Organizers',
+                        'children':[]
+                    },
+                 ]
+            },
+            {
+                'value':'cameraandphoto',
+                'label':'Camera and Photo',
+                'children':[
+                    {
+                    'value':'accessories',
+                    'label':'Accessories',
+                    'children':[]
+                },
+                {
+                    'value':'bagsandcases',
+                    'label':'Bags and Cases',
+                    'children':[]
+                },
+                {
+                    'value':'binocularsandscopes',
+                    'label':'Binoculars and Scopes',
+                    'children':[]
+                },
+                {
+                    'value':'digitalcameras',
+                    'label':'Digital Cameras',
+                    'children':[]
+                },
+                {
+                    'value':'filmphotography',
+                    'label':'Flim Photography',
+                    'children':[]
+                },
+                {
+                    'value':'flashes',
+                    'label':'Flashes',
+                    'children':[]
+                },
+                {
+                    'value':'lenses',
+                    'label':'Lenses',
+                    'children':[]
+                },
+                {
+                    'value':'lightingandstudio',
+                    'label':'Lighting and Studio',
+                    'children':[]
+                },
+                {
+                    'value':'video',
+                    'label':'Video',
+                    'children':[]
+                },
+                {
+                    'value':'printersandscanners',
+                    'label':'Printers and Scanners',
+                    'children':[]
+                },
+                {
+                    'value':'tripodsandmonopods',
+                    'label':'Tripods and Monopads',
+                    'children':[]
+                },
+                {
+                    'value':'underwaterphotography',
+                    'label':'Underwater Photography',
+                    'children':[]
+                },
+                {
+                    'value':'videosurveillance',
+                    'label':'Video Surveillance',
+                    'children':[]
+                }
+            ]
+            },
+            {
+                'value':'carsndvehicleelctronics',
+                'label':'Cars and Vehicle Electronics',
+                'children':[
+                    {
+                        'value':'aviationelectronics',
+                        'label':'Aviation Electronics',
+                        'children':[]
+                    },
+                    {
+                        'value':'carelectronics',
+                        'label':'Car Electronics',
+                        'children':[]
+                    },
+                    {
+                        'value':'marineelectronics',
+                        'label':'Marine Electronics',
+                        'children':[]
+                    },
+                    {
+                        'value':'powersportselectronics',
+                        'label':'Powersports Electronics',
+                        'children':[]
+                    },
+                    {
+                        'value':'vehicleelectronicsaccessories',
+                        'label':'Vehicle Electronic Accessories',
+                        'children':[]
+                    },
+                    {
+                        'value':'vehiclegps',
+                        'label':'Vehicle GPS',
+                        'children':[]
+                    }]
+            },
+            {
+                'value':'cellphonesandaccessories',
+                'label':'Cell Phone and Accessories',
+                'children':[
+                    {
+                        'value':'carriecellphones',
+                    'label':'Carrier Cell Phones',
+                    'children':[]
+                },
+                {
+                    'value':'unlockedcellphones',
+                    'label':'Unlocked Cell Phones',
+                    'children':[]
+                },
+                {
+                    'value':'mobilebroadband',
+                    'label':'Mobile Broadband',
+                    'children':[]
+                },
+                {
+                    'value':'accessories',
+                    'label':'Accessories',
+                    'children':[]
+                },
+                {
+                    'value':'cases,holstersandclips',
+                    'label':'Cases, Holdters and Clips',
+                    'children':[]
+                }
+                ]
+            },
+            {
+                'value':'computerandaccesorries',
+                'label':'Computer and Accessories',
+                'children':[{
+                    'value':'computeraccessoriesandperipherals',
+                    'label':'Computer Accessories and Peripherals',
+                    'children':[]
+                },
+                {
+                    'value':'computercomponents',
+                    'label':'Computer Components',
+                    'children':[]
+                },
+                {
+                    'value':'computersandtablets',
+                    'label':'Computers and Tablets',
+                    'children':[]
+                },
+                {
+                    'value':'datastorage',
+                    'label':'Data Storage',
+                    'children':[]
+                },
+                {
+                    'value':'laptopaccessories',
+                    'label':'Laptop Accessories',
+                    'children':[]
+                },
+                {
+                    'value':'monitors',
+                    'label':'Monitors',
+                    'children':[]
+                },
+                {
+                    'value':'networkingproducts',
+                    'label':'Networking Products',
+                    'children':[]
+                },
+                {
+                    'value':'powerstripsandsurgeprotectors',
+                    'label':'Power Strips and Surges Protectors',
+                    'children':[]
+                },
+                {
+                    'value':'printers',
+                    'label':'Printers',
+                    'children':[]
+                },
+                {
+                    'value':'scanners',
+                    'label':'Scanners',
+                    'children':[]
+                },
+                {
+                    'value':'servers',
+                    'label':'Servers',
+                    'children':[]
+                },
+                {
+                    'value':'tabletsaccessories',
+                    'label':'Tablets Accessories',
+                    'children':[]
+                },
+                {
+                    'value':'tabletreplacementparts',
+                    'label':'Tablet Replacement Parts',
+                    'children':[]
+                },
+                {
+                    'value':'warrantiesandservices',
+                    'label':'Warranties and Services',
+                    'children':[]
+                },
+                ]
+            },
+            {
+                'value':'gpsandnavigation',
+                'label':'GPS and Navigation',
+                'children':[{
+                    'value':'bloatinggpsunitsandcharplotters',
+                    'label':'Bloating GPS Units and Charplotters',
+                    'children':[]
+                },
+                {
+                    'value':'gpssystemaccessories',
+                    'label':'GPS System Accessories',
+                    'children':[]
+                },
+                {
+                    'value':'gpstrackers',
+                    'label':'GPS Trackers',
+                    'children':[]
+                },
+                {
+                    'value':'itemfinders',
+                    'label':'Item Finders',
+                    'children':[]
+                },
+                {
+                    'value':'sportsandhandheldgps',
+                    'label':'Sports and Handheld GPS',
+                    'children':[]
+                },
+                {
+                    'value':'vehiclegps',
+                    'label':'Vehicle GPS',
+                    'children':[]
+                },
+                ]
+            },
+            {
+                'value':'headphones',
+                'label':'Headphones',
+                'children':[{
+                    'value':'earbudheadphones',
+                    'label':'Earbud Headphones',
+                    'children':[]
+                },
+                {
+                    'value':'overearheadphones',
+                    'label':'Over-Ear Headphones',
+                    'children':[]
+                },
+                {
+                    'value':'onearheadphones',
+                    'label':'On-Ear Headphones',
+                    'children':[]
+                },
+                ]
+            },
+            {
+                'value':'homeaudio',
+                'label':'Home Audio',
+                'children':[{
+                    'value':'hometheater',
+                    'label':'Home Theater',
+                    'children':[]
+                },
+                {
+                    'value':'speakers',
+                    'label':'Speakers',
+                    'children':[]
+                },
+                {
+                    'value':'wirelessandstreamingaudio',
+                    'label':'Wireless and Streming Audio',
+                    'children':[]
+                },
+                {
+                    'value':'stereosystemcomponents',
+                    'label':'Stereo System Components',
+                    'children':[]
+                },
+                {
+                    'value':'turntablesandaccessories',
+                    'label':'Turntables and Accessories',
+                    'children':[]
+                },
+                {
+                    'value':'compactradioandstereos',
+                    'label':'Compact Radio and Stereos',
+                    'children':[]
+                },
+                {
+                    'value':'headphones',
+                    'label':'Headphones',
+                    'children':[]
+                },
+                {
+                    'value':'homeaudioaccessories',
+                    'label':'Home Audio Accessories',
+                    'children':[]
+                },
+                ]
+            },
+            {
+                'value':'officeelectronics',
+                'label':'Office Electronics',
+                'children':[{
+                    'value':'cableorganizerbagsandcases',
+                    'label':'Cable Organizer Bags and Cases',
+                    'children':[]
+                },
+                {
+                    'value':'calculators',
+                    'label':'Calculators',
+                    'children':[]
+                },
+                {
+                    'value':'copiers',
+                    'label':'Copiers',
+                    'children':[]
+                },
+                {
+                    'value':'documentcameras',
+                    'label':'Document Cameras',
+                    'children':[]
+                },
+                {
+                    'value':'electronicdictionaries,thesauriandtranlators',
+                    'label':'Electronic Dictionaries, Thesauri and Translators,',
+                    'children':[]
+                },
+                {
+                    'value':'faxmachines',
+                    'label':'Fax Machines',
+                    'children':[]
+                },
+                {
+                    'value':'otherofficeequipment',
+                    'label':'Other Office Equipment',
+                    'children':[]
+                },
+                {
+                    'value':'pdasandhandhelds',
+                    'label':'PDAs and Handhelds',
+                    'children':[]
+                },
+                {
+                    'value':'pointofsaleequipments',
+                    'label':'Point-of-Sale(POS) Equipment',
+                    'children':[]
+                },
+                {
+                    'value':'presentationproducts',
+                    'label':'Presentation Products',
+                    'children':[]
+                },
+                {
+                    'value':'printersandaccessories',
+                    'label':'Printers and Accessories',
+                    'children':[]
+                },
+                {
+                    'value':'scannersandaccessories',
+                    'label':'Scanners and Accessoriees',
+                    'children':[]
+                },
+                {
+                    'value':'telephonesandaccesories',
+                    'label':'Telephones and Accessories',
+                    'children':[]
+                },
+                {
+                    'value':'videoprojectorsandaccessories',
+                    'label':'Video Projectors and Accessories',
+                    'children':[]
+                },
+                ]
+            },
+            {
+                'value':'portableaudioandvideo',
+                'label':'Portable Audio and Video',
+                'children':[{
+                    'value':'boomboxes',
+                    'label':'Boomboxes',
+                    'children':[]
+                },
+                {
+                    'value':'cbandtwowayradio',
+                    'label':'CB and Two-Way Radio',
+                    'children':[]
+                },
+                {
+                    'value':'cassetteplayersandrecorders',
+                    'label':'Cassette Players and Recorders',
+                    'children':[]
+                },
+                {
+                    'value':'digitalvidoerecorders',
+                    'label':'Digital Video Recorders',
+                    'children':[]
+                },
+                {
+                    'value':'mp3andmp4players',
+                    'label':'Mp3 and Mp4 Players',
+                    'children':[]
+                },
+                {
+                    'value':'mp3andmp4playersaccessories',
+                    'label':'Mp3 and Mp4 Players Accessories',
+                    'children':[]
+                },
+                {
+                    'value':'microcassetterecorders',
+                    'label':'Microcassette Recorders',
+                    'children':[]
+                },
+                {
+                    'value':'minidiscplayers',
+                    'label':'Minidisc Players',
+                    'children':[]
+                },
+                {
+                    'value':'portableandhandheldtvs',
+                    'label':'Portable and Handheld TVs',
+                    'children':[]
+                },
+                {
+                    'value':'portablecdplayers',
+                    'label':'Portable CD Players',
+                    'children':[]
+                },
+                {
+                    'value':'portabledvdplayers',
+                    'label':'Portable DVD Players',
+                    'children':[]
+                },
+                {
+                    'value':'portablespeakersanddocks',
+                    'label':'Portable Speakers and Docks',
+                    'children':[]
+                },
+                {
+                    'value':'radios',
+                    'label':'Radios',
+                    'children':[]
+                }
+                ]
+            },
+            {
+                'value':'securiyandsurveillance',
+                'label':'Security and Surveillance',
+                'children':[{
+                    'value':'accessories',
+                    'label':'Accessories',
+                    'children':[]
+                },
+                {
+                    'value':'biometrics',
+                    'label':'Biometrics',
+                    'children':[]
+                },
+                {
+                    'value':'homesecuritysystem',
+                    'label':'Home Security System',
+                    'children':[]
+                },
+                {
+                    'value':'hornsandsirens',
+                    'label':'Horns And Sirens',
+                    'children':[]
+                },
+                {
+                    'value':'motiondetectors',
+                    'label':'Motion Detectors',
+                    'children':[]
+                },
+                {
+                    'value':'radiocanners',
+                    'label':'Radio Scanners',
+                    'children':[]
+                },
+                {
+                    'value':'surveillancecameras',
+                    'label':'Surveillance Cameras',
+                    'children':[]
+                },
+                {
+                    'value':'Surveillancevidoeequipment',
+                    'label':'Surveillance Video Equipment',
+                    'children':[]
+                },
+                ]
+            },
+            {
+                'value':'serviceplans',
+                'label':'Service Plans',
+                'children':[{
+                    'value':'computers',
+                    'label':'Computers',
+                    'children':[]
+                },
+                ]
+            },
+            {
+                'value':'televisionandvideo',
+                'label':'Television and Video',
+                'children':[{
+                    'value':'analogtodigitalconverter',
+                    'label':'Analog-to-Digital(DTV) Converter',
+                    'children':[]
+                },
+                {
+                    'value':'avreceiverandamplifiers',
+                    'label':'AV Receiver and Amplifiers',
+                    'children':[]
+                },
+                {
+                    'value':'blurayplayersandrecorders',
+                    'label':'Blu-ray Players and Recorders',
+                    'children':[]
+                },
+                {
+                    'value':'dvdplayersandrecorders',
+                    'label':'DVD Players and Recorders',
+                    'children':[]
+                },
+                {
+                    'value':'dvdvcrcombos',
+                    'label':'DVD-VCR Combos',
+                    'children':[]
+                },
+                {
+                    'value':'hddvdplayers',
+                    'label':'HD DVD Players',
+                    'children':[]
+                },
+                {
+                    'value':'hometheatersystem',
+                    'label':'Home Theater Systems',
+                    'children':[]
+                },
+                {
+                    'value':'projectionscreens',
+                    'label':'Projection Screens',
+                    'children':[]
+                },
+                {
+                    'value':'projectors',
+                    'label':'Projectors',
+                    'children':[]
+                },
+                {
+                    'value':'satellitetelevision',
+                    'label':'Satellite Television',
+                    'children':[]
+                },
+                {
+                    'value':'streamingmediaplayers',
+                    'label':'Streaming Media Players',
+                    'children':[]
+                },
+                {
+                    'value':'televisionaccessories',
+                    'label':'Television Accessories',
+                    'children':[]
+                },
+                {
+                    'value':'tvdvdcombos',
+                    'label':'TV-DVD Combos',
+                    'children':[]
+                },
+                {
+                    'value':'vcrs',
+                    'label':'VCRs',
+                    'children':[]
+                },
+                {
+                    'value':'videoglasses',
+                    'label':'Video Glasses',
+                    'children':[]
+                }
+                ]
+            },
+            {
+                'value':'videogameconsoleandaccessories',
+                'label':'Video Games Cosole and Accessories',
+                'children':[{
+                    'value':'playstation4',
+                    'label':'PlayStation 4',
+                    'children':[]
+                },
+                {
+                    'value':'playstation3',
+                    'label':'PlayStation 3',
+                    'children':[]
+                },
+                {
+                    'value':'xboxone',
+                    'label':'Xbox One',
+                    'children':[]
+                },
+                {
+                    'value':'xbox360',
+                    'label':'Xbox 360',
+                    'children':[]
+                },
+                {
+                    'value':'wiiu',
+                    'label':'Wii U',
+                    'children':[]
+                },
+                {
+                    'value':'wii',
+                    'label':'Wii',
+                    'children':[]
+                },
+                {
+                    'value':'nintendo3ds',
+                    'label':'Nintendo 3DS',
+                    'children':[]
+                },
+                {
+                    'value':'nintendods',
+                    'label':'Nintendo DS',
+                    'children':[]
+                },
+                {
+                    'value':'playstationvita',
+                    'label':'PlayStation Vita',
+                    'children':[]
+                },
+                {
+                    'value':'sonypsp',
+                    'label':'Sony PSP',
+                    'children':[]
+                },
+            ]
+            },
+            {
+                'value':'videoprojectors',
+                'label':'Video Projectors',
+                'children':[]
+            },
+            {
+                'value':'wearabletechnology',
+                'label':'Wearable Technology',
+                'children':[{
+                    'value':'bodymountedcameras',
+                    'label':'Body Mounted Cameras',
+                    'children':[]
+                },
+                {
+                    'value':'clips,armsandwristbands',
+                    'label':'Clips, Arm and Wristbands',
+                    'children':[]
+                },
+                {
+                    'value':'glasses',
+                    'label':'Glasses',
+                    'children':[]
+                },
+                {
+                    'value':'rings',
+                    'label':'Rings',
+                    'children':[]
+                },
+                {
+                    'value':'smartwatches',
+                    'label':'Smart Watches',
+                    'children':[]
+                },
+                {
+                    'value':'accessories',
+                    'label':'Accessories',
+                    'children':[]
+                },
+                {
+                    'value':'virtualreality',
+                    'label':'Virtual Reality',
+                    'children':[]
+                }
+                ]
+            },
+            {
+                'value':'ebookreadersandaccessories',
+                'label':'Ebook Readers and Accessories',
+                'children':[{
+                    'value':'ebookreader',
+                    'label':'eBook Readers',
+                    'children':[]
+                },
+                {
+                    'value':'bundles',
+                    'label':'Bundles',
+                    'children':[]
+                },
+                {
+                    'value':'covers',
+                    'label':'Covers',
+                    'children':[]
+                },
+                {
+                    'value':'poweradapters',
+                    'label':'Power Adapters',
+                    'children':[]
+                },
+                {
+                    'value':'powercables',
+                    'label':'Power Cables',
+                    'children':[]
+                },
+                {
+                    'value':'readinglights',
+                    'label':'Reading Lights',
+                    'children':[]
+                },
+                {
+                    'value':'screenprotectors',
+                    'label':'Screen Protectors',
+                    'children':[]
+                },
+                {
+                    'value':'skins',
+                    'label':'Skins',
+                    'children':[]
+                },
+                {
+                    'value':'sleeves',
+                    'label':'Sleeves',
+                    'children':[]
+                },
+                {
+                    'value':'stands',
+                    'label':'Stands',
+                    'children':[]
+                },
+                ]
+            },
+        ]
     },
     {
         'value':'womensfashion',
-        'label':'Women\'s fashion',
-        'children':[]
-
-    },
-    {
-        'value':'mensfashion',
-        'label':'Men\'s Fashion',
+        'label':'Women\'s Fashion',
         'children':[,
             {
                 'value':'clothing',
                 'label':'Clothing',
                 'children':[
                     {
-                        'value':'active',
-                        'label':'Active',
-                        'children':[]
-                    },
-                    {
-                        'value':'clotingsets',
-                        'label':'Clothing Sets',
-                        'children':[]
-                    },
-                    {
                         'value':'dresses',
                         'label':'Dresses',
                         'children':[]
                     },
                     {
-                        'value':'fashionhoodiesandsweatshirts',
-                        'label':'Fashion Hoodies and Sweatshirts',
-                        'children':[]
-                    },
-                    {
-                        'value':'jacketsandcoats',
-                        'label':'Jackets and Coats',
-                        'children':[]
-                    },
-                    {
-                        'value':'jeans',
-                        'label':'Jeans',
-                        'children':[]
-                    },
-                    {
-                        'value':'jumpsuitsandrompers',
-                        'label':'Jumpsuits and Rompers',
-                        'children':[]
-                    },
-                    {
-                        'value':'leggings',
-                        'label':'Leggings',
-                        'children':[]
-                    },
-                    {
-                        'value':'overalls',
-                        'label':'Overalls',
-                        'children':[]
-                    },
-                    {
-                        'value':'pantsandcapris',
-                        'label':'Pants and Capris',
-                        'children':[]
-                    },
-                    {
-                        'value':'shorts',
-                        'label':'Shorts',
-                        'children':[]
-                    },
-                    {
-                        'value':'skirtsandskorts',
-                        'label':'Skirts and Skorts',
-                        'children':[]
-                    },
-                    {
-                        'value':'sleepwearandrobes',
-                        'label':'Sleepwear anf Robes',
-                        'children':[]
-                    },
-                    {
-                        'value':'socksandtights',
-                        'label':'Socks and Tights',
+                        'value':'tops,teesandblouses',
+                        'label':'Tops, Tees and Blouses',
                         'children':[]
                     },
                     {
@@ -5153,20 +7958,70 @@ export const AMAZON_CATEGORIES = [
                         'children':[]
                     },
                     {
-                        'value':'swim',
-                        'label':'Swim',
+                        'value':'fashionhoodiesandsweaarshirts',
+                        'label':'Fashion Hoodies and Sweatshirts',
                         'children':[]
                     },
                     {
-                        'value':'topsteesandblouses',
-                        'label':'Tops, Tees and Blouses',
+                        'value':'jeans',
+                        'label':'Jeans',
                         'children':[]
                     },
                     {
-                        'value':'underwear',
-                        'label':'Underwear',
+                        'value':'pants',
+                        'label':'Pants',
                         'children':[]
-                    }
+                    },
+                    {
+                        'value':'skirts',
+                        'label':'Skirts',
+                        'children':[]
+                    },
+                    {
+                        'value':'shorts',
+                        'label':'Shorts',
+                        'children':[]
+                    },
+                    {
+                        'value':'legging',
+                        'label':'Legging',
+                        'children':[]
+                    },
+                    {
+                        'value':'active',
+                        'label':'Active',
+                        'children':[]
+                    },
+                    {
+                        'value':'swimsuitsandcoverups',
+                        'label':'Swimsuits and Cover Ups',
+                        'children':[]
+                    },
+                    {
+                        'value':'lingerie,sleepandlounge',
+                        'label':'Lingerie, Sleep and Lounge',
+                        'children':[]
+                    },
+                    {
+                        'value':'jumpsuits,romperandoveralls',
+                        'label':'Jumpsuits, Rompers and Overalls',
+                        'children':[]
+                    },
+                    {
+                        'value':'coats,jacketsandvests',
+                        'label':'Coat, Jackets and Vests',
+                        'children':[]
+                    },
+                    {
+                        'value':'suitingandblazers',
+                        'label':'Suiting and Blazers',
+                        'children':[]
+                    },
+                    {
+                        'value':'socksandhosiery',
+                        'label':'Socks and Hosiery',
+                        'children':[]
+                    },
                 ]
             },
             {
@@ -5184,8 +8039,8 @@ export const AMAZON_CATEGORIES = [
                         'children':[]
                     },
                     {
-                        'value':'clogsandmules',
-                        'label':'Clogs and Mules',
+                        'value':'fashionsneakers',
+                        'label':'Fashion Sneakers',
                         'children':[]
                     },
                     {
@@ -5194,8 +8049,13 @@ export const AMAZON_CATEGORIES = [
                         'children':[]
                     },
                     {
-                        'value':'loafers',
-                        'label':'Loafers',
+                        'value':'loagersandslipons',
+                        'label':'Loafers and Slip-Ons',
+                        'children':[]
+                    },
+                    {
+                        'value':'mulesandclogs',
+                        'label':'Mules and Clogs',
                         'children':[]
                     },
                     {
@@ -5209,6 +8069,11 @@ export const AMAZON_CATEGORIES = [
                         'children':[]
                     },
                     {
+                        'value':'pumps',
+                        'label':'Pumps',
+                        'children':[]
+                    },
+                    {
                         'value':'sandals',
                         'label':'Sandals',
                         'children':[]
@@ -5219,8 +8084,8 @@ export const AMAZON_CATEGORIES = [
                         'children':[]
                     },
                     {
-                        'value':'sneakers',
-                        'label':'Sneakers',
+                        'value':'workandsafety',
+                        'label':'Work and Safety',
                         'children':[]
                     }
                 ]
@@ -5250,13 +8115,314 @@ export const AMAZON_CATEGORIES = [
                         'children':[]
                     },
                     {
-                        'value':'necklacesandpendants',
-                        'label':'Necklaces and Pendants',
+                        'value':'jewelrysets',
+                        'label':'Jewelry Sets',
+                        'children':[]
+                    },
+                    {
+                        'value':'necklaces',
+                        'label':'Necklaces',
                         'children':[]
                     },
                     {
                         'value':'rings',
                         'label':'Rings',
+                        'children':[]
+                    },
+                    {
+                        'value':'weddingandengagement',
+                        'label':'Wedding and Engagement',
+                        'children':[]
+                    },
+                    {
+                        'value':'smartjewelry',
+                        'label':'Smart Jewelry',
+                        'children':[]
+                    },
+                    {
+                        'value':'bodyjewelry',
+                        'label':'Body Jewelry',
+                        'children':[]
+                    },
+                ]
+            },
+            {
+                'value':'watches',
+                'label':'Wathches',
+                'children':[
+                    {
+                        'value':'wristwatches',
+                        'label':'Wrist Watches',
+                        'children':[]
+                    },
+                    {
+                        'value':'watchbands',
+                        'label':'Watch Bands',
+                        'children':[]
+                    },
+                    {
+                        'value':'pocketwatches',
+                        'label':'Pocket Watches',
+                        'children':[]
+                    },
+                    {
+                        'value':'smartwatches',
+                        'label':'Smart Watches',
+                        'children':[]
+                    }
+                ]
+            },
+            {
+                'value':'handbagsandwallets',
+                'label':'Handbags and Wallets',
+                'children':[
+                    {
+                        'value':'clutchesandeveningbags',
+                        'label':'Clutches and Evening Bags',
+                        'children':[]
+                    },
+                    {
+                        'value':'crossbodybags',
+                        'label':'Crossbody Bags',
+                        'children':[]
+                    },
+                    {
+                        'value':'hobobags',
+                        'label':'Hobo Bags',
+                        'children':[]
+                    },
+                    {
+                        'value':'satchels',
+                        'label':'Satchels',
+                        'children':[]
+                    },
+                    {
+                        'value':'shoulderbags',
+                        'label':'Shoulder Bags',
+                        'children':[]
+                    },
+                    {
+                        'value':'top-handlebags',
+                        'label':'Top-Handle Bags',
+                        'children':[]
+                    },
+                    {
+                        'value':'totes',
+                        'label':'Totes',
+                        'children':[]
+                    },
+                    {
+                        'value':'wallets',
+                        'label':'Wallets',
+                        'children':[]
+                    },
+                    {
+                        'value':'wristlets',
+                        'label':'Wristlets',
+                        'children':[]
+                    }
+                ]
+            },
+            {
+                'value':'accessories',
+                'label':'Accessories',
+                'children':[
+                    {
+                        'value':'belts',
+                        'label':'Belts',
+                        'children':[]
+                    },
+                    {
+                        'value':'sunglassesandeyewearaccessories',
+                        'label':'Sunglasses and Eyewear Accessories',
+                        'children':[]
+                    },
+                    {
+                        'value':'scarvesandwraps',
+                        'label':'Scarves and Wraps',
+                        'children':[]
+                    },
+                    {
+                        'value':'glovesandmittens',
+                        'label':'Gloves and Mittens',
+                        'children':[]
+                    },
+                    {
+                        'value':'hats and caps',
+                        'label':'Hats and Caps',
+                        'children':[]
+                    },
+                    {
+                        'value':'earmuffs',
+                        'label':'Earmuffs',
+                        'children':[]
+                    },
+                    {
+                        'value':'handbagaccessories',
+                        'label':'Hand Bag Accessories',
+                        'children':[]
+                    },
+                    {
+                        'value':'keyringsandkeychains',
+                        'label':'Keyrings and Keychains',
+                        'children':[]
+                    },
+                    {
+                        'value':'wallets,cardscasesandmoneyorganizers',
+                        'label':'Wallets, Card Cases and Money Organizers',
+                        'children':[]
+                    }
+                ]
+            },
+            {
+                'value':'mensfashion',
+                'label':'Men\'s Fashion',
+                'children':[]
+            },
+            {
+                'value':'girlsfashion',
+                'label':'Girls\' Fashion',
+                'children':[]
+            },
+            {
+                'value':'boysfashion',
+                'label':'Boys\' Fashion',
+                'children':[]
+            }
+        ]
+    },
+    {
+        'value':'mensfashion',
+        'label':'Men\'s Fashion',
+        'children':[
+            {
+                'value':'clothing',
+                'label':'Clothing',
+                'children':[
+                    {
+                        'value':'shirts',
+                        'label':'Shirts',
+                        'children':[]
+                    },
+                    {
+                        'value':'fashionhoodiesandsweaarshirts',
+                        'label':'Fashion Hoodies and Sweatshirts',
+                        'children':[]
+                    },
+                    {
+                        'value':'sweaters',
+                        'label':'Sweaters',
+                        'children':[]
+                    },
+                    {
+                        'value':'jacketsandcoats',
+                        'label':'Jackets and Coats',
+                        'children':[]
+                    },
+                    {
+                        'value':'jeans',
+                        'label':'Jeans',
+                        'children':[]
+                    },
+                    {
+                        'value':'pants',
+                        'label':'Pants',
+                        'children':[]
+                    },
+                    {
+                        'value':'shorts',
+                        'label':'Shorts',
+                        'children':[]
+                    },
+                    {
+                        'value':'active',
+                        'label':'Active',
+                        'children':[]
+                    },
+                    {
+                        'value':'swim',
+                        'label':'Swim',
+                        'children':[]
+                    },
+                    {
+                        'value':'suitsandsportscoats',
+                        'label':'Suits and Sports Coats',
+                        'children':[]
+                    },
+                    {
+                        'value':'underwear',
+                        'label':'UnderWear',
+                        'children':[]
+                    },
+                    {
+                        'value':'socks',
+                        'label':'Sccks',
+                        'children':[]
+                    },
+                    {
+                        'value':'sleepandlounge',
+                        'label':'Sleep and Lounge',
+                        'children':[]
+                    },
+                    {
+                        'value':'tshirtsandtanks',
+                        'label':'T-Shirts and Tanks',
+                        'children':[]
+                    }
+                ]
+            },
+            {
+                'value':'shoes',
+                'label':'Shoes',
+                'children':[
+                    {
+                        'value':'athletic',
+                        'label':'Athletic',
+                        'children':[]
+                    },
+                    {
+                        'value':'boots',
+                        'label':'Boots',
+                        'children':[]
+                    },
+                    {
+                        'value':'fashionsneakers',
+                        'label':'Fashion Sneakers',
+                        'children':[]
+                    },
+                    {
+                        'value':'loagersandslipons',
+                        'label':'Loafers and Slip-Ons',
+                        'children':[]
+                    },
+                    {
+                        'value':'mulesandclogs',
+                        'label':'Mules and Clogs',
+                        'children':[]
+                    },
+                    {
+                        'value':'outdoor',
+                        'label':'Outdoor',
+                        'children':[]
+                    },
+                    {
+                        'value':'oxfords',
+                        'label':'Oxfords',
+                        'children':[]
+                    },
+                    {
+                        'value':'sandals',
+                        'label':'Sandals',
+                        'children':[]
+                    },
+                    {
+                        'value':'slippers',
+                        'label':'Slippers',
+                        'children':[]
+                    },
+                    {
+                        'value':'workandsafety',
+                        'label':'Work and Safety',
                         'children':[]
                     }
                 ]
@@ -5279,6 +8445,11 @@ export const AMAZON_CATEGORIES = [
                         'value':'pocketwatches',
                         'label':'Pocket Watches',
                         'children':[]
+                    },
+                    {
+                        'value':'smartwatches',
+                        'label':'Smart Watches',
+                        'children':[]
                     }
                 ]
             },
@@ -5287,8 +8458,33 @@ export const AMAZON_CATEGORIES = [
                 'label':'Accessories',
                 'children':[
                     {
-                        'value':'coldweather',
-                        'label':'Cold Weather',
+                        'value':'belts',
+                        'label':'Belts',
+                        'children':[]
+                    },
+                    {
+                        'value':'collarstays',
+                        'label':'Collar Stays',
+                        'children':[]
+                    },
+                    {
+                        'value':'cufflinks,shirtsstudsandtieclip',
+                        'label':'Cuff Links, Shirt Studs and Tie Clips',
+                        'children':[]
+                    },
+                    {
+                        'value':'earmuffs',
+                        'label':'Earmuffs',
+                        'children':[]
+                    },
+                    {
+                        'value':'glovesandmittens',
+                        'label':'Gloves and Mittens',
+                        'children':[]
+                    },
+                    {
+                        'value':'handkerchiefs',
+                        'label':'Handkerchiefs',
                         'children':[]
                     },
                     {
@@ -5297,46 +8493,36 @@ export const AMAZON_CATEGORIES = [
                         'children':[]
                     },
                     {
-                        'value':'belts',
-                        'label':'Belts',
+                        'value':'keyringsandkeychains',
+                        'label':'Keyrings and Keychains',
                         'children':[]
                     },
                     {
-                        'value':'sunglasses',
-                        'label':'Sunglasses',
+                        'value':'scarves',
+                        'label':'Scatves',
                         'children':[]
                     },
                     {
-                        'value':'fashionscarves',
-                        'label':'Fashion Scarves',
+                        'value':'sunglassesandeyewearaccessories',
+                        'label':'Sunglasses and Eyewear Accessories',
                         'children':[]
                     },
                     {
-                        'value':'specialoccasiongloves',
-                        'label':'SPecial Occasion Gloves',
+                        'value':'suspenders',
+                        'label':'Suspenders',
                         'children':[]
                     },
                     {
-                        'value':'firstcommunionveils',
-                        'label':'First Communion Veils',
+                        'value':'ties,cummerbundsandpocketsquares',
+                        'label':'Ties, Cummerbunds and Pocket Squares',
+                        'children':[]
+                    },
+                    {
+                        'value':'wallets,cardscasesandmoneyorganizers',
+                        'label':'Wallets, Card Cases and Money Organizers',
                         'children':[]
                     }
-                ]
-            },
-            {
-                'value':'schooluniform',
-                'label':'School Uniform',
-                'children':[
-                    {
-                        'value':'clothing',
-                        'label':'Clothing',
-                        'children':[]
-                    },
-                    {
-                        'value':'shoes',
-                        'label':'Shoes',
-                        'children':[]
-                    }
+                    
                 ]
             },
             {
@@ -5345,13 +8531,13 @@ export const AMAZON_CATEGORIES = [
                 'children':[]
             },
             {
-                'value':'mensfashion',
-                'label':'Men\'s Fashion',
+                'value':'girlsfashion',
+                'label':'Girls\' Fashion',
                 'children':[]
             },
             {
-                'value':'girlsfashion',
-                'label':'Girls\' Fashion',
+                'value':'boysfashion',
+                'label':'Boys\' Fashion',
                 'children':[]
             }
         ]
@@ -5637,8 +8823,8 @@ export const AMAZON_CATEGORIES = [
                 'children':[]
             },
             {
-                'value':'girlsfashion',
-                'label':'Girls\' Fashion',
+                'value':'boysfashion',
+                'label':'Boys\' Fashion',
                 'children':[]
             }
         ]
@@ -9321,6 +12507,10 @@ export const AMAZON_CATEGORIES = [
 
         ]
 
-    } 
+    }
+
+        
+
+     
     
 ];
