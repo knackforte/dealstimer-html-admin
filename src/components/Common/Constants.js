@@ -2958,6 +2958,18 @@ export const AMAZON_CATEGORIES= [
                 
                     },
                     {
+                        'value': 'capsandhats',
+                        'label': 'Caps & Hats',
+                        'children': []
+                
+                    },
+                    {
+                        'value': 'cellphoneaccessories',
+                        'label': 'Cell Phone Accessories',
+                        'children': []
+                
+                    },
+                    {
                         'value': 'clothing',
                         'label': 'Clothing',
                         'children': []
@@ -3483,6 +3495,12 @@ export const AMAZON_CATEGORIES= [
                 
                     },
                     {
+                        'value':'giftsets',
+                        'label':'Gift Sets',
+                        'children':[]
+                
+                    },
+                    {
                         'value':'keepsakes',
                         'label':'Keepsakes',
                         'children':[]
@@ -3638,8 +3656,8 @@ export const AMAZON_CATEGORIES= [
                 
                     },
                     {
-                        'value':'Harnesses & Leashes',
-                        'label':'Maternity Pillows',
+                        'value':'harnessesandleashes',
+                        'label':'Harnesses & Leashes',
                         'children':[]
                 
                     },
@@ -3660,19 +3678,7 @@ export const AMAZON_CATEGORIES= [
                         'label':'Outdoor Safety',
                         'children':[]
                 
-                    },
-                    {
-                        'value':'monitors',
-                        'label':'Monitors',
-                        'children':[]
-                
-                    },
-                    {
-                        'value':'outdoorsafety',
-                        'label':'Outdoor Safety',
-                        'children':[]
-                
-                    },
+                    }, 
                     {
                         'value':'railsandrailguards',
                         'label':'Rails & Rail Guards',
@@ -4956,7 +4962,7 @@ export const AMAZON_CATEGORIES= [
                 
                     },
                     {
-                        'value':'steeringandsuspension',
+                        'value':'steeringandsuspensiontools',
                         'label':'Steering & Suspension Tools',
                         'children':[]
                 
@@ -5166,12 +5172,6 @@ export const AMAZON_CATEGORIES= [
                     },
                     {
                         'value':'metalstampingtools',
-                        'label':'Metal Stamping Tools',
-                        'children':[]
-                
-                    },
-                    {
-                        'value':'polishingandbuffing',
                         'label':'Metal Stamping Tools',
                         'children':[]
                 
@@ -5962,6 +5962,18 @@ export const AMAZON_CATEGORIES= [
                 
                     },
                     {
+                        'value':'sergerandoverlockmachine',
+                        'label':'Sergers & Overlock Machines',
+                        'children':[]
+                
+                    },
+                    {
+                        'value':'sewingmachinepartsandaccessories',
+                        'label':'Sewing Machine Parts & Accessories',
+                        'children':[]
+                
+                    },
+                    {
                         'value':'sewingmachines',
                         'label':'Sewing Machines',
                         'children':[]
@@ -6044,13 +6056,7 @@ export const AMAZON_CATEGORIES= [
                         'label':'Makeup Ralettes',
                         'children':[]
                 
-                    },
-                    {
-                        'value':'sewingprojectkits',
-                        'label':'Sewing Project Kits',
-                        'children':[]
-                
-                    },
+                    }, 
                     {
                         'value':'makeupremover',
                         'label':'Makeup Remover',
@@ -6207,13 +6213,7 @@ export const AMAZON_CATEGORIES= [
                         'label':'Dusting Powders',
                         'children':[]
                 
-                    },
-                    {
-                        'value':'haircoloringproducts',
-                        'label':'Hair Coloring Products',
-                        'children':[]
-                
-                    },
+                    }, 
                     {
                         'value':'mens',
                         'label':'Men\'s',
@@ -6726,7 +6726,7 @@ export const AMAZON_CATEGORIES= [
                     'children':[]
                 },
                 {
-                    'value':'Externalsolidstatedrives',
+                    'value':'externalsolidstatedrives',
                     'label':'External Solid State Drives',
                     'children':[]
                 },
@@ -6735,7 +6735,7 @@ export const AMAZON_CATEGORIES= [
                     'label':'External Sound Cards',
                     'children':[]
                 },
-                {
+                { 
                     'value':'externaltvtuners',
                     'label':'External TV Tuners',
                     'children':[]
@@ -6749,13 +6749,14 @@ export const AMAZON_CATEGORIES= [
                     'value':'opticaldrives',
                     'label':'Optical Drives',
                     'children':[]
-                },]
+                },
+            ]
         },
         {
             'value':'laptopaccessories',
             'label':'Laptop Accessories',
             'children':[{
-                'value':'bags,casesandsleeves',
+                'value':'bagscasesandsleeves',
                 'label':'Bags, Cases and Sleeves',
                 'children':[]
             },
@@ -6800,7 +6801,7 @@ export const AMAZON_CATEGORIES= [
                 'children':[]
             },
             {
-                'value':'screen protectors',
+                'value':'screenprotectors',
                 'label':'Screen Protectors',
                 'children':[]
             },
@@ -6957,7 +6958,7 @@ export const AMAZON_CATEGORIES= [
                 },]
         },
         {
-            'value':'Scanners',
+            'value':'scanners',
             'label':'Scanners',
             'children':[
                 {
@@ -6991,7 +6992,7 @@ export const AMAZON_CATEGORIES= [
             'label':'Tablet Accessories',
             'children':[
                 {
-                    'value':'bags,casesandsleeves',
+                    'value':'bagscasesandsleeves',
                     'label':'Bags, Cases and Sleeves',
                     'children':[]
                 },
@@ -7011,7 +7012,7 @@ export const AMAZON_CATEGORIES= [
                     'children':[]
                 },
                 {
-                    'value':'Keyboards',
+                    'value':'keyboards',
                     'label':'Keyboards',
                     'children':[]
                 },
@@ -7062,7 +7063,7 @@ export const AMAZON_CATEGORIES= [
                     'children':[]
                 },
                 {
-                    'value':'Screens',
+                    'value':'screens',
                     'label':'Screens',
                     'children':[]
                 },]
@@ -7076,11 +7077,7 @@ export const AMAZON_CATEGORIES= [
                     'label':'Computer Equipment Warranties',
                     'children':[]
                 },
-                {
-                    'value':'serviceplans',
-                    'label':'Service Plans',
-                    'children':[]
-                },]
+                ]
         },
         ]
     },
@@ -7134,7 +7131,7 @@ export const AMAZON_CATEGORIES= [
                         'children':[]
                     },
                     {
-                        'value':'batteries,chargersandaccessories',
+                        'value':'batterieschargersandaccessories',
                         'label':'Batteries, Chargers and Accessories',
                         'children':[]
                     },
@@ -7257,7 +7254,7 @@ export const AMAZON_CATEGORIES= [
             ]
             },
             {
-                'value':'carsndvehicleelctronics',
+                'value':'carsandvehicleelctronics',
                 'label':'Cars and Vehicle Electronics',
                 'children':[
                     {
@@ -7296,7 +7293,7 @@ export const AMAZON_CATEGORIES= [
                 'label':'Cell Phone and Accessories',
                 'children':[
                     {
-                        'value':'carriecellphones',
+                        'value':'carriercellphones',
                     'label':'Carrier Cell Phones',
                     'children':[]
                 },
@@ -7316,7 +7313,7 @@ export const AMAZON_CATEGORIES= [
                     'children':[]
                 },
                 {
-                    'value':'cases,holstersandclips',
+                    'value':'casesholstersandclips',
                     'label':'Cases, Holdters and Clips',
                     'children':[]
                 }
@@ -7521,7 +7518,7 @@ export const AMAZON_CATEGORIES= [
                     'children':[]
                 },
                 {
-                    'value':'electronicdictionaries,thesauriandtranlators',
+                    'value':'electronicdictionariesthesauriandtranlators',
                     'label':'Electronic Dictionaries, Thesauri and Translators,',
                     'children':[]
                 },
@@ -7761,6 +7758,11 @@ export const AMAZON_CATEGORIES= [
                     'children':[]
                 },
                 {
+                    'value':'televisions',
+                    'label':'Televisions',
+                    'children':[]
+                },
+                {
                     'value':'tvdvdcombos',
                     'label':'TV-DVD Combos',
                     'children':[]
@@ -7846,7 +7848,7 @@ export const AMAZON_CATEGORIES= [
                     'children':[]
                 },
                 {
-                    'value':'clips,armsandwristbands',
+                    'value':'clipsarmsandwristbands',
                     'label':'Clips, Arm and Wristbands',
                     'children':[]
                 },
