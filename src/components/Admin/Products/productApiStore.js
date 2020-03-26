@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { TYPE_CATEGORY_VIEW, CATEGORY_SUBCATEGORY_VIEW, SHARAF_DG_API_URL } from '../../Common/Constants';
+import { BABYSHOP_CATEGORIES, SHARAF_DG_CATEGORIES, AMAZON_CATEGORIES, GET_PRODUCTS_API_SCRAPPER_URL } from '../../Common/Constants';
 import Modal from './ProductAddModal';
-import {getSharafDGFormData} from '../../Common/utils';
+import { getSharafDGFormData, getBabyshopUrl, getAmazonUrl } from '../../Common/utils';
 import axios from 'axios';
 import { Cascader } from 'antd';
 import 'antd/dist/antd.css';
@@ -12,7 +12,7 @@ class ProductsAll extends Component {
         super(props);
     }
     state = {
-        selectedView: 'select',
+        selectedType: 'select',
         selectedCategory: 'select',
         selectedSubCategory: 'select',
         products: [],
@@ -23,21 +23,36 @@ class ProductsAll extends Component {
         activeItemName: '',
         activeItemImages: '',
         activeItemPermalink: '',
-        activeItemPrice: 0,
-        activeItemSalePrice: 0,
-        activeItemInStock: 0,
-        activeItemDiscount: 0
+        category_options: '',
+        storeId: ''
     }
-
+    componentDidMount() {
+        let storeId = this.props.match.params.id;
+        this.setState({ storeId: storeId });
+        switch (storeId) {
+            case "2":
+                this.setState({ category_options: SHARAF_DG_CATEGORIES });
+                break;
+            case "3":
+                this.setState({ category_options: BABYSHOP_CATEGORIES, pageId: 1 });
+                break;
+            case "4":
+                this.setState({ category_options: AMAZON_CATEGORIES, pageId: 1 });
+                break;
+        }
+    }
     openModal = (data) => {
         this.setState({ modalIsOpen: true });
         this.setState({ activeItemName: data.post_title });
         this.setState({ activeItemImages: data.images });
         this.setState({ activeItemPermalink: data.permalink });
-        this.setState({ activeItemPrice: data.regular_price });
-        this.setState({ activeItemSalePrice: data.sale_price });
-        this.setState({ activeItemInStock: data.in_stock });
-        this.setState({ activeItemDiscount: data.discount_val });
+    }
+
+    openModalScrap = (data) => {
+        this.setState({ modalIsOpen: true });
+        this.setState({ activeItemName: data.name });
+        this.setState({ activeItemImages: data.image_url });
+        this.setState({ activeItemPermalink: data.permalink });
     }
 
     closeModal = () => {
@@ -45,26 +60,9 @@ class ProductsAll extends Component {
         this.setState({ activeItemName: '' });
         this.setState({ activeItemImages: '' });
         this.setState({ activeItemPermalink: '' });
-        this.setState({ activeItemPrice: 0 });
-        this.setState({ activeItemSalePrice: 0 });
-        this.setState({ activeItemInStock: 0 });
-        this.setState({ activeItemDiscount: 0 });
     }
-
-    typeChangeHandler = (e) => {
-        this.setState({ selectedView: e.target.value });
-        this.setState({ selectedCategory: 'select' });
-        this.setState({ selectedSubCategory: 'select' });
-        this.setState({ pageId: 0 });
-    }
-    categoryChangeHandler = (e) => {
-        this.setState({ selectedCategory: e.target.value });
-        this.setState({ selectedSubCategory: 'select' });
-        this.setState({ pageId: 0 });
-    }
-    subCategoryChangeHandler = (e) => {
-        this.setState({ selectedSubCategory: e.target.value });
-        this.setState({ pageId: 0 });
+    handleCategory = (value) => {
+        this.setState({ selectedType: value[0], selectedCategory: value[1], selectedSubCategory: value[2] });
     }
 
     nextPageTrigger = (e) => {
@@ -78,55 +76,155 @@ class ProductsAll extends Component {
     }
 
     searchProduct = () => {
-        let type = this.state.selectedView;
-        let cat = this.state.selectedCategory;
-        let sub_cat = this.state.selectedSubCategory;
-        if (type === "select" || cat === "select" || sub_cat === "select") {
-            alert("Please select Type, Category and Subcategory first!");
-            return;
+
+        let storeId = this.props.match.params.id;
+        switch (storeId) {
+            case "2":
+                let type = this.state.selectedType;
+                let cat = this.state.selectedCategory;
+                let sub_cat = this.state.selectedSubCategory;
+                if (type === "select" || cat === "select" || sub_cat === "select") {
+                    alert("Please select Type, Category and Subcategory first!");
+                    return;
+                }
+                let formdata = getSharafDGFormData(type, cat, sub_cat, this.state.pageId);
+                axios.request({
+                    url: GET_PRODUCTS_API_SCRAPPER_URL,
+                    method: 'post',
+                    data: formdata,
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa',
+                        store_id: 2,
+                    }
+
+                }).then(response => {
+                    if (response.data.results[0].hits.length !== 0) {
+                        this.setState({ products: response.data.results[0].hits });
+                        if (this.state.pageId >= 0) {
+                            this.setState({ nextBtnDisabled: false });
+                        }
+                        if (this.state.pageId > 0) {
+                            this.setState({ prevBtnDisabled: false });
+                        }
+
+                        if (this.state.pageId === 0) {
+                            this.setState({ prevBtnDisabled: true });
+                        }
+                    } else {
+                        this.setState({ nextBtnDisabled: true });
+                        if (this.state.pageId === 0) {
+                            this.setState({ pageId: 0 });
+                            this.setState({ products: [] });
+                        }
+                    }
+                })
+                    .catch(e => {
+                        alert(e + 'Unable to fetch data from API.');
+                    })
+                break;
+            case "3":
+                let type2 = this.state.selectedType;
+                let cat2 = this.state.selectedCategory;
+                if (type2 === "select" || cat2 === "select") {
+                    alert("Please select Type and Category first!");
+                    return;
+                }
+                let scrapUrl = getBabyshopUrl(type2, cat2, this.state.pageId);
+                let fData = new FormData();
+                fData.append('url', scrapUrl);
+                axios.request({
+                    url: GET_PRODUCTS_API_SCRAPPER_URL,
+                    method: 'post',
+                    data: fData,
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa',
+                        store_id: 3,
+                    }
+
+                }).then(response => {
+                    if (response.data.products.length !== 0) {
+                        this.setState({ products: response.data.products });
+                        if (this.state.pageId >= 0) {
+                            this.setState({ nextBtnDisabled: false });
+                        }
+                        if (this.state.pageId > 0) {
+                            this.setState({ prevBtnDisabled: false });
+                        }
+
+                        if (this.state.pageId === 0) {
+                            this.setState({ prevBtnDisabled: true });
+                        }
+                    } else {
+                        this.setState({ nextBtnDisabled: true });
+                        if (this.state.pageId === 0) {
+                            this.setState({ pageId: 0 });
+                            this.setState({ products: [] });
+                        }
+                    }
+                })
+                    .catch(e => {
+                        alert(e + 'Unable to fetch data from API.');
+                    })
+                break;
+            case "4":
+                let type3 = this.state.selectedType;
+                let cat3 = this.state.selectedCategory;
+                let sub_cat2 = this.state.selectedSubCategory;
+                if (type3 === "select" || cat3 === "select" || sub_cat2 === "select") {
+                    alert("Please select Type, Category and Sub Category first!");
+                    return;
+                }
+                let scrapUrl2 = getAmazonUrl(type3, cat3, sub_cat2, this.state.pageId);
+                let fData2 = new FormData();
+                fData2.append('url', scrapUrl2);
+                axios.request({
+                    url: GET_PRODUCTS_API_SCRAPPER_URL,
+                    method: 'post',
+                    data: fData2,
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa',
+                        store_id: 4,
+                    }
+
+                }).then(response => {
+                    if (response.data.products.length !== 0) {
+                        this.setState({ products: response.data.products });
+                        if (this.state.pageId >= 0) {
+                            this.setState({ nextBtnDisabled: false });
+                        }
+                        if (this.state.pageId > 0) {
+                            this.setState({ prevBtnDisabled: false });
+                        }
+
+                        if (this.state.pageId === 0) {
+                            this.setState({ prevBtnDisabled: true });
+                        }
+                    } else {
+                        this.setState({ nextBtnDisabled: true });
+                        if (this.state.pageId === 0) {
+                            this.setState({ pageId: 0 });
+                            this.setState({ products: [] });
+                        }
+                    }
+                })
+                    .catch(e => {
+                        alert(e + 'Unable to fetch data from API.');
+                    })
+                break;
         }
-        let formdata = getSharafDGFormData(type,cat,sub_cat);
-        axios.request({
-            url: SHARAF_DG_API_URL,
-            method: 'post',
-            data: formdata,
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-                APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa',
-            }
 
-        }).then(response => {
-            if (response.data.results[0].hits.length !== 0) {
-                this.setState({ products: response.data.results[0].hits });
-                if (this.state.pageId >= 0) {
-                    this.setState({ nextBtnDisabled: false });
-                }
-                if (this.state.pageId > 0) {
-                    this.setState({ prevBtnDisabled: false });
-                }
 
-                if (this.state.pageId === 0) {
-                    this.setState({ prevBtnDisabled: true });
-                }
-            } else {
-                this.setState({ nextBtnDisabled: true });
-                if (this.state.pageId === 0) {
-                    this.setState({ pageId: 0 });
-                    this.setState({ products: [] });
-                }
-            }
-        })
-            .catch(e => {
-                alert(e + 'Unable to fetch data from API.');
-            })
 
     }
 
     render() {
-        const { selectedView, selectedCategory, modalIsOpen } = this.state;
+        const { modalIsOpen } = this.state;
         return (
             <>
-                {(modalIsOpen) ? <Modal openModal={this.openModal} closeModal={this.closeModal} modalIsOpen={modalIsOpen} product_name={this.state.activeItemName} price={this.state.activeItemPrice} product_url={this.state.activeItemPermalink} sale_price={this.state.activeItemSalePrice} in_stock={this.state.activeItemInStock} discount={this.state.activeItemDiscount} picture={this.state.activeItemImages} /> : null}
+                {(modalIsOpen) ? <Modal openModal={this.openModal} closeModal={this.closeModal} modalIsOpen={modalIsOpen} product_name={this.state.activeItemName} product_url={this.state.activeItemPermalink} picture={this.state.activeItemImages} /> : null}
                 <div className="app-content content container-fluid" >
                     <div className="content-wrapper">
                         <div className="content-header row">
@@ -159,15 +257,15 @@ class ProductsAll extends Component {
                                                 <div className="form-body">
                                                     <div className="form-group row">
                                                         <div className=" col-md-11">
-                                                        <Cascader
-                                                        options={TYPE_CATEGORY_VIEW}
-                                                        onChange={this.handleCategory}
-                                                        style={{"display":"block"}}
-                                                        name="category_id"
-                                                        />
+                                                            <Cascader
+                                                                options={this.state.category_options}
+                                                                onChange={this.handleCategory}
+                                                                style={{ "display": "block" }}
+                                                                name="category_id"
+                                                            />
 
                                                         </div>
-                                                    
+
                                                         <div className="col-md-1">
                                                             <button type="submit" className="btn btn-primary" onClick={this.searchProduct}>
                                                                 <i className="icon-search"></i>
@@ -198,18 +296,50 @@ class ProductsAll extends Component {
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    {this.state.products.map(data => {
-                                                        return (
-                                                            <tr>
-                                                                <th scope="row">{data.post_id}</th>
-                                                                <td>{data.post_title}</td>
-                                                                <td>{data.price}</td>
-                                                                <td><img style={{ width: "50px", height: "50px" }} src={data.images} alt="Product Image" /></td>
-                                                                <td><a href={data.permalink} target="_blank" rel="noopener noreferrer">{data.permalink}</a></td>
-                                                                <td><button className="btn btn-primary" onClick={() => this.openModal(data)}>Add Product</button></td>
-                                                            </tr>
-                                                        )
-                                                    })
+                                                    {(this.state.storeId === "2") ?
+                                                        this.state.products.map(data => {
+                                                            return (
+                                                                <tr>
+                                                                    <th scope="row">{data.post_id}</th>
+                                                                    <td>{data.post_title}</td>
+                                                                    <td>{data.price}</td>
+                                                                    <td><img style={{ width: "50px", height: "50px" }} src={data.images} alt="Product Image" /></td>
+                                                                    <td><a href={data.permalink} target="_blank" rel="noopener noreferrer">{data.permalink}</a></td>
+                                                                    <td><button className="btn btn-primary" onClick={() => this.openModal(data)}>Add Product</button></td>
+                                                                </tr>
+                                                            )
+                                                        })
+                                                        : null
+                                                    }
+                                                    {(this.state.storeId === "3") ?
+                                                        this.state.products.map(data => {
+                                                            return (
+                                                                <tr>
+                                                                    <th scope="row">{}</th>
+                                                                    <td>{data.name}</td>
+                                                                    <td>{data.price}</td>
+                                                                    <td><img style={{ width: "50px", height: "50px" }} src={data.image_url} alt="Product Image" /></td>
+                                                                    <td><a href={data.permalink} target="_blank" rel="noopener noreferrer">{data.permalink}</a></td>
+                                                                    <td><button className="btn btn-primary" onClick={() => this.openModalScrap(data)}>Add Product</button></td>
+                                                                </tr>
+                                                            )
+                                                        })
+                                                        : null
+                                                    }
+                                                    {(this.state.storeId === "4") ?
+                                                        this.state.products.map(data => {
+                                                            return (
+                                                                <tr>
+                                                                    <th scope="row">{}</th>
+                                                                    <td>{data.name}</td>
+                                                                    <td>{data.price}</td>
+                                                                    <td><img style={{ width: "50px", height: "50px" }} src={data.image_url} alt="Product Image" /></td>
+                                                                    <td><a href={data.permalink} target="_blank" rel="noopener noreferrer">{data.permalink}</a></td>
+                                                                    <td><button className="btn btn-primary" onClick={() => this.openModalScrap(data)}>Add Product</button></td>
+                                                                </tr>
+                                                            )
+                                                        })
+                                                        : null
                                                     }
                                                 </tbody>
                                             </table>

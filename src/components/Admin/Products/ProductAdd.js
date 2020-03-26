@@ -10,12 +10,11 @@ import { GET_CATEGORIES, ADD_PRODUCT_API_URL } from '../../Common/Constants';
 
 const initialState = {
     product_name: "",
-    price: "",
     category: "",
     errors: {},
     isButtonDisabled: false,
     picture: [],
-    options:[]
+    options: []
 };
 
 class ProductAdd extends Component {
@@ -23,7 +22,7 @@ class ProductAdd extends Component {
         super(props);
         this.state = initialState;
     }
-    componentDidMount(){
+    componentDidMount() {
         let config = {
             headers: {
                 APP_KEY: '$2y$10$bmMnWMBdvUmNWDSu9DwhH0sT.Yx4syv81fz3WDPRBO3pMSj8CthVRQGa'
@@ -31,14 +30,14 @@ class ProductAdd extends Component {
         }
         axios.get(GET_CATEGORIES, config)
             .then(response => {
-                this.setState({options: response.data});
+                this.setState({ options: response.data });
             })
             .catch(e => {
                 alert(e.response.data);
-            })    
+            })
     }
 
-    
+
     resetState = () => {
         this.setState(initialState);
     }
@@ -51,9 +50,9 @@ class ProductAdd extends Component {
         this.setState({ [event.target.name]: event.target.value });
     }
 
-    handleCategory = (value) =>{
+    handleCategory = (value) => {
         this.setState({
-            category: value[value.length-1]
+            category: value[value.length - 1]
         });
     }
     handleSubmit = (event) => {
@@ -82,11 +81,9 @@ class ProductAdd extends Component {
                 }
                 let formData = new FormData();
                 formData.append('name', this.state.product_name);
-                formData.append('price', this.state.price);
                 formData.append('category_id', this.state.category);
-                formData.append('picture', this.state.picture[0]);
+                formData.append('images', this.state.picture[0]);
                 formData.append('created_by', 1);
-
                 axios.post(ADD_PRODUCT_API_URL, formData, config)
                     .then(response => {
                         alert("Product has been saved successfully!");
@@ -106,9 +103,9 @@ class ProductAdd extends Component {
             })
     }
     render() {
-        
 
-        
+
+
         return (
             <div className="app-content content container-fluid">
                 <div className="content-wrapper">
@@ -154,24 +151,18 @@ class ProductAdd extends Component {
                                                             </div>
                                                         </div>
                                                         <div className="row">
-                                                            <div className="col-md-4">
-                                                                <label for="price">Price
+                                                            <div className="col-md-12">
+                                                                <label>Product Category
                                                         </label>
-                                                                <input type="number" step="0.01" id="price" className={"form-control " + (this.state.errors.price ? 'border-danger' : "")} name="price" onChange={this.handleInputChange} value={this.state.price} />
-                                                                <p className='danger lighten-2'>{(this.state.errors.price) ? this.state.errors.price : ''}</p>
-                                                            </div>
-                                                            <div className="col-md-8">
-                                                            <label>Product Category
-                                                        </label>
-                                                            <Cascader
-                                                        options={this.state.options}
-                                                        onChange={this.handleCategory}
-                                                        style={{"display":"block"}}
-                                                        name="category_id"
-                                                    />
+                                                                <Cascader
+                                                                    options={this.state.options}
+                                                                    onChange={this.handleCategory}
+                                                                    style={{ "display": "block" }}
+                                                                    name="category_id"
+                                                                />
                                                             </div>
                                                         </div>
-                                                        
+
 
                                                     </div>
                                                     <div className="col-md-4">
