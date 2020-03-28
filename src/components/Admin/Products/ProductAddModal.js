@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Modal, Button } from "react-bootstrap";
 import { validateAll } from 'indicative/validator';
-import { Cascader } from 'antd';
+import { MultiCascader } from 'rsuite';
 import 'antd/dist/antd.css';
 import styles from './ProductModal.module.css';
 import axios from 'axios';
@@ -14,6 +14,7 @@ const initialState = {
     product_name: "",
     product_url: "",
     category: "",
+    store_id: "",
     errors: {},
     isButtonDisabled: false,
     picture: '',
@@ -32,6 +33,7 @@ class ProductAddModal extends Component {
         this.setState({ product_name: this.props.product_name });
         this.setState({ product_url: this.props.product_url });
         this.setState({ picture: this.props.picture });
+        this.setState({ store_id: this.props.store_id });
 
         let config = {
             headers: {
@@ -106,6 +108,7 @@ class ProductAddModal extends Component {
             let formData = new FormData();
             formData.append('name', this.state.product_name);
             formData.append('product_parent_id', this.state.selectedProduct);
+            formData.append('store_id', this.state.store_id);
             formData.append('category_id', this.state.category);
             formData.append('picture', this.state.picture);
             formData.append('permalink', this.state.product_url);
@@ -117,8 +120,12 @@ class ProductAddModal extends Component {
                     alert("Product has been saved successfully!");
                     this.setState({ isButtonDisabled: false });
                 })
+                .catch((errors) => {
+                    alert("Product already exists!");
+                })
         }).catch((errors) => {
             const formattedErrors = {}
+            console.log(errors)
             errors.forEach(error => formattedErrors[error.field] = error.message)
             this.setState({ errors: formattedErrors })
         })
@@ -242,7 +249,7 @@ class ProductAddModal extends Component {
                                                     <label>Category</label>
                                                 </div>
                                                 <div className="">
-                                                    <Cascader options={this.state.category_options} className="cascade" onChange={this.handleCategory} placeholder="Please select" />
+                                                    <MultiCascader data={this.state.category_options} size="md" className="cascade" onChange={this.handleCategory} placeholder="Please select" />
                                                 </div>
                                             </div>
                                             <div className="form-group ">

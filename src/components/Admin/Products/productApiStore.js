@@ -224,7 +224,7 @@ class ProductsAll extends Component {
         const { modalIsOpen } = this.state;
         return (
             <>
-                {(modalIsOpen) ? <Modal openModal={this.openModal} closeModal={this.closeModal} modalIsOpen={modalIsOpen} product_name={this.state.activeItemName} product_url={this.state.activeItemPermalink} picture={this.state.activeItemImages} /> : null}
+                {(modalIsOpen) ? <Modal openModal={this.openModal} closeModal={this.closeModal} modalIsOpen={modalIsOpen} product_name={this.state.activeItemName} product_url={this.state.activeItemPermalink} picture={this.state.activeItemImages} store_id={this.state.storeId} /> : null}
                 <div className="app-content content container-fluid" >
                     <div className="content-wrapper">
                         <div className="content-header row">
