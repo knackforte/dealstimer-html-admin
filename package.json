@@ -15,7 +15,7 @@
     "indicative": "^7.4.4",
     "jquery": "^3.4.1",
     "material-ui-dropzone": "^2.4.7",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "pace": "0.0.4",
     "pace-js": "^1.0.2",
     "react": "^16.12.0",
